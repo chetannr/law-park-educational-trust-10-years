@@ -1,32 +1,77 @@
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { milestones } from '../../data/milestones'
 import type { Milestone } from '../../types'
 
+// Create a flat list of all images across all milestones
+function getAllImages() {
+  const allImages: Array<{ milestone: Milestone; imageIndex: number; globalIndex: number }> = []
+  let globalIndex = 0
+
+  milestones.forEach((milestone) => {
+    milestone.images.forEach((_, imageIndex) => {
+      allImages.push({ milestone, imageIndex, globalIndex })
+      globalIndex++
+    })
+  })
+
+  return allImages
+}
+
 function Timeline() {
-  const [selectedImage, setSelectedImage] = useState<{ milestone: Milestone; index: number } | null>(null)
+  const [selectedImage, setSelectedImage] = useState<{ milestone: Milestone; index: number; globalIndex: number } | null>(null)
+  const allImages = getAllImages()
 
   function openLightbox(milestone: Milestone, index: number) {
-    setSelectedImage({ milestone, index })
+    const globalIndex = allImages.findIndex(
+      (img) => img.milestone === milestone && img.imageIndex === index
+    )
+    setSelectedImage({ milestone, index, globalIndex })
   }
 
-  function closeLightbox() {
+  const closeLightbox = useCallback(() => {
     setSelectedImage(null)
-  }
+  }, [])
 
-  function navigateImage(direction: 'prev' | 'next') {
+  const navigateImage = useCallback((direction: 'prev' | 'next') => {
     if (!selectedImage) return
 
-    const { milestone, index } = selectedImage
-    const totalImages = milestone.images.length
+    const { globalIndex } = selectedImage
+    let newGlobalIndex: number
 
     if (direction === 'prev') {
-      const newIndex = index === 0 ? totalImages - 1 : index - 1
-      setSelectedImage({ milestone, index: newIndex })
+      newGlobalIndex = globalIndex === 0 ? allImages.length - 1 : globalIndex - 1
     } else {
-      const newIndex = index === totalImages - 1 ? 0 : index + 1
-      setSelectedImage({ milestone, index: newIndex })
+      newGlobalIndex = globalIndex === allImages.length - 1 ? 0 : globalIndex + 1
     }
-  }
+
+    const newImage = allImages[newGlobalIndex]
+    setSelectedImage({
+      milestone: newImage.milestone,
+      index: newImage.imageIndex,
+      globalIndex: newGlobalIndex,
+    })
+  }, [selectedImage, allImages])
+
+  // Keyboard navigation
+  useEffect(() => {
+    if (selectedImage === null) return
+
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault()
+        navigateImage('prev')
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault()
+        navigateImage('next')
+      } else if (e.key === 'Escape') {
+        e.preventDefault()
+        closeLightbox()
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [selectedImage, navigateImage, closeLightbox])
 
   return (
     <>
@@ -70,7 +115,12 @@ function Timeline() {
                         <div className="mx-4 overflow-hidden rounded-xl bg-white shadow-lg transition-all hover:shadow-xl">
                           {/* Featured Image */}
                           {featuredImage && (
-                            <div className="relative h-64 overflow-hidden sm:h-80">
+                            <button
+                              type="button"
+                              onClick={() => openLightbox(milestone, 0)}
+                              className="relative h-64 w-full overflow-hidden sm:h-80"
+                              aria-label={`View ${milestone.title} photos`}
+                            >
                               <img
                                 src={`${import.meta.env.BASE_URL}images/${featuredImage}`}
                                 alt={milestone.title}
@@ -88,7 +138,7 @@ function Timeline() {
                                   </p>
                                 )}
                               </div>
-                            </div>
+                            </button>
                           )}
 
                           {/* Content */}
@@ -185,57 +235,53 @@ function Timeline() {
             </svg>
           </button>
 
-          {/* Desktop: Side navigation buttons - hidden on mobile */}
-          {selectedImage.milestone.images.length > 1 && (
-            <>
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  navigateImage('prev')
-                }}
-                className="absolute left-4 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white md:block"
-                aria-label="Previous image"
-              >
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  navigateImage('next')
-                }}
-                className="absolute right-4 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white md:block"
-                aria-label="Next image"
-              >
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
-            </>
-          )}
+          {/* Desktop: Side navigation buttons - always visible for cross-year navigation */}
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation()
+              navigateImage('prev')
+            }}
+            className="absolute left-4 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white md:block"
+            aria-label="Previous image"
+          >
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation()
+              navigateImage('next')
+            }}
+            className="absolute right-4 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white md:block"
+            aria-label="Next image"
+          >
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
 
           {/* Image container */}
           <div
@@ -255,68 +301,63 @@ function Timeline() {
             className="mt-4 flex w-full max-w-3xl flex-col items-center gap-3"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Mobile: Bottom navigation arrows with info */}
-            {selectedImage.milestone.images.length > 1 ? (
-              <div className="flex w-full items-center justify-center gap-4 md:hidden">
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    navigateImage('prev')
-                  }}
-                  className="rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 active:bg-white/30 focus:outline-none focus:ring-2 focus:ring-white"
-                  aria-label="Previous image"
-                >
-                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 19l-7-7 7-7"
-                    />
-                  </svg>
-                </button>
+            {/* Mobile: Bottom navigation arrows with info - always visible */}
+            <div className="flex w-full items-center justify-center gap-4 md:hidden">
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  navigateImage('prev')
+                }}
+                className="rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 active:bg-white/30 focus:outline-none focus:ring-2 focus:ring-white"
+                aria-label="Previous image"
+              >
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
 
-                <div className="flex-1 rounded-lg bg-black/40 px-4 py-3 text-center text-white backdrop-blur-sm">
-                  <p className="font-semibold text-sm sm:text-base">{selectedImage.milestone.title}</p>
-                  <p className="text-xs text-white/80 sm:text-sm">
-                    {selectedImage.index + 1} of {selectedImage.milestone.images.length}
-                  </p>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    navigateImage('next')
-                  }}
-                  className="rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 active:bg-white/30 focus:outline-none focus:ring-2 focus:ring-white"
-                  aria-label="Next image"
-                >
-                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </button>
-              </div>
-            ) : (
-              <div className="w-full rounded-lg bg-black/40 px-4 py-3 text-center text-white backdrop-blur-sm md:hidden">
-                <p className="font-semibold text-sm sm:text-base">{selectedImage.milestone.title}</p>
+              <div className="flex-1 rounded-lg bg-black/40 px-4 py-3 text-center text-white backdrop-blur-sm">
+                <p className="font-semibold text-sm sm:text-base">
+                  {selectedImage.milestone.year}: {selectedImage.milestone.title}
+                </p>
                 <p className="text-xs text-white/80 sm:text-sm">
-                  {selectedImage.index + 1} of {selectedImage.milestone.images.length}
+                  {selectedImage.globalIndex + 1} of {allImages.length} • Image {selectedImage.index + 1} of {selectedImage.milestone.images.length}
                 </p>
               </div>
-            )}
 
-            {/* Desktop: Center info only */}
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  navigateImage('next')
+                }}
+                className="rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 active:bg-white/30 focus:outline-none focus:ring-2 focus:ring-white"
+                aria-label="Next image"
+              >
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            {/* Desktop: Center info with year */}
             <div className="hidden w-full rounded-lg bg-black/40 px-6 py-3 text-center text-white backdrop-blur-sm md:block">
-              <p className="font-semibold">{selectedImage.milestone.title}</p>
+              <p className="font-semibold">
+                {selectedImage.milestone.year}: {selectedImage.milestone.title}
+              </p>
               <p className="text-sm text-white/80">
-                {selectedImage.index + 1} of {selectedImage.milestone.images.length}
+                {selectedImage.globalIndex + 1} of {allImages.length} • Image {selectedImage.index + 1} of {selectedImage.milestone.images.length}
               </p>
             </div>
           </div>
