@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useMemo } from 'react'
 import { milestones } from '../../data/milestones'
 import type { Milestone } from '../../types'
 
@@ -19,7 +19,7 @@ function getAllImages() {
 
 function Timeline() {
   const [selectedImage, setSelectedImage] = useState<{ milestone: Milestone; index: number; globalIndex: number } | null>(null)
-  const allImages = getAllImages()
+  const allImages = useMemo(() => getAllImages(), [])
 
   function openLightbox(milestone: Milestone, index: number) {
     const globalIndex = allImages.findIndex(
@@ -35,22 +35,26 @@ function Timeline() {
   const navigateImage = useCallback((direction: 'prev' | 'next') => {
     if (!selectedImage) return
 
-    const { globalIndex } = selectedImage
-    let newGlobalIndex: number
+    setSelectedImage((current) => {
+      if (!current) return null
 
-    if (direction === 'prev') {
-      newGlobalIndex = globalIndex === 0 ? allImages.length - 1 : globalIndex - 1
-    } else {
-      newGlobalIndex = globalIndex === allImages.length - 1 ? 0 : globalIndex + 1
-    }
+      const { globalIndex } = current
+      let newGlobalIndex: number
 
-    const newImage = allImages[newGlobalIndex]
-    setSelectedImage({
-      milestone: newImage.milestone,
-      index: newImage.imageIndex,
-      globalIndex: newGlobalIndex,
+      if (direction === 'prev') {
+        newGlobalIndex = globalIndex === 0 ? allImages.length - 1 : globalIndex - 1
+      } else {
+        newGlobalIndex = globalIndex === allImages.length - 1 ? 0 : globalIndex + 1
+      }
+
+      const newImage = allImages[newGlobalIndex]
+      return {
+        milestone: newImage.milestone,
+        index: newImage.imageIndex,
+        globalIndex: newGlobalIndex,
+      }
     })
-  }, [selectedImage, allImages])
+  }, [allImages])
 
   // Keyboard navigation
   useEffect(() => {
