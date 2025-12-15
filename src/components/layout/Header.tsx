@@ -8,9 +8,12 @@ function Header() {
     <header className="sticky top-0 z-50 bg-white shadow-sm">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
         <div className="flex h-16 items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-primary-600">Law Park</span>
-            <span className="text-sm text-gray-600">Educational Trust</span>
+          <Link to="/" className="flex items-center">
+            <img 
+              src={`${import.meta.env.BASE_URL}logo.png`}
+              alt="Law Park Educational Trust"
+              className="h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
