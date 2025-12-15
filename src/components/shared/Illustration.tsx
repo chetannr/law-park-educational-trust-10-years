@@ -9,8 +9,8 @@ interface IllustrationProps {
 // and place them in public/illustrations/ folder
 export function Illustration({ name, color: _color = '16a34a', className = '' }: IllustrationProps) {
   // In Vite, files in public folder are served from root
-  // Use absolute path starting with / to reference public folder
-  const localPath = `/illustrations/${name}.svg`
+  // Use BASE_URL to reference public folder correctly for GitHub Pages
+  const localPath = `${import.meta.env.BASE_URL}illustrations/${name}.svg`
   
   return (
     <img

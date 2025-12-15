@@ -4,7 +4,7 @@ function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/slide_28_Picture_3_00.jpg"
+          src={`${import.meta.env.BASE_URL}images/slide_28_Picture_3_00.jpg`}
           alt="Children learning and education"
           className="w-full h-full object-cover"
           loading="eager"

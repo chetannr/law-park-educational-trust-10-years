@@ -36,7 +36,7 @@ function Gallery() {
                 className="group relative aspect-square overflow-hidden rounded-lg bg-gray-200 transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
               >
                 <img
-                  src={`/images/${image.src}`}
+                  src={`${import.meta.env.BASE_URL}images/${image.src}`}
                   alt={image.alt}
                   className="h-full w-full object-cover"
                   loading="lazy"
@@ -73,7 +73,7 @@ function Gallery() {
             </svg>
           </button>
           <img
-            src={`/images/${selectedImage}`}
+            src={`${import.meta.env.BASE_URL}images/${selectedImage}`}
             alt="Gallery image"
             className="max-h-full max-w-full object-contain"
             onClick={(e) => e.stopPropagation()}
