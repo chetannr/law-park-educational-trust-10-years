@@ -48,11 +48,52 @@ function Timeline() {
       introTimeoutRef.current = null
     }
 
-    // Close intro immediately
-    setShowIntro(false)
-
     setSelectedImage((current) => {
       if (!current) return null
+
+      // If intro is showing and going forward, navigate to first image of current milestone
+      if (showIntro && direction === 'next') {
+        const firstImageIndex = allImages.findIndex(
+          (img) => img.milestone === current.milestone && img.imageIndex === 0
+        )
+        if (firstImageIndex !== -1) {
+          setShowIntro(false)
+          return {
+            milestone: current.milestone,
+            index: 0,
+            globalIndex: firstImageIndex,
+          }
+        }
+      }
+
+      // If intro is showing and going backward, go to previous year's last image
+      if (showIntro && direction === 'prev') {
+        // Find previous year
+        const currentYearIndex = milestones.findIndex(m => m.year === current.milestone.year)
+        if (currentYearIndex > 0) {
+          const prevMilestone = milestones[currentYearIndex - 1]
+          const lastImageIndex = prevMilestone.images.length - 1
+          const globalIndex = allImages.findIndex(
+            (img) => img.milestone === prevMilestone && img.imageIndex === lastImageIndex
+          )
+          if (globalIndex !== -1) {
+            setShowIntro(false)
+            return {
+              milestone: prevMilestone,
+              index: lastImageIndex,
+              globalIndex: globalIndex,
+            }
+          }
+        }
+        // If no previous year, go to last image overall
+        const lastImage = allImages[allImages.length - 1]
+        setShowIntro(false)
+        return {
+          milestone: lastImage.milestone,
+          index: lastImage.imageIndex,
+          globalIndex: allImages.length - 1,
+        }
+      }
 
       const { globalIndex, milestone } = current
       let newGlobalIndex: number
@@ -67,24 +108,24 @@ function Timeline() {
       
       // Check if we're switching to a different year
       if (newImage.milestone.year !== milestone.year) {
-        // Show intro after a brief delay to allow image to update
-        introTimeoutRef.current = window.setTimeout(() => {
-          setShowIntro(true)
-          // Auto-hide intro after 5 seconds
-          introTimeoutRef.current = window.setTimeout(() => {
-            setShowIntro(false)
-            introTimeoutRef.current = null
-          }, 5000)
-        }, 100)
+        // Show intro slide for the new year
+        setShowIntro(true)
+        return {
+          milestone: newImage.milestone,
+          index: newImage.imageIndex,
+          globalIndex: newGlobalIndex,
+        }
       }
 
+      // Same year, just navigate to image
+      setShowIntro(false)
       return {
         milestone: newImage.milestone,
         index: newImage.imageIndex,
         globalIndex: newGlobalIndex,
       }
     })
-  }, [allImages])
+  }, [allImages, showIntro])
 
   // Keyboard navigation
   useEffect(() => {
@@ -107,23 +148,19 @@ function Timeline() {
       if (e.key === 'Escape') {
         e.preventDefault()
         e.stopPropagation()
-        if (showIntro) {
-          setShowIntro(false)
-        } else {
-          closeLightbox()
-        }
+        closeLightbox()
         return
       }
       if (showIntro && (e.key === 'Enter' || e.key === ' ')) {
-        // Allow Enter or Space to dismiss intro
+        // Allow Enter or Space to go to first image from intro slide
         e.preventDefault()
         e.stopPropagation()
-        setShowIntro(false)
+        navigateImage('next')
       }
     }
 
     window.addEventListener('keydown', handleKeyDown, true) // Use capture phase
-      return () => {
+    return () => {
       window.removeEventListener('keydown', handleKeyDown, true)
       if (introTimeoutRef.current) {
         window.clearTimeout(introTimeoutRef.current)
@@ -341,139 +378,160 @@ function Timeline() {
             </svg>
           </button>
 
-          {/* Year Intro Overlay - Shows when switching to a new year */}
-          {showIntro && selectedImage && (
+          {/* Year Intro Slide - Shows as a separate slide when switching to a new year */}
+          {showIntro && selectedImage ? (
             <div
-              className="absolute inset-0 z-40 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
-              onClick={(e) => {
-                e.stopPropagation()
-                setShowIntro(false)
-              }}
+              className="flex max-h-[calc(100vh-180px)] max-w-4xl flex-col items-center justify-center px-6 py-8 md:max-h-[calc(100vh-120px)]"
+              onClick={(e) => e.stopPropagation()}
             >
-              <div
-                className="max-w-2xl rounded-lg bg-white/95 p-6 shadow-2xl backdrop-blur-sm"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <div className="mb-4 flex items-center justify-between">
-                  <h3 className="text-2xl font-bold text-gray-900">
-                    {selectedImage.milestone.year}: {selectedImage.milestone.title}
-                  </h3>
-                  <button
-                    type="button"
-                    onClick={() => setShowIntro(false)}
-                    className="rounded-full p-1 text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-700"
-                    aria-label="Close intro"
-                  >
-                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M6 18L18 6M6 6l12 12"
-                      />
-                    </svg>
-                  </button>
-                </div>
-                {selectedImage.milestone.location && (
-                  <p className="mb-3 text-sm font-medium text-primary-600">
-                    📍 {selectedImage.milestone.location}
-                  </p>
-                )}
-                <p className="mb-4 text-gray-700 leading-relaxed">
-                  {selectedImage.milestone.description}
-                </p>
-                {selectedImage.milestone.impact && (
-                  <div className="inline-flex items-center rounded-full bg-primary-100 px-4 py-2">
-                    <span className="text-sm font-semibold text-primary-700">
-                      ✨ Impact: {selectedImage.milestone.impact}
-                    </span>
+              <div className="w-full rounded-2xl bg-gradient-to-br from-primary-50 to-white p-8 shadow-2xl">
+                <div className="mb-6 text-center">
+                  <div className="mb-4 inline-flex h-20 w-20 items-center justify-center rounded-full bg-primary-600 text-3xl font-bold text-white shadow-xl">
+                    {selectedImage.milestone.year}
                   </div>
-                )}
-                <p className="mt-4 text-xs text-gray-500">
-                  Click anywhere or press any key to continue viewing images
-                </p>
+                  <h3 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+                    {selectedImage.milestone.title}
+                  </h3>
+                  {selectedImage.milestone.location && (
+                    <p className="mt-3 text-lg font-medium text-primary-600">
+                      📍 {selectedImage.milestone.location}
+                    </p>
+                  )}
+                </div>
+                
+                <div className="mx-auto max-w-2xl">
+                  <p className="mb-6 text-center text-lg leading-relaxed text-gray-700">
+                    {selectedImage.milestone.description}
+                  </p>
+                  
+                  {selectedImage.milestone.impact && (
+                    <div className="mb-6 flex justify-center">
+                      <div className="inline-flex items-center rounded-full bg-primary-100 px-6 py-3">
+                        <span className="text-base font-semibold text-primary-700">
+                          ✨ Impact: {selectedImage.milestone.impact}
+                        </span>
+                      </div>
+                    </div>
+                  )}
+                  
+                  <div className="mt-8 text-center">
+                    <p className="text-sm text-gray-500">
+                      Press → or click next to view photos from {selectedImage.milestone.year}
+                    </p>
+                  </div>
+                </div>
               </div>
+            </div>
+          ) : (
+            /* Image container - Only show when not showing intro */
+            <div
+              className="flex max-h-[calc(100vh-180px)] max-w-full flex-col items-center md:max-h-[calc(100vh-120px)]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Image */}
+              {selectedImage && (
+                <img
+                  src={`${import.meta.env.BASE_URL}images/${selectedImage.milestone.images[selectedImage.index]}`}
+                  alt={`${selectedImage.milestone.title} - Image ${selectedImage.index + 1}`}
+                  className="max-h-full w-auto rounded-lg object-contain"
+                />
+              )}
             </div>
           )}
 
-          {/* Image container */}
-          <div
-            className="flex max-h-[calc(100vh-180px)] max-w-full flex-col items-center md:max-h-[calc(100vh-120px)]"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Image */}
-            <img
-              src={`${import.meta.env.BASE_URL}images/${selectedImage.milestone.images[selectedImage.index]}`}
-              alt={`${selectedImage.milestone.title} - Image ${selectedImage.index + 1}`}
-              className="max-h-full w-auto rounded-lg object-contain"
-            />
-          </div>
+          {/* Title and navigation - Below content, no overlap */}
+          {selectedImage && (
+            <div
+              className="mt-4 flex w-full max-w-3xl flex-col items-center gap-3"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Mobile: Bottom navigation arrows with info - always visible */}
+              <div className="flex w-full items-center justify-center gap-4 md:hidden">
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    navigateImage('prev')
+                  }}
+                  className="rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 active:bg-white/30 focus:outline-none focus:ring-2 focus:ring-white"
+                  aria-label={showIntro ? "Previous" : "Previous image"}
+                >
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 19l-7-7 7-7"
+                    />
+                  </svg>
+                </button>
 
-          {/* Title and navigation - Below image, no overlap */}
-          <div
-            className="mt-4 flex w-full max-w-3xl flex-col items-center gap-3"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Mobile: Bottom navigation arrows with info - always visible */}
-            <div className="flex w-full items-center justify-center gap-4 md:hidden">
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  navigateImage('prev')
-                }}
-                className="rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 active:bg-white/30 focus:outline-none focus:ring-2 focus:ring-white"
-                aria-label="Previous image"
-              >
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
+                <div className="flex-1 rounded-lg bg-black/40 px-4 py-3 text-center text-white backdrop-blur-sm">
+                  {showIntro ? (
+                    <>
+                      <p className="font-semibold text-sm sm:text-base">
+                        {selectedImage.milestone.year} - Introduction
+                      </p>
+                      <p className="text-xs text-white/80 sm:text-sm">
+                        Press → to view photos
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="font-semibold text-sm sm:text-base">
+                        {selectedImage.milestone.year}: {selectedImage.milestone.title}
+                      </p>
+                      <p className="text-xs text-white/80 sm:text-sm">
+                        {selectedImage.globalIndex + 1} of {allImages.length} • Image {selectedImage.index + 1} of {selectedImage.milestone.images.length}
+                      </p>
+                    </>
+                  )}
+                </div>
 
-              <div className="flex-1 rounded-lg bg-black/40 px-4 py-3 text-center text-white backdrop-blur-sm">
-                <p className="font-semibold text-sm sm:text-base">
-                  {selectedImage.milestone.year}: {selectedImage.milestone.title}
-                </p>
-                <p className="text-xs text-white/80 sm:text-sm">
-                  {selectedImage.globalIndex + 1} of {allImages.length} • Image {selectedImage.index + 1} of {selectedImage.milestone.images.length}
-                </p>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    navigateImage('next')
+                  }}
+                  className="rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 active:bg-white/30 focus:outline-none focus:ring-2 focus:ring-white"
+                  aria-label={showIntro ? "Next" : "Next image"}
+                >
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </button>
               </div>
 
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  navigateImage('next')
-                }}
-                className="rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 active:bg-white/30 focus:outline-none focus:ring-2 focus:ring-white"
-                aria-label="Next image"
-              >
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
+              {/* Desktop: Center info with year */}
+              <div className="hidden w-full rounded-lg bg-black/40 px-6 py-3 text-center text-white backdrop-blur-sm md:block">
+                {showIntro ? (
+                  <>
+                    <p className="font-semibold">
+                      {selectedImage.milestone.year} - Introduction
+                    </p>
+                    <p className="text-sm text-white/80">
+                      Press → to view photos from {selectedImage.milestone.year}
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p className="font-semibold">
+                      {selectedImage.milestone.year}: {selectedImage.milestone.title}
+                    </p>
+                    <p className="text-sm text-white/80">
+                      {selectedImage.globalIndex + 1} of {allImages.length} • Image {selectedImage.index + 1} of {selectedImage.milestone.images.length}
+                    </p>
+                  </>
+                )}
+              </div>
             </div>
-
-            {/* Desktop: Center info with year */}
-            <div className="hidden w-full rounded-lg bg-black/40 px-6 py-3 text-center text-white backdrop-blur-sm md:block">
-              <p className="font-semibold">
-                {selectedImage.milestone.year}: {selectedImage.milestone.title}
-              </p>
-              <p className="text-sm text-white/80">
-                {selectedImage.globalIndex + 1} of {allImages.length} • Image {selectedImage.index + 1} of {selectedImage.milestone.images.length}
-              </p>
-            </div>
-          </div>
+          )}
         </div>
       )}
     </>
