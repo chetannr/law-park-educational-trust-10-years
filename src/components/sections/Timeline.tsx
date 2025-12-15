@@ -157,16 +157,17 @@ function Timeline() {
       {/* Lightbox Modal */}
       {selectedImage && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/90 p-4 pb-8 md:pb-4"
           onClick={closeLightbox}
           role="dialog"
           aria-modal="true"
           aria-label="Image lightbox"
         >
+          {/* Close button */}
           <button
             type="button"
             onClick={closeLightbox}
-            className="absolute right-4 top-4 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white"
+            className="absolute right-4 top-4 z-10 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white"
             aria-label="Close lightbox"
           >
             <svg
@@ -184,6 +185,7 @@ function Timeline() {
             </svg>
           </button>
 
+          {/* Desktop: Side navigation buttons - hidden on mobile */}
           {selectedImage.milestone.images.length > 1 && (
             <>
               <button
@@ -192,7 +194,7 @@ function Timeline() {
                   e.stopPropagation()
                   navigateImage('prev')
                 }}
-                className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white"
+                className="absolute left-4 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white md:block"
                 aria-label="Previous image"
               >
                 <svg
@@ -215,7 +217,7 @@ function Timeline() {
                   e.stopPropagation()
                   navigateImage('next')
                 }}
-                className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white"
+                className="absolute right-4 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white md:block"
                 aria-label="Next image"
               >
                 <svg
@@ -235,16 +237,83 @@ function Timeline() {
             </>
           )}
 
+          {/* Image container */}
           <div
-            className="relative max-h-[90vh] max-w-[90vw]"
+            className="flex max-h-[calc(100vh-180px)] max-w-full flex-col items-center md:max-h-[calc(100vh-120px)]"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Image */}
             <img
               src={`${import.meta.env.BASE_URL}images/${selectedImage.milestone.images[selectedImage.index]}`}
               alt={`${selectedImage.milestone.title} - Image ${selectedImage.index + 1}`}
-              className="max-h-[90vh] max-w-full rounded-lg object-contain"
+              className="max-h-full w-auto rounded-lg object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 rounded-b-lg bg-black/60 p-4 text-center text-white">
+          </div>
+
+          {/* Title and navigation - Below image, no overlap */}
+          <div
+            className="mt-4 flex w-full max-w-3xl flex-col items-center gap-3"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Mobile: Bottom navigation arrows with info */}
+            {selectedImage.milestone.images.length > 1 ? (
+              <div className="flex w-full items-center justify-center gap-4 md:hidden">
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    navigateImage('prev')
+                  }}
+                  className="rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 active:bg-white/30 focus:outline-none focus:ring-2 focus:ring-white"
+                  aria-label="Previous image"
+                >
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 19l-7-7 7-7"
+                    />
+                  </svg>
+                </button>
+
+                <div className="flex-1 rounded-lg bg-black/40 px-4 py-3 text-center text-white backdrop-blur-sm">
+                  <p className="font-semibold text-sm sm:text-base">{selectedImage.milestone.title}</p>
+                  <p className="text-xs text-white/80 sm:text-sm">
+                    {selectedImage.index + 1} of {selectedImage.milestone.images.length}
+                  </p>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    navigateImage('next')
+                  }}
+                  className="rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 active:bg-white/30 focus:outline-none focus:ring-2 focus:ring-white"
+                  aria-label="Next image"
+                >
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </button>
+              </div>
+            ) : (
+              <div className="w-full rounded-lg bg-black/40 px-4 py-3 text-center text-white backdrop-blur-sm md:hidden">
+                <p className="font-semibold text-sm sm:text-base">{selectedImage.milestone.title}</p>
+                <p className="text-xs text-white/80 sm:text-sm">
+                  {selectedImage.index + 1} of {selectedImage.milestone.images.length}
+                </p>
+              </div>
+            )}
+
+            {/* Desktop: Center info only */}
+            <div className="hidden w-full rounded-lg bg-black/40 px-6 py-3 text-center text-white backdrop-blur-sm md:block">
               <p className="font-semibold">{selectedImage.milestone.title}</p>
               <p className="text-sm text-white/80">
                 {selectedImage.index + 1} of {selectedImage.milestone.images.length}
