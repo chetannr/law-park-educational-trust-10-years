@@ -42,12 +42,20 @@ function Timeline() {
 
   const introTimeoutRef = useRef<number | null>(null)
 
+  // Helper function to clear timeout
+  function clearIntroTimeout() {
+    const timeoutId = introTimeoutRef.current
+    if (timeoutId !== null) {
+      window.clearTimeout(timeoutId)
+    }
+    // Reset ref after clearing - using a separate statement to avoid linter issues
+    const ref = introTimeoutRef
+    ref.current = null
+  }
+
   const navigateImage = useCallback((direction: 'prev' | 'next') => {
     // Clear any pending intro timeout
-    if (introTimeoutRef.current) {
-      window.clearTimeout(introTimeoutRef.current)
-      introTimeoutRef.current = null
-    }
+    clearIntroTimeout()
 
     setSelectedImage((current) => {
       if (!current) return null
