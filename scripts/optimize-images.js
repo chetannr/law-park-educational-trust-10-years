@@ -4,25 +4,43 @@ import { join, extname, basename } from 'path'
 import { existsSync } from 'fs'
 
 const IMAGES_DIRS = ['public/images', 'public']
-const QUALITY = 85 // WebP quality (0-100)
+const QUALITY = 80 // WebP quality (0-100) - reduced for better compression
+const MAX_WIDTH = 1920 // Max width for large images (most displays are 1920px or less)
+const MAX_HEIGHT = 1080 // Max height for large images
 
 async function optimizeImage(inputPath, outputPath) {
   try {
     const metadata = await sharp(inputPath).metadata()
     const fileSize = (await stat(inputPath)).size
     
-    // Convert to WebP with optimization
-    await sharp(inputPath)
+    let image = sharp(inputPath)
+    
+    // Resize if image is larger than max dimensions (maintains aspect ratio)
+    if (metadata.width > MAX_WIDTH || metadata.height > MAX_HEIGHT) {
+      image = image.resize(MAX_WIDTH, MAX_HEIGHT, {
+        fit: 'inside',
+        withoutEnlargement: true
+      })
+    }
+    
+    // Convert to WebP with aggressive optimization
+    await image
       .webp({ 
         quality: QUALITY,
-        effort: 6 // Higher effort = better compression but slower
+        effort: 6, // Maximum effort for best compression
+        nearLossless: false, // Allow lossy compression for smaller files
+        smartSubsample: true // Better quality at lower file sizes
       })
       .toFile(outputPath)
     
     const optimizedSize = (await stat(outputPath)).size
     const savings = ((fileSize - optimizedSize) / fileSize * 100).toFixed(1)
     
-    console.log(`✓ ${basename(inputPath)} → ${basename(outputPath)} (${(fileSize / 1024).toFixed(1)}KB → ${(optimizedSize / 1024).toFixed(1)}KB, ${savings}% smaller)`)
+    const resizeInfo = (metadata.width > MAX_WIDTH || metadata.height > MAX_HEIGHT) 
+      ? ` [resized from ${metadata.width}x${metadata.height}]` 
+      : ''
+    
+    console.log(`✓ ${basename(inputPath)} → ${basename(outputPath)} (${(fileSize / 1024).toFixed(1)}KB → ${(optimizedSize / 1024).toFixed(1)}KB, ${savings}% smaller)${resizeInfo}`)
     
     return { original: fileSize, optimized: optimizedSize, savings }
   } catch (error) {
