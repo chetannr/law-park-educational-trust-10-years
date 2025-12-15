@@ -17,6 +17,7 @@ export interface Stat {
   label: string
   value: number
   suffix?: string
+  customText?: string
 }
 
 export interface GalleryImage {

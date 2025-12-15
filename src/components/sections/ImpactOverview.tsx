@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import { stats } from '../../data/stats'
 
-function StatCard({ label, value, suffix }: { label: string; value: number; suffix?: string }) {
+function StatCard({ label, value, suffix, customText }: { label: string; value: number; suffix?: string; customText?: string }) {
   const [count, setCount] = useState(0)
   const [hasAnimated, setHasAnimated] = useState(false)
 
   useEffect(() => {
-    if (hasAnimated) return
+    if (hasAnimated || customText) return
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -43,12 +43,12 @@ function StatCard({ label, value, suffix }: { label: string; value: number; suff
         observer.unobserve(element)
       }
     }
-  }, [value, label, hasAnimated])
+  }, [value, label, hasAnimated, customText])
 
   return (
     <div id={`stat-${label}`} className="text-center">
       <div className="text-4xl font-bold text-primary-600 sm:text-5xl">
-        {count.toLocaleString()}{suffix}
+        {customText || `${count.toLocaleString()}${suffix || ''}`}
       </div>
       <div className="mt-2 text-base text-gray-600 sm:text-lg">{label}</div>
     </div>
@@ -74,6 +74,7 @@ function ImpactOverview() {
               label={stat.label}
               value={stat.value}
               suffix={stat.suffix}
+              customText={stat.customText}
             />
           ))}
         </div>
