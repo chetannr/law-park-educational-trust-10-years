@@ -104,7 +104,7 @@ function Gallery() {
                   <img
                     src={getImageSources(`images/${image.src}`).fallback}
                     alt={image.alt}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-contain"
                     loading="lazy"
                   />
                 </picture>
@@ -185,7 +185,7 @@ function Gallery() {
 
           {/* Image container */}
           <div 
-            className="flex max-h-[calc(100vh-180px)] max-w-full flex-col items-center md:max-h-[calc(100vh-120px)]"
+            className="flex max-h-[calc(100vh-180px)] max-w-[calc(100vw-2rem)] flex-col items-center justify-center md:max-h-[calc(100vh-120px)] md:max-w-[calc(100vw-8rem)]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Image */}
@@ -194,7 +194,7 @@ function Gallery() {
               <img
                 src={getImageSources(`images/${allImages[selectedImageIndex].src}`).fallback}
                 alt={allImages[selectedImageIndex].alt}
-                className="max-h-full w-auto rounded-lg object-contain"
+                className="max-h-full max-w-full rounded-lg object-contain"
               />
             </picture>
           </div>
