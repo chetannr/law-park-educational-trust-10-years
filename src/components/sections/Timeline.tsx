@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from 'react'
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import { milestones } from '../../data/milestones'
 import type { Milestone } from '../../types'
 
@@ -31,17 +31,25 @@ function Timeline() {
   }
 
   const closeLightbox = useCallback(() => {
+    if (introTimeoutRef.current) {
+      clearTimeout(introTimeoutRef.current)
+      introTimeoutRef.current = null
+    }
     setSelectedImage(null)
     setShowIntro(false)
   }, [])
 
-  const navigateImage = useCallback((direction: 'prev' | 'next', skipIntro = false) => {
-    if (!selectedImage) return
+  const introTimeoutRef = useRef<number | null>(null)
 
-    // Close intro if it's showing
-    if (showIntro && !skipIntro) {
-      setShowIntro(false)
+  const navigateImage = useCallback((direction: 'prev' | 'next') => {
+    // Clear any pending intro timeout
+    if (introTimeoutRef.current) {
+      window.clearTimeout(introTimeoutRef.current)
+      introTimeoutRef.current = null
     }
+
+    // Close intro immediately
+    setShowIntro(false)
 
     setSelectedImage((current) => {
       if (!current) return null
@@ -57,11 +65,17 @@ function Timeline() {
 
       const newImage = allImages[newGlobalIndex]
       
-      // Check if we're switching to a different year (and intro is not being skipped)
-      if (!skipIntro && newImage.milestone.year !== milestone.year) {
-        setShowIntro(true)
-        // Auto-hide intro after 5 seconds
-        setTimeout(() => setShowIntro(false), 5000)
+      // Check if we're switching to a different year
+      if (newImage.milestone.year !== milestone.year) {
+        // Show intro after a brief delay to allow image to update
+        introTimeoutRef.current = window.setTimeout(() => {
+          setShowIntro(true)
+          // Auto-hide intro after 5 seconds
+          introTimeoutRef.current = window.setTimeout(() => {
+            setShowIntro(false)
+            introTimeoutRef.current = null
+          }, 5000)
+        }, 100)
       }
 
       return {
@@ -70,35 +84,51 @@ function Timeline() {
         globalIndex: newGlobalIndex,
       }
     })
-  }, [allImages, showIntro])
+  }, [allImages])
 
   // Keyboard navigation
   useEffect(() => {
     if (selectedImage === null) return
 
     function handleKeyDown(e: KeyboardEvent) {
+      // Always allow arrow keys to navigate, even when intro is showing
       if (e.key === 'ArrowLeft') {
         e.preventDefault()
+        e.stopPropagation()
         navigateImage('prev')
-      } else if (e.key === 'ArrowRight') {
+        return
+      }
+      if (e.key === 'ArrowRight') {
         e.preventDefault()
+        e.stopPropagation()
         navigateImage('next')
-      } else if (e.key === 'Escape') {
+        return
+      }
+      if (e.key === 'Escape') {
         e.preventDefault()
+        e.stopPropagation()
         if (showIntro) {
           setShowIntro(false)
         } else {
           closeLightbox()
         }
-      } else if (showIntro && (e.key === 'Enter' || e.key === ' ')) {
+        return
+      }
+      if (showIntro && (e.key === 'Enter' || e.key === ' ')) {
         // Allow Enter or Space to dismiss intro
         e.preventDefault()
+        e.stopPropagation()
         setShowIntro(false)
       }
     }
 
-    window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
+    window.addEventListener('keydown', handleKeyDown, true) // Use capture phase
+      return () => {
+      window.removeEventListener('keydown', handleKeyDown, true)
+      if (introTimeoutRef.current) {
+        window.clearTimeout(introTimeoutRef.current)
+      }
+    }
   }, [selectedImage, navigateImage, closeLightbox, showIntro])
 
   return (
