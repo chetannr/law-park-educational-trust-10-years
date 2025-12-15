@@ -19,6 +19,7 @@ function getAllImages() {
 
 function Timeline() {
   const [selectedImage, setSelectedImage] = useState<{ milestone: Milestone; index: number; globalIndex: number } | null>(null)
+  const [showIntro, setShowIntro] = useState(false)
   const allImages = useMemo(() => getAllImages(), [])
 
   function openLightbox(milestone: Milestone, index: number) {
@@ -26,19 +27,26 @@ function Timeline() {
       (img) => img.milestone === milestone && img.imageIndex === index
     )
     setSelectedImage({ milestone, index, globalIndex })
+    setShowIntro(false)
   }
 
   const closeLightbox = useCallback(() => {
     setSelectedImage(null)
+    setShowIntro(false)
   }, [])
 
-  const navigateImage = useCallback((direction: 'prev' | 'next') => {
+  const navigateImage = useCallback((direction: 'prev' | 'next', skipIntro = false) => {
     if (!selectedImage) return
+
+    // Close intro if it's showing
+    if (showIntro && !skipIntro) {
+      setShowIntro(false)
+    }
 
     setSelectedImage((current) => {
       if (!current) return null
 
-      const { globalIndex } = current
+      const { globalIndex, milestone } = current
       let newGlobalIndex: number
 
       if (direction === 'prev') {
@@ -48,13 +56,21 @@ function Timeline() {
       }
 
       const newImage = allImages[newGlobalIndex]
+      
+      // Check if we're switching to a different year (and intro is not being skipped)
+      if (!skipIntro && newImage.milestone.year !== milestone.year) {
+        setShowIntro(true)
+        // Auto-hide intro after 5 seconds
+        setTimeout(() => setShowIntro(false), 5000)
+      }
+
       return {
         milestone: newImage.milestone,
         index: newImage.imageIndex,
         globalIndex: newGlobalIndex,
       }
     })
-  }, [allImages])
+  }, [allImages, showIntro])
 
   // Keyboard navigation
   useEffect(() => {
@@ -69,13 +85,21 @@ function Timeline() {
         navigateImage('next')
       } else if (e.key === 'Escape') {
         e.preventDefault()
-        closeLightbox()
+        if (showIntro) {
+          setShowIntro(false)
+        } else {
+          closeLightbox()
+        }
+      } else if (showIntro && (e.key === 'Enter' || e.key === ' ')) {
+        // Allow Enter or Space to dismiss intro
+        e.preventDefault()
+        setShowIntro(false)
       }
     }
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [selectedImage, navigateImage, closeLightbox])
+  }, [selectedImage, navigateImage, closeLightbox, showIntro])
 
   return (
     <>
@@ -286,6 +310,61 @@ function Timeline() {
               />
             </svg>
           </button>
+
+          {/* Year Intro Overlay - Shows when switching to a new year */}
+          {showIntro && selectedImage && (
+            <div
+              className="absolute inset-0 z-40 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+              onClick={(e) => {
+                e.stopPropagation()
+                setShowIntro(false)
+              }}
+            >
+              <div
+                className="max-w-2xl rounded-lg bg-white/95 p-6 shadow-2xl backdrop-blur-sm"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="mb-4 flex items-center justify-between">
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    {selectedImage.milestone.year}: {selectedImage.milestone.title}
+                  </h3>
+                  <button
+                    type="button"
+                    onClick={() => setShowIntro(false)}
+                    className="rounded-full p-1 text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-700"
+                    aria-label="Close intro"
+                  >
+                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                {selectedImage.milestone.location && (
+                  <p className="mb-3 text-sm font-medium text-primary-600">
+                    📍 {selectedImage.milestone.location}
+                  </p>
+                )}
+                <p className="mb-4 text-gray-700 leading-relaxed">
+                  {selectedImage.milestone.description}
+                </p>
+                {selectedImage.milestone.impact && (
+                  <div className="inline-flex items-center rounded-full bg-primary-100 px-4 py-2">
+                    <span className="text-sm font-semibold text-primary-700">
+                      ✨ Impact: {selectedImage.milestone.impact}
+                    </span>
+                  </div>
+                )}
+                <p className="mt-4 text-xs text-gray-500">
+                  Click anywhere or press any key to continue viewing images
+                </p>
+              </div>
+            </div>
+          )}
 
           {/* Image container */}
           <div
