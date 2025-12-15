@@ -9,11 +9,14 @@ function Header() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
         <div className="flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center">
-            <img 
-              src={`${import.meta.env.BASE_URL}logo.png`}
-              alt="Law Park Educational Trust"
-              className="h-12 w-auto"
-            />
+            <picture>
+              <source srcSet={`${import.meta.env.BASE_URL}logo.webp`} type="image/webp" />
+              <img 
+                src={`${import.meta.env.BASE_URL}logo.png`}
+                alt="Law Park Educational Trust"
+                className="h-12 w-auto"
+              />
+            </picture>
           </Link>
 
           {/* Desktop Navigation */}

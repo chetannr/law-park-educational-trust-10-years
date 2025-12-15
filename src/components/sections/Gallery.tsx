@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { milestones } from '../../data/milestones'
+import { getImageSources } from '../../utils/image'
 
 function Gallery() {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null)
@@ -98,12 +99,15 @@ function Gallery() {
                 onClick={() => setSelectedImageIndex(index)}
                 className="group relative aspect-square overflow-hidden rounded-lg bg-gray-200 transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
               >
-                <img
-                  src={`${import.meta.env.BASE_URL}images/${image.src}`}
-                  alt={image.alt}
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                />
+                <picture>
+                  <source srcSet={getImageSources(`images/${image.src}`).webp} type="image/webp" />
+                  <img
+                    src={getImageSources(`images/${image.src}`).fallback}
+                    alt={image.alt}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </picture>
                 <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/10" />
               </button>
             ))}
@@ -185,11 +189,14 @@ function Gallery() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Image */}
-            <img
-              src={`${import.meta.env.BASE_URL}images/${allImages[selectedImageIndex].src}`}
-              alt={allImages[selectedImageIndex].alt}
-              className="max-h-full w-auto rounded-lg object-contain"
-            />
+            <picture>
+              <source srcSet={getImageSources(`images/${allImages[selectedImageIndex].src}`).webp} type="image/webp" />
+              <img
+                src={getImageSources(`images/${allImages[selectedImageIndex].src}`).fallback}
+                alt={allImages[selectedImageIndex].alt}
+                className="max-h-full w-auto rounded-lg object-contain"
+              />
+            </picture>
           </div>
 
           {/* Title and navigation - Below image, no overlap */}

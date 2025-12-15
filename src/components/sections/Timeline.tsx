@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import { milestones } from '../../data/milestones'
 import type { Milestone } from '../../types'
+import { getImageSources } from '../../utils/image'
 
 // Create a flat list of all images across all milestones
 function getAllImages() {
@@ -216,12 +217,15 @@ function Timeline() {
                               className="relative h-64 w-full overflow-hidden sm:h-80"
                               aria-label={`View ${milestone.title} photos`}
                             >
-                              <img
-                                src={`${import.meta.env.BASE_URL}images/${featuredImage}`}
-                                alt={milestone.title}
-                                className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
-                                loading="lazy"
-                              />
+                              <picture>
+                                <source srcSet={getImageSources(`images/${featuredImage}`).webp} type="image/webp" />
+                                <img
+                                  src={getImageSources(`images/${featuredImage}`).fallback}
+                                  alt={milestone.title}
+                                  className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                                  loading="lazy"
+                                />
+                              </picture>
                               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0" />
                               <div className="absolute bottom-0 left-0 right-0 p-6">
                                 <h3 className="text-2xl font-bold text-white">
@@ -263,12 +267,15 @@ function Timeline() {
                                       className="group relative aspect-square overflow-hidden rounded-lg"
                                       aria-label={`View ${milestone.title} - Image ${imgIndex + 2}`}
                                     >
-                                      <img
-                                        src={`${import.meta.env.BASE_URL}images/${image}`}
-                                        alt={`${milestone.title} - Image ${imgIndex + 2}`}
-                                        className="h-full w-full object-cover transition-transform duration-200 group-hover:scale-110"
-                                        loading="lazy"
-                                      />
+                                      <picture>
+                                        <source srcSet={getImageSources(`images/${image}`).webp} type="image/webp" />
+                                        <img
+                                          src={getImageSources(`images/${image}`).fallback}
+                                          alt={`${milestone.title} - Image ${imgIndex + 2}`}
+                                          className="h-full w-full object-cover transition-transform duration-200 group-hover:scale-110"
+                                          loading="lazy"
+                                        />
+                                      </picture>
                                       <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/20" />
                                     </button>
                                   ))}
@@ -430,11 +437,14 @@ function Timeline() {
             >
               {/* Image */}
               {selectedImage && (
-                <img
-                  src={`${import.meta.env.BASE_URL}images/${selectedImage.milestone.images[selectedImage.index]}`}
-                  alt={`${selectedImage.milestone.title} - Image ${selectedImage.index + 1}`}
-                  className="max-h-full w-auto rounded-lg object-contain"
-                />
+                <picture>
+                  <source srcSet={getImageSources(`images/${selectedImage.milestone.images[selectedImage.index]}`).webp} type="image/webp" />
+                  <img
+                    src={getImageSources(`images/${selectedImage.milestone.images[selectedImage.index]}`).fallback}
+                    alt={`${selectedImage.milestone.title} - Image ${selectedImage.index + 1}`}
+                    className="max-h-full w-auto rounded-lg object-contain"
+                  />
+                </picture>
               )}
             </div>
           )}
