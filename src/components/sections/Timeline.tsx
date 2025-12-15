@@ -440,17 +440,17 @@ function Timeline() {
           ) : (
             /* Image container - Only show when not showing intro */
             <div
-              className="flex max-h-[calc(100vh-180px)] max-w-full flex-col items-center md:max-h-[calc(100vh-120px)]"
+              className="flex max-h-[calc(100vh-240px)] max-w-full flex-col items-center justify-center md:max-h-[calc(100vh-180px)]"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Image */}
               {selectedImage && (
-                <picture>
+                <picture className="flex max-h-full items-center justify-center">
                   <source srcSet={getImageSources(`images/${selectedImage.milestone.images[selectedImage.index]}`).webp} type="image/webp" />
                   <img
                     src={getImageSources(`images/${selectedImage.milestone.images[selectedImage.index]}`).fallback}
                     alt={`${selectedImage.milestone.title} - Image ${selectedImage.index + 1}`}
-                    className="max-h-full w-auto rounded-lg object-contain"
+                    className="max-h-full max-w-full rounded-lg object-contain"
                   />
                 </picture>
               )}

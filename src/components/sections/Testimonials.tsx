@@ -16,7 +16,7 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
   const displayTestimonials = testimonials.slice(0, 6)
 
   return (
-    <section className="section-padding bg-white">
+    <section id="testimonials" className="section-padding bg-white">
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">

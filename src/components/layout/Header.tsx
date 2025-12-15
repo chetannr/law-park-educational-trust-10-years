@@ -20,7 +20,7 @@ function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-8">
+          <div className="hidden md:flex md:items-center md:space-x-6">
             <Link
               to="/"
               className="text-gray-700 transition-colors hover:text-primary-600"
@@ -29,14 +29,14 @@ function Header() {
               Home
             </Link>
             <a
-              href="#journey"
+              href="#impact"
               className="text-gray-700 transition-colors hover:text-primary-600"
               onClick={(e) => {
                 e.preventDefault()
-                document.getElementById('journey')?.scrollIntoView({ behavior: 'smooth' })
+                document.getElementById('impact')?.scrollIntoView({ behavior: 'smooth' })
               }}
             >
-              Journey
+              Impact
             </a>
             <a
               href="#activities"
@@ -49,6 +49,26 @@ function Header() {
               Activities
             </a>
             <a
+              href="#process"
+              className="text-gray-700 transition-colors hover:text-primary-600"
+              onClick={(e) => {
+                e.preventDefault()
+                document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })
+              }}
+            >
+              Process
+            </a>
+            <a
+              href="#journey"
+              className="text-gray-700 transition-colors hover:text-primary-600"
+              onClick={(e) => {
+                e.preventDefault()
+                document.getElementById('journey')?.scrollIntoView({ behavior: 'smooth' })
+              }}
+            >
+              Journey
+            </a>
+            <a
               href="#gallery"
               className="text-gray-700 transition-colors hover:text-primary-600"
               onClick={(e) => {
@@ -57,6 +77,26 @@ function Header() {
               }}
             >
               Gallery
+            </a>
+            <a
+              href="#trustees"
+              className="text-gray-700 transition-colors hover:text-primary-600"
+              onClick={(e) => {
+                e.preventDefault()
+                document.getElementById('trustees')?.scrollIntoView({ behavior: 'smooth' })
+              }}
+            >
+              Trustees
+            </a>
+            <a
+              href="#testimonials"
+              className="text-gray-700 transition-colors hover:text-primary-600"
+              onClick={(e) => {
+                e.preventDefault()
+                document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })
+              }}
+            >
+              Testimonials
             </a>
             <a
               href="#get-involved"
@@ -115,15 +155,15 @@ function Header() {
                 Home
               </Link>
               <a
-                href="#journey"
+                href="#impact"
                 className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50"
                 onClick={(e) => {
                   e.preventDefault()
                   setIsMenuOpen(false)
-                  document.getElementById('journey')?.scrollIntoView({ behavior: 'smooth' })
+                  document.getElementById('impact')?.scrollIntoView({ behavior: 'smooth' })
                 }}
               >
-                Journey
+                Impact
               </a>
               <a
                 href="#activities"
@@ -137,6 +177,28 @@ function Header() {
                 Activities
               </a>
               <a
+                href="#process"
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50"
+                onClick={(e) => {
+                  e.preventDefault()
+                  setIsMenuOpen(false)
+                  document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })
+                }}
+              >
+                Process
+              </a>
+              <a
+                href="#journey"
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50"
+                onClick={(e) => {
+                  e.preventDefault()
+                  setIsMenuOpen(false)
+                  document.getElementById('journey')?.scrollIntoView({ behavior: 'smooth' })
+                }}
+              >
+                Journey
+              </a>
+              <a
                 href="#gallery"
                 className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50"
                 onClick={(e) => {
@@ -146,6 +208,28 @@ function Header() {
                 }}
               >
                 Gallery
+              </a>
+              <a
+                href="#trustees"
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50"
+                onClick={(e) => {
+                  e.preventDefault()
+                  setIsMenuOpen(false)
+                  document.getElementById('trustees')?.scrollIntoView({ behavior: 'smooth' })
+                }}
+              >
+                Trustees
+              </a>
+              <a
+                href="#testimonials"
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50"
+                onClick={(e) => {
+                  e.preventDefault()
+                  setIsMenuOpen(false)
+                  document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })
+                }}
+              >
+                Testimonials
               </a>
               <a
                 href="#get-involved"

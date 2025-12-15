@@ -14,7 +14,7 @@ interface ProcessProps {
 
 export function Process({ process }: ProcessProps) {
   return (
-    <section className="section-padding bg-white">
+    <section id="process" className="section-padding bg-white">
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
