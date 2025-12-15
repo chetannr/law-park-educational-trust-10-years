@@ -72,7 +72,7 @@ function Timeline() {
                           {featuredImage && (
                             <div className="relative h-64 overflow-hidden sm:h-80">
                               <img
-                                src={`/images/${featuredImage}`}
+                                src={`${import.meta.env.BASE_URL}images/${featuredImage}`}
                                 alt={milestone.title}
                                 className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
                                 loading="lazy"
@@ -119,7 +119,7 @@ function Timeline() {
                                       aria-label={`View ${milestone.title} - Image ${imgIndex + 2}`}
                                     >
                                       <img
-                                        src={`/images/${image}`}
+                                        src={`${import.meta.env.BASE_URL}images/${image}`}
                                         alt={`${milestone.title} - Image ${imgIndex + 2}`}
                                         className="h-full w-full object-cover transition-transform duration-200 group-hover:scale-110"
                                         loading="lazy"
@@ -240,7 +240,7 @@ function Timeline() {
             onClick={(e) => e.stopPropagation()}
           >
             <img
-              src={`/images/${selectedImage.milestone.images[selectedImage.index]}`}
+              src={`${import.meta.env.BASE_URL}images/${selectedImage.milestone.images[selectedImage.index]}`}
               alt={`${selectedImage.milestone.title} - Image ${selectedImage.index + 1}`}
               className="max-h-[90vh] max-w-full rounded-lg object-contain"
             />
