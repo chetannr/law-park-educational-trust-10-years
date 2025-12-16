@@ -129,6 +129,9 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#15803d" />
+        <meta name="msapplication-navbutton-color" content="#15803d" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <link rel="preload" href="/images/slide_28_Picture_3_00.webp" as="image" type="image/webp" />
         <link rel="preload" href="/images/slide_28_Picture_3_00.jpg" as="image" type="image/jpeg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
