@@ -1,3 +1,5 @@
+'use client'
+
 interface IllustrationProps {
   name: string
   color?: string
@@ -18,15 +20,6 @@ export function Illustration({ name, className = '' }: IllustrationProps) {
       className={className}
       loading="lazy"
       aria-hidden="true"
-      onError={(e) => {
-        // If local file doesn't exist, log error for debugging
-        console.error(`Illustration "${name}" not found at ${localPath}. Please check public/illustrations/ folder.`)
-        // Hide the broken image
-        const target = e.target as HTMLImageElement
-        if (target) {
-          target.style.display = 'none'
-        }
-      }}
     />
   )
 }

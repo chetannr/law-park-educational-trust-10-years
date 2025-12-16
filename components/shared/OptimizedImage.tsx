@@ -1,3 +1,5 @@
+'use client'
+
 interface OptimizedImageProps {
   src: string
   alt: string
