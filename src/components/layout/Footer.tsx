@@ -36,9 +36,26 @@ function Footer() {
           </div>
           <div>
             <h3 className="mb-4 text-lg font-semibold">Contact</h3>
-            <p className="text-gray-400">
-              For inquiries about scholarships, volunteering, or partnerships, please reach out to us.
-            </p>
+            <div className="space-y-3 text-gray-400">
+              <div>
+                <p className="font-semibold text-white mb-1">Address</p>
+                <p>
+                  No 19/A-1, 14th 'B' Cross, 2nd A Main Rd, 6th Sector, HSR Layout, Bengaluru, Karnataka 560102
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-white mb-1">Phone</p>
+                <a href="tel:+91945665379" className="hover:text-white transition-colors">
+                  +91-9945-665-379
+                </a>
+              </div>
+              <div>
+                <p className="font-semibold text-white mb-1">Email</p>
+                <a href="mailto:lawparktrust@gmail.com" className="hover:text-white transition-colors">
+                  lawparktrust@gmail.com
+                </a>
+              </div>
+            </div>
           </div>
         </div>
         <div className="mt-8 border-t border-gray-800 pt-8 text-center text-gray-400">

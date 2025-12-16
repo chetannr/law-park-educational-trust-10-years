@@ -8,6 +8,8 @@ import Gallery from '../components/sections/Gallery'
 import { Trustees } from '../components/sections/Trustees'
 import { Testimonials } from '../components/sections/Testimonials'
 import CTASection from '../components/sections/CTASection'
+import Footer from '../components/layout/Footer'
+import WhatsAppButton from '../components/shared/WhatsAppButton'
 import { websiteContent } from '../data/websiteContent'
 
 export const Route = createFileRoute('/')({
@@ -26,6 +28,8 @@ function HomePage() {
       <Trustees trustees={websiteContent.trustees} />
       <Testimonials testimonials={websiteContent.testimonials} />
       <CTASection />
+      <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

@@ -27,23 +27,33 @@ function CTASection() {
           in their lives. Together, we can build a brighter future.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button variant="primary" size="lg">
-            Donate Now
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="bg-white/10 border-white text-white hover:bg-white/20"
+          <a
+            href="https://razorpay.me/@lawparkeducationaltrust"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Become a Volunteer
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="bg-white/10 border-white text-white hover:bg-white/20"
-          >
-            Partner With Us
-          </Button>
+            <Button variant="primary" size="lg">
+              Donate Now
+            </Button>
+          </a>
+          <a href="mailto:lawparktrust@gmail.com?subject=Volunteer%20Inquiry">
+            <Button
+              variant="outline"
+              size="lg"
+              className="bg-white/10 border-white text-white hover:bg-white/20"
+            >
+              Become a Volunteer
+            </Button>
+          </a>
+          <a href="mailto:lawparktrust@gmail.com?subject=Partnership%20Inquiry">
+            <Button
+              variant="outline"
+              size="lg"
+              className="bg-white/10 border-white text-white hover:bg-white/20"
+            >
+              Partner With Us
+            </Button>
+          </a>
         </div>
       </div>
     </section>

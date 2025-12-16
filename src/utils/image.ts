@@ -16,9 +16,7 @@ export function getImageSources(originalPath: string): {
   }
   
   // Remove base path if present
-  if (cleanPath.startsWith('images/')) {
-    cleanPath = cleanPath
-  } else if (!cleanPath.includes('/')) {
+  if (!cleanPath.startsWith('images/') && !cleanPath.includes('/')) {
     cleanPath = `images/${cleanPath}`
   }
   
