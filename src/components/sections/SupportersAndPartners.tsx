@@ -34,6 +34,16 @@ export function SupportersAndPartners({
             {supporters.map((supporter, index) => (
               <Card key={index} hover className="p-6">
                 <div className="text-center">
+                  {supporter.image && (
+                    <div className="mb-4">
+                      <img
+                        src={supporter.image}
+                        alt={supporter.name}
+                        className="w-32 h-32 rounded-full object-cover mx-auto"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
                   <div className="mb-3">
                     <span
                       className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${

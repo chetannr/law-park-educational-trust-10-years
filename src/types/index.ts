@@ -51,6 +51,7 @@ export interface Supporter {
   type: 'donor' | 'volunteer'
   contribution?: string
   description?: string
+  image?: string
 }
 
 export interface PartnerNGO {
