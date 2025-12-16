@@ -40,7 +40,7 @@ function CTASection() {
             <Button
               variant="outline"
               size="lg"
-              className="bg-white/10 border-white text-white hover:bg-white/20"
+              className="bg-white/20 border-2 border-white text-white hover:bg-white/30"
             >
               Become a Volunteer
             </Button>
@@ -49,7 +49,7 @@ function CTASection() {
             <Button
               variant="outline"
               size="lg"
-              className="bg-white/10 border-white text-white hover:bg-white/20"
+              className="bg-white/20 border-2 border-white text-white hover:bg-white/30"
             >
               Partner With Us
             </Button>

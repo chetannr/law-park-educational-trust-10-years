@@ -23,14 +23,14 @@ function Header() {
           <div className="hidden md:flex md:items-center md:space-x-6">
             <Link
               to="/"
-              className="text-gray-700 transition-colors hover:text-primary-600"
+              className="text-gray-900 transition-colors hover:text-primary-600"
               activeProps={{ className: 'text-primary-600 font-medium' }}
             >
               Home
             </Link>
             <a
               href="#impact"
-              className="text-gray-700 transition-colors hover:text-primary-600"
+              className="text-gray-900 transition-colors hover:text-primary-600"
               onClick={(e) => {
                 e.preventDefault()
                 document.getElementById('impact')?.scrollIntoView({ behavior: 'smooth' })
@@ -40,7 +40,7 @@ function Header() {
             </a>
             <a
               href="#activities"
-              className="text-gray-700 transition-colors hover:text-primary-600"
+              className="text-gray-900 transition-colors hover:text-primary-600"
               onClick={(e) => {
                 e.preventDefault()
                 document.getElementById('activities')?.scrollIntoView({ behavior: 'smooth' })
@@ -50,7 +50,7 @@ function Header() {
             </a>
             <a
               href="#process"
-              className="text-gray-700 transition-colors hover:text-primary-600"
+              className="text-gray-900 transition-colors hover:text-primary-600"
               onClick={(e) => {
                 e.preventDefault()
                 document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })
@@ -60,7 +60,7 @@ function Header() {
             </a>
             <a
               href="#journey"
-              className="text-gray-700 transition-colors hover:text-primary-600"
+              className="text-gray-900 transition-colors hover:text-primary-600"
               onClick={(e) => {
                 e.preventDefault()
                 document.getElementById('journey')?.scrollIntoView({ behavior: 'smooth' })
@@ -70,7 +70,7 @@ function Header() {
             </a>
             <a
               href="#gallery"
-              className="text-gray-700 transition-colors hover:text-primary-600"
+              className="text-gray-900 transition-colors hover:text-primary-600"
               onClick={(e) => {
                 e.preventDefault()
                 document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })
@@ -80,7 +80,7 @@ function Header() {
             </a>
             <a
               href="#trustees"
-              className="text-gray-700 transition-colors hover:text-primary-600"
+              className="text-gray-900 transition-colors hover:text-primary-600"
               onClick={(e) => {
                 e.preventDefault()
                 document.getElementById('trustees')?.scrollIntoView({ behavior: 'smooth' })
@@ -90,7 +90,7 @@ function Header() {
             </a>
             <a
               href="#testimonials"
-              className="text-gray-700 transition-colors hover:text-primary-600"
+              className="text-gray-900 transition-colors hover:text-primary-600"
               onClick={(e) => {
                 e.preventDefault()
                 document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })
@@ -113,7 +113,7 @@ function Header() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="md:hidden"
+            className="md:hidden text-gray-900"
             aria-expanded={isMenuOpen}
             aria-label="Toggle menu"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -149,14 +149,14 @@ function Header() {
             <div className="space-y-1 pb-3 pt-2">
               <Link
                 to="/"
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50"
+                className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               <a
                 href="#impact"
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50"
+                className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
                 onClick={(e) => {
                   e.preventDefault()
                   setIsMenuOpen(false)
@@ -167,7 +167,7 @@ function Header() {
               </a>
               <a
                 href="#activities"
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50"
+                className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
                 onClick={(e) => {
                   e.preventDefault()
                   setIsMenuOpen(false)
@@ -178,7 +178,7 @@ function Header() {
               </a>
               <a
                 href="#process"
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50"
+                className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
                 onClick={(e) => {
                   e.preventDefault()
                   setIsMenuOpen(false)
@@ -189,7 +189,7 @@ function Header() {
               </a>
               <a
                 href="#journey"
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50"
+                className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
                 onClick={(e) => {
                   e.preventDefault()
                   setIsMenuOpen(false)
@@ -200,7 +200,7 @@ function Header() {
               </a>
               <a
                 href="#gallery"
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50"
+                className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
                 onClick={(e) => {
                   e.preventDefault()
                   setIsMenuOpen(false)
@@ -211,7 +211,7 @@ function Header() {
               </a>
               <a
                 href="#trustees"
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50"
+                className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
                 onClick={(e) => {
                   e.preventDefault()
                   setIsMenuOpen(false)
@@ -222,7 +222,7 @@ function Header() {
               </a>
               <a
                 href="#testimonials"
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50"
+                className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
                 onClick={(e) => {
                   e.preventDefault()
                   setIsMenuOpen(false)
