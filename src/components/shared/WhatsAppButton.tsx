@@ -1,5 +1,5 @@
 function WhatsAppButton() {
-  const whatsappUrl = `https://wa.me/91945665379`
+  const whatsappUrl = `https://wa.me/919945665379`
 
   return (
     <a
