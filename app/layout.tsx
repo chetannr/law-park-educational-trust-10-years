@@ -44,6 +44,27 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://journey.lawparkeducationaltrust.org/',
   },
+  icons: {
+    icon: [
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      {
+        rel: 'android-chrome-192x192',
+        url: '/android-chrome-192x192.png',
+      },
+      {
+        rel: 'android-chrome-512x512',
+        url: '/android-chrome-512x512.png',
+      },
+    ],
+  },
+  manifest: '/site.webmanifest',
 }
 
 // Organization Schema.org structured data
@@ -104,6 +125,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
         <link rel="preload" href="/images/slide_28_Picture_3_00.webp" as="image" type="image/webp" />
         <link rel="preload" href="/images/slide_28_Picture_3_00.jpg" as="image" type="image/jpeg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
