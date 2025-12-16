@@ -45,3 +45,16 @@ export interface Testimonial {
   role: string
   image?: string
 }
+
+export interface Supporter {
+  name: string
+  type: 'donor' | 'volunteer'
+  contribution?: string
+  description?: string
+}
+
+export interface PartnerNGO {
+  name: string
+  description: string
+  focus?: string
+}
