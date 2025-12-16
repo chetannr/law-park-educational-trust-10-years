@@ -35,7 +35,7 @@ function Hero() {
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <a
               href="#get-involved"
-              className="rounded-md bg-primary-600 px-6 py-3 text-base font-semibold text-white shadow-lg transition-colors hover:bg-primary-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="rounded-md bg-primary-600 px-6 py-3 text-base font-semibold text-white shadow-lg transition-colors hover:bg-primary-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white focus-visible:ring-2 focus-visible:ring-white"
             >
               Get Involved
             </a>

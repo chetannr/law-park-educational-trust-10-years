@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chetan-kumar.github.io/law-park-educational-trust-10-years/sitemap.xml
+
