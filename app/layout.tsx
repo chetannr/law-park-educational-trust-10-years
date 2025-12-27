@@ -28,10 +28,10 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: '/logo.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Law Park Educational Trust Logo',
+        url: '/images/slide_03_Picture_1_00.jpg',
+        width: 960,
+        height: 540,
+        alt: 'Law Park Educational Trust - 10 Years of Transforming Lives',
       },
     ],
   },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Law Park Educational Trust - 10 Years of Transforming Lives',
     description: 'Law Park Educational Trust helps children from rural areas across India get their right to education through partially funded scholarships.',
-    images: ['/logo.webp'],
+    images: ['/images/slide_03_Picture_1_00.jpg'],
   },
   alternates: {
     canonical: 'https://journey.lawparkeducationaltrust.org/',
