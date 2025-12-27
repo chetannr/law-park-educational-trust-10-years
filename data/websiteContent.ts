@@ -81,46 +81,130 @@ export const websiteContent: WebsiteContent = {
   ],
   supporters: [
     {
-      name: 'Dr. Varalakshmi and Dr. Nandakumar',
-      type: 'donor',
-      contribution: 'Long-term Educational Support',
-      description:
-        'Regular contributors who have been supporting our scholarship programs for over 5 years, helping multiple students complete their education.',
-    },
-    {
-      name: 'Sreekanth',
-      type: 'donor',
-      contribution: 'CSR Initiative Sponsor',
-      description:
-        'Director of Tech Hat Pvt. Ltd., who has been instrumental in providing corporate support for our educational initiatives.',
-    },
-    {
-      name: 'Aishwarya K',
-      type: 'donor',
-      contribution: 'Infrastructure & Resources',
-      description:
-        'Director of Versalis International, supporting our mission by contributing educational resources and infrastructure improvements.',
-    },
-    {
-      name: 'Ramya Balaji',
+      name: 'Mrs. Geetha',
       type: 'volunteer',
-      contribution: 'Music Instructor & Mentor',
+      contribution: 'Education Counselor',
       description:
-        'Dedicated volunteer who has been with us since the beginning, providing music education and mentorship to students while also helping with administrative tasks.',
+        'Education counselor from HSR, Bengaluru, providing valuable guidance and counseling to students, helping them make informed decisions about their academic paths and career choices.',
     },
     {
-      name: 'Mr. Nihar Panigrahi',
-      type: 'volunteer',
-      contribution: 'Technology & Outreach',
+      name: 'Mrs. Bhavya Shravanth',
+      type: 'donor',
+      contribution: 'Partner',
       description:
-        'Senior Software Engineer who volunteers his time to help with our digital presence, student database management, and community outreach programs.',
+        'Partner from Bengaluru who has been a generous supporter of our educational initiatives, contributing to the growth and development of underprivileged students.',
     },
     {
-      name: 'Local Community Volunteers',
-      type: 'volunteer',
-      contribution: 'Field Work & Student Support',
+      name: 'Dr. Adarsh',
+      type: 'donor',
+      contribution: 'Medical Professional & Supporter',
       description:
-        'A group of dedicated volunteers from local communities who assist with field visits, student interviews, fee distribution, and ongoing student support throughout the academic year.',
+        'Medical professional from Hyderabad who supports our mission by contributing to educational programs and helping students access quality education regardless of their financial background.',
+    },
+    {
+      name: 'Mr. Rajesh',
+      type: 'volunteer',
+      contribution: 'Advocate',
+      description:
+        'Advocate from Bangalore who volunteers his legal expertise to support our trust operations and provides guidance on legal matters, ensuring our programs comply with all regulations.',
+    },
+    {
+      name: 'Mrs. Mamtha',
+      type: 'donor',
+      contribution: 'Community Supporter',
+      description:
+        'Dedicated supporter from Bengaluru who has been actively contributing to our educational programs, helping us reach more children in need of financial assistance for their studies.',
+    },
+    {
+      name: 'Mr. Nagendra',
+      type: 'volunteer',
+      contribution: 'Community Volunteer',
+      description:
+        'Active volunteer from Bengaluru who assists with field visits, student interviews, and community outreach programs, playing a crucial role in identifying and supporting deserving students.',
+    },
+    {
+      name: 'Dr. Nanda Kumar',
+      type: 'donor',
+      contribution: 'International Supporter',
+      description:
+        'Generous donor from USA who has been supporting our scholarship programs from abroad, helping bridge the gap for students who need financial assistance to continue their education.',
+    },
+    {
+      name: 'Mr. Krishnapriya',
+      type: 'volunteer',
+      contribution: 'Community Volunteer',
+      description:
+        'Dedicated volunteer from Bengaluru who actively participates in our field work, helping with student identification, fee distribution, and ongoing support throughout the academic year.',
+    },
+    {
+      name: 'Mr. Venkat',
+      type: 'volunteer',
+      contribution: 'Advocate',
+      description:
+        'Advocate from Bengaluru who provides legal support and guidance to our trust, ensuring all our operations are conducted in compliance with legal requirements and best practices.',
+    },
+    {
+      name: 'Mrs. Lavanya',
+      type: 'donor',
+      contribution: 'Community Supporter',
+      description:
+        'Supportive donor from Bengaluru who contributes to our educational initiatives, helping us provide financial assistance to students from economically disadvantaged backgrounds.',
+    },
+    {
+      name: 'Mrs. Roopa',
+      type: 'volunteer',
+      contribution: 'Community Volunteer',
+      description:
+        'Active volunteer from Bengaluru who assists with various trust activities including student interviews, fee distribution, and maintaining regular contact with supported students and their families.',
+    },
+    {
+      name: 'Mrs. Sumithra',
+      type: 'donor',
+      contribution: 'Partner - Royal Enfield',
+      description:
+        'Partner from Royal Enfield, Bengaluru, who has been instrumental in providing corporate support for our educational programs, contributing to the success of our scholarship initiatives.',
+    },
+    {
+      name: 'Mrs. Nandini',
+      type: 'donor',
+      contribution: 'Community Supporter',
+      description:
+        'Generous supporter from Bengaluru who has been contributing to our mission of providing quality education to underprivileged children, making a positive impact on their lives.',
+    },
+    {
+      name: 'Ms. Navya',
+      type: 'volunteer',
+      contribution: 'Community Volunteer',
+      description:
+        'Dedicated volunteer from Bengaluru who actively participates in our field work and student support programs, helping us reach more children in need of educational assistance.',
+    },
+    {
+      name: 'Ms. Pragya',
+      type: 'volunteer',
+      contribution: 'Community Volunteer',
+      description:
+        'Active volunteer from Bengaluru who assists with various trust activities including organizing events, coordinating with schools, and providing ongoing support to students and their families.',
+    },
+    {
+      name: 'Mrs. Neha',
+      type: 'donor',
+      contribution: 'Community Supporter',
+      description:
+        'Supportive donor from Bengaluru who contributes to our educational programs, helping us provide financial assistance and resources to students who need support to continue their studies.',
+    },
+    {
+      name: 'Mr. Chetan Kumar N',
+      type: 'volunteer',
+      contribution: 'Software Engineer',
+      description:
+        'Software Engineer from HSR, Bengaluru, who volunteers his technical expertise to help with our digital presence, website development, and technology solutions that enhance our operational efficiency.',
+    },
+    {
+      name: 'Mrs. Jeevitha S',
+      type: 'volunteer',
+      contribution: 'Software Engineer',
+      description:
+        'Software Engineer from HSR, Bengaluru, who contributes her technical skills to support our trust operations, helping with digital initiatives and technology-driven solutions for better student management.',
     },
   ],
   partnerNGOs: [

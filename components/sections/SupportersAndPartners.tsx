@@ -44,7 +44,7 @@ export function SupportersAndPartners({
                       />
                     </div>
                   )}
-                  <div className="mb-3">
+                  {/* <div className="mb-3">
                     <span
                       className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${
                         supporter.type === 'donor'
@@ -54,7 +54,7 @@ export function SupportersAndPartners({
                     >
                       {supporter.type === 'donor' ? 'Donor' : 'Volunteer'}
                     </span>
-                  </div>
+                  </div> */}
                   <h4 className="text-xl font-bold mb-2">{supporter.name}</h4>
                   {supporter.contribution && (
                     <p className="text-primary-600 font-semibold mb-3">
