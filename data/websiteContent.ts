@@ -81,25 +81,72 @@ export const websiteContent: WebsiteContent = {
   ],
   supporters: [
     {
-      name: 'Mrs. Geetha',
+      name: 'Geetha Jayaram',
       type: 'volunteer',
       contribution: 'Education Counselor',
       description:
         'Education counselor from HSR, Bengaluru, providing valuable guidance and counseling to students, helping them make informed decisions about their academic paths and career choices.',
     },
     {
-      name: 'Mrs. Bhavya Shravanth',
+      name: 'Mr. Sai Prashanth Pillarisetty',
       type: 'donor',
-      contribution: 'Partner',
+      contribution: 'International Donor & Supporter',
       description:
-        'Partner from Bengaluru who has been a generous supporter of our educational initiatives, contributing to the growth and development of underprivileged students.',
+        'A committed donor and supporter, actively driving scholarships and programs while championing digital transformation. Plays a pivotal role in shaping future initiatives through strategic guidance and visionary advice.',
+    },
+    {
+      name: 'Mr. Sai Prashanth',
+      type: 'donor',
+      contribution: 'International Supporter',
+      description: 'Generous donor and supporter from Hong Kong, contributing to our educational initiatives and helping us reach more children in need.',
+    },
+    {
+      name: 'Mr. Anand',
+      type: 'donor',
+      contribution: 'Program Manager',
+      description: 'Program Manager from USA, supporting our mission through strategic contributions and program development initiatives.',
+    },
+    {
+      name: 'Mr. Sreekanth',
+      type: 'volunteer',
+      contribution: 'Director',
+      description: 'Director at Techhat, Bangalore, providing valuable support and guidance to our trust operations and educational programs.',
+    },
+    {
+      name: 'Mrs. Nandini',
+      type: 'volunteer',
+      contribution: 'Lead Consultant - ITC',
+      description: 'Lead Consultant at ITC, Bangalore, contributing expertise and support to our educational initiatives and student development programs.',
+    },
+    {
+      name: 'K. Krishnapriya',
+      type: 'volunteer',
+      contribution: 'Customer Support Manager',
+      description: 'Customer Support Manager from Bangalore, actively volunteering and supporting our trust activities and student assistance programs.',
+    },
+    {
+      name: 'Roopa Gante',
+      type: 'volunteer',
+      contribution: 'Senior Professional Product Developer',
+      description: 'Senior Professional Product Developer at Gainwell Technologies (Former HP), contributing technical expertise and support to our trust operations and digital initiatives.',
+    },
+    {
+      name: 'Ms. Navya',
+      type: 'volunteer',
+      contribution: 'Public Health Research Associate',
+      description: 'Public Health Research Associate at IPH, Bangalore, providing valuable support and expertise to our educational and community development programs.',
     },
     {
       name: 'Dr. Adarsh',
       type: 'donor',
-      contribution: 'Medical Professional & Supporter',
-      description:
-        'Medical professional from Hyderabad who supports our mission by contributing to educational programs and helping students access quality education regardless of their financial background.',
+      contribution: 'Manager (Product & Trade)',
+      description: 'Manager (Product & Trade) at Avanti Pet Care Pvt. Ltd., Hyderabad, supporting our mission through generous contributions to educational programs.',
+    },
+    {
+      name: 'Mrs. Bhavya',
+      type: 'donor',
+      contribution: 'Home maker',
+      description: 'Home maker from Bangalore, generously supporting our educational initiatives and contributing to the growth and development of underprivileged students.',
     },
     {
       name: 'Mr. Rajesh',
@@ -130,13 +177,6 @@ export const websiteContent: WebsiteContent = {
         'Generous donor from USA who has been supporting our scholarship programs from abroad, helping bridge the gap for students who need financial assistance to continue their education.',
     },
     {
-      name: 'Mr. Krishnapriya',
-      type: 'volunteer',
-      contribution: 'Community Volunteer',
-      description:
-        'Dedicated volunteer from Bengaluru who actively participates in our field work, helping with student identification, fee distribution, and ongoing support throughout the academic year.',
-    },
-    {
       name: 'Mr. Venkat',
       type: 'volunteer',
       contribution: 'Advocate',
@@ -151,32 +191,11 @@ export const websiteContent: WebsiteContent = {
         'Supportive donor from Bengaluru who contributes to our educational initiatives, helping us provide financial assistance to students from economically disadvantaged backgrounds.',
     },
     {
-      name: 'Mrs. Roopa',
-      type: 'volunteer',
-      contribution: 'Community Volunteer',
-      description:
-        'Active volunteer from Bengaluru who assists with various trust activities including student interviews, fee distribution, and maintaining regular contact with supported students and their families.',
-    },
-    {
       name: 'Mrs. Sumithra',
       type: 'donor',
       contribution: 'Partner - Royal Enfield',
       description:
         'Partner from Royal Enfield, Bengaluru, who has been instrumental in providing corporate support for our educational programs, contributing to the success of our scholarship initiatives.',
-    },
-    {
-      name: 'Mrs. Nandini',
-      type: 'donor',
-      contribution: 'Community Supporter',
-      description:
-        'Generous supporter from Bengaluru who has been contributing to our mission of providing quality education to underprivileged children, making a positive impact on their lives.',
-    },
-    {
-      name: 'Ms. Navya',
-      type: 'volunteer',
-      contribution: 'Community Volunteer',
-      description:
-        'Dedicated volunteer from Bengaluru who actively participates in our field work and student support programs, helping us reach more children in need of educational assistance.',
     },
     {
       name: 'Ms. Pragya',
