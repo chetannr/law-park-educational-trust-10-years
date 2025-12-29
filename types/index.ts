@@ -59,3 +59,16 @@ export interface PartnerNGO {
   description: string
   focus?: string
 }
+
+export interface Award {
+  title: string
+  recipient: string
+  organization: string
+  date: string
+  location: string
+  description: string
+  presentedBy?: string
+  videoUrl?: string
+  images?: string[]
+  certificateImage?: string
+}

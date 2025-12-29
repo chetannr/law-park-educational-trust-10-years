@@ -6,6 +6,7 @@ import Timeline from '@/components/sections/Timeline'
 import Gallery from '@/components/sections/Gallery'
 import { Trustees } from '@/components/sections/Trustees'
 import { SupportersAndPartners } from '@/components/sections/SupportersAndPartners'
+import { Awards } from '@/components/sections/Awards'
 import { Testimonials } from '@/components/sections/Testimonials'
 import CTASection from '@/components/sections/CTASection'
 import { websiteContent } from '@/data/websiteContent'
@@ -20,6 +21,7 @@ export default function HomePage() {
       <Timeline />
       <Gallery />
       <Trustees trustees={websiteContent.trustees} />
+      <Awards awards={websiteContent.awards} />
       <SupportersAndPartners
         supporters={websiteContent.supporters}
         partnerNGOs={websiteContent.partnerNGOs}
