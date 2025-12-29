@@ -65,25 +65,47 @@ function SocialMediaContentPage() {
 
         {/* Instagram Section */}
         <Card className="p-8 mb-8">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
             <h2 className="text-3xl font-bold">📱 Instagram Post</h2>
-            <button
-              onClick={() => copyToClipboard(instagramContent)}
-              className="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
-            >
-              Copy Content
-            </button>
+            <div className="flex gap-3">
+              <button
+                onClick={() => copyToClipboard(instagramContent, 'instagram')}
+                className={`px-6 py-3 rounded-lg font-semibold transition-all flex items-center gap-2 ${
+                  copiedId === 'instagram'
+                    ? 'bg-green-600 text-white'
+                    : 'bg-primary-600 text-white hover:bg-primary-700 hover:shadow-lg'
+                }`}
+              >
+                {copiedId === 'instagram' ? (
+                  <>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    Copied!
+                  </>
+                ) : (
+                  <>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    Copy Content
+                  </>
+                )}
+              </button>
+            </div>
           </div>
           <div className="space-y-4">
             <div>
               <h3 className="text-xl font-semibold mb-2">Title/Headline:</h3>
-              <p className="text-lg font-bold text-primary-600">
-                🏆 Bharat Shiksha Ratan Award - A Milestone Achievement! 🎓
-              </p>
+              <div className="bg-primary-50 p-4 rounded-lg border-2 border-primary-200">
+                <p className="text-lg font-bold text-primary-600 select-all">
+                  🏆 Bharat Shiksha Ratan Award - A Milestone Achievement! 🎓
+                </p>
+              </div>
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-2">Caption:</h3>
-              <div className="bg-gray-50 p-6 rounded-lg whitespace-pre-wrap text-gray-700 leading-relaxed">
+              <div className="bg-gray-50 p-6 rounded-lg whitespace-pre-wrap text-gray-700 leading-relaxed border-2 border-gray-200 select-all cursor-text hover:border-primary-300 transition-colors">
                 {instagramContent}
               </div>
             </div>
@@ -92,25 +114,47 @@ function SocialMediaContentPage() {
 
         {/* Facebook Section */}
         <Card className="p-8 mb-8">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
             <h2 className="text-3xl font-bold">📘 Facebook Post</h2>
-            <button
-              onClick={() => copyToClipboard(facebookContent)}
-              className="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
-            >
-              Copy Content
-            </button>
+            <div className="flex gap-3">
+              <button
+                onClick={() => copyToClipboard(facebookContent, 'facebook')}
+                className={`px-6 py-3 rounded-lg font-semibold transition-all flex items-center gap-2 ${
+                  copiedId === 'facebook'
+                    ? 'bg-green-600 text-white'
+                    : 'bg-primary-600 text-white hover:bg-primary-700 hover:shadow-lg'
+                }`}
+              >
+                {copiedId === 'facebook' ? (
+                  <>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    Copied!
+                  </>
+                ) : (
+                  <>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    Copy Content
+                  </>
+                )}
+              </button>
+            </div>
           </div>
           <div className="space-y-4">
             <div>
               <h3 className="text-xl font-semibold mb-2">Title:</h3>
-              <p className="text-lg font-bold text-primary-600">
-                🏆 Law Park Educational Trust Receives Prestigious Bharat Shiksha Ratan Award!
-              </p>
+              <div className="bg-primary-50 p-4 rounded-lg border-2 border-primary-200">
+                <p className="text-lg font-bold text-primary-600 select-all">
+                  🏆 Law Park Educational Trust Receives Prestigious Bharat Shiksha Ratan Award!
+                </p>
+              </div>
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-2">Post Content:</h3>
-              <div className="bg-gray-50 p-6 rounded-lg whitespace-pre-wrap text-gray-700 leading-relaxed">
+              <div className="bg-gray-50 p-6 rounded-lg whitespace-pre-wrap text-gray-700 leading-relaxed border-2 border-gray-200 select-all cursor-text hover:border-primary-300 transition-colors">
                 {facebookContent}
               </div>
             </div>
@@ -119,25 +163,47 @@ function SocialMediaContentPage() {
 
         {/* YouTube Section */}
         <Card className="p-8 mb-8">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
             <h2 className="text-3xl font-bold">📺 YouTube Video</h2>
-            <button
-              onClick={() => copyToClipboard(youtubeContent)}
-              className="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
-            >
-              Copy Description
-            </button>
+            <div className="flex gap-3">
+              <button
+                onClick={() => copyToClipboard(youtubeContent, 'youtube')}
+                className={`px-6 py-3 rounded-lg font-semibold transition-all flex items-center gap-2 ${
+                  copiedId === 'youtube'
+                    ? 'bg-green-600 text-white'
+                    : 'bg-red-600 text-white hover:bg-red-700 hover:shadow-lg'
+                }`}
+              >
+                {copiedId === 'youtube' ? (
+                  <>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    Copied!
+                  </>
+                ) : (
+                  <>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    Copy Description
+                  </>
+                )}
+              </button>
+            </div>
           </div>
           <div className="space-y-4">
             <div>
               <h3 className="text-xl font-semibold mb-2">Video Title:</h3>
-              <p className="text-lg font-bold text-primary-600">
-                🏆 Bharat Shiksha Ratan Award 2025 | Law Park Educational Trust | New Delhi
-              </p>
+              <div className="bg-red-50 p-4 rounded-lg border-2 border-red-200">
+                <p className="text-lg font-bold text-red-600 select-all">
+                  🏆 Bharat Shiksha Ratan Award 2025 | Law Park Educational Trust | New Delhi
+                </p>
+              </div>
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-2">Video Description:</h3>
-              <div className="bg-gray-50 p-6 rounded-lg whitespace-pre-wrap text-gray-700 leading-relaxed text-sm">
+              <div className="bg-gray-50 p-6 rounded-lg whitespace-pre-wrap text-gray-700 leading-relaxed text-sm border-2 border-gray-200 select-all cursor-text hover:border-red-300 transition-colors">
                 {youtubeContent}
               </div>
             </div>
@@ -147,31 +213,67 @@ function SocialMediaContentPage() {
         {/* WhatsApp Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <Card className="p-8">
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
               <h2 className="text-2xl font-bold">💬 WhatsApp (Short)</h2>
               <button
-                onClick={() => copyToClipboard(whatsappShort)}
-                className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm"
+                onClick={() => copyToClipboard(whatsappShort, 'whatsapp-short')}
+                className={`px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 text-sm ${
+                  copiedId === 'whatsapp-short'
+                    ? 'bg-green-700 text-white'
+                    : 'bg-green-600 text-white hover:bg-green-700 hover:shadow-lg'
+                }`}
               >
-                Copy
+                {copiedId === 'whatsapp-short' ? (
+                  <>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    Copied!
+                  </>
+                ) : (
+                  <>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    Copy
+                  </>
+                )}
               </button>
             </div>
-            <div className="bg-gray-50 p-6 rounded-lg whitespace-pre-wrap text-gray-700 leading-relaxed text-sm">
+            <div className="bg-gray-50 p-6 rounded-lg whitespace-pre-wrap text-gray-700 leading-relaxed text-sm border-2 border-gray-200 select-all cursor-text hover:border-green-300 transition-colors">
               {whatsappShort}
             </div>
           </Card>
 
           <Card className="p-8">
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
               <h2 className="text-2xl font-bold">💬 WhatsApp (Long)</h2>
               <button
-                onClick={() => copyToClipboard(whatsappLong)}
-                className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm"
+                onClick={() => copyToClipboard(whatsappLong, 'whatsapp-long')}
+                className={`px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 text-sm ${
+                  copiedId === 'whatsapp-long'
+                    ? 'bg-green-700 text-white'
+                    : 'bg-green-600 text-white hover:bg-green-700 hover:shadow-lg'
+                }`}
               >
-                Copy
+                {copiedId === 'whatsapp-long' ? (
+                  <>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    Copied!
+                  </>
+                ) : (
+                  <>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    Copy
+                  </>
+                )}
               </button>
             </div>
-            <div className="bg-gray-50 p-6 rounded-lg whitespace-pre-wrap text-gray-700 leading-relaxed text-sm">
+            <div className="bg-gray-50 p-6 rounded-lg whitespace-pre-wrap text-gray-700 leading-relaxed text-sm border-2 border-gray-200 select-all cursor-text hover:border-green-300 transition-colors">
               {whatsappLong}
             </div>
           </Card>
@@ -181,17 +283,38 @@ function SocialMediaContentPage() {
         <Card className="p-8 mb-8">
           <h2 className="text-3xl font-bold mb-6">📧 Email Newsletter Subject Lines</h2>
           <div className="space-y-3">
-            {emailSubjects.map((subject, index) => (
-              <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                <span className="text-gray-700">{subject}</span>
-                <button
-                  onClick={() => copyToClipboard(subject)}
-                  className="px-3 py-1 bg-primary-600 text-white rounded hover:bg-primary-700 transition-colors text-sm"
-                >
-                  Copy
-                </button>
-              </div>
-            ))}
+            {emailSubjects.map((subject, index) => {
+              const emailId = `email-${index}`
+              return (
+                <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg border-2 border-gray-200 hover:border-primary-300 transition-colors">
+                  <span className="text-gray-700 select-all flex-1 mr-4">{subject}</span>
+                  <button
+                    onClick={() => copyToClipboard(subject, emailId)}
+                    className={`px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 text-sm whitespace-nowrap ${
+                      copiedId === emailId
+                        ? 'bg-green-600 text-white'
+                        : 'bg-primary-600 text-white hover:bg-primary-700 hover:shadow-lg'
+                    }`}
+                  >
+                    {copiedId === emailId ? (
+                      <>
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        Copied!
+                      </>
+                    ) : (
+                      <>
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                        Copy
+                      </>
+                    )}
+                  </button>
+                </div>
+              )
+            })}
           </div>
         </Card>
 
