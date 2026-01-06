@@ -246,7 +246,7 @@ export const websiteContent: WebsiteContent = {
         'Law Park Educational Trust received the prestigious Bharat Shiksha Ratan Award for outstanding achievements and remarkable role in the education sector. This recognition was presented at the National Summit in New Delhi, honoring our decade-long commitment to transforming lives through education. Out of 25 awardees, we were honored to receive this distinguished award, presented by Union Ministers including Mr. Kamal Singh Negi (Cabinet Minister) and Mr. Dinesh Upadhyay (Ayush Minister). This award is a testament to our joint efforts and the collective impact we have made in bringing quality education to underprivileged children across India.',
       presentedBy: 'Economic and Social Development Foundation (E.S.D.F), New Delhi',
       videoUrl: '', // Add video URL once uploaded
-      certificateImage: '', // Add certificate image path once uploaded
+      certificateImage: '/images/Bharat-Shiksha-Ratan-Award-Certificate.jpeg',
       images: [], // Add award ceremony images once uploaded
     },
   ],
