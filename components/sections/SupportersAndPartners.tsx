@@ -18,14 +18,14 @@ export function SupportersAndPartners({
             Our Supporters & Partners
           </h2>
           <p className="text-lg max-w-2xl mx-auto text-gray-600">
-            Our journey is made possible by the generosity of our donors, the dedication of our volunteers, and the collaboration with like-minded organizations.
+            Our journey is made possible by our Team and the collaboration with like-minded organizations.
           </p>
         </div>
 
         {/* Supporters Section */}
         <div className="mb-16">
           <h3 className="text-2xl font-bold mb-6 text-center text-gray-800">
-            Generous Donors & Dedicated Volunteers
+            Our Team
           </h3>
           <p className="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
             We are deeply grateful to the individuals who have supported our mission through financial contributions and those who have volunteered their time and expertise throughout our journey. Their commitment has been instrumental in transforming the lives of countless children.

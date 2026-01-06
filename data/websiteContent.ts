@@ -90,17 +90,25 @@ export const websiteContent: WebsiteContent = {
         'Education counselor from HSR, Bengaluru, providing valuable guidance and counseling to students, helping them make informed decisions about their academic paths and career choices.',
     },
     {
+      name: 'Mr. Chetan Kumar N',
+      type: 'volunteer',
+      contribution: 'Software Engineer',
+      description:
+        'Software Engineer from HSR, Bengaluru, who volunteers his technical expertise to help with our digital presence, website development, and technology solutions that enhance our operational efficiency.',
+    },
+    {
+      name: 'Mrs. Jeevitha S',
+      type: 'volunteer',
+      contribution: 'Software Engineer',
+      description:
+        'Software Engineer from HSR, Bengaluru, who contributes her technical skills to support our trust operations, helping with digital initiatives and technology-driven solutions for better student management.',
+    },
+    {
       name: 'Mr. Sai Prashanth Pillarisetty',
       type: 'donor',
       contribution: 'International Donor & Supporter',
       description:
         'A committed donor and supporter, actively driving scholarships and programs while championing digital transformation. Plays a pivotal role in shaping future initiatives through strategic guidance and visionary advice.',
-    },
-    {
-      name: 'Mr. Sai Prashanth',
-      type: 'donor',
-      contribution: 'International Supporter',
-      description: 'Generous donor and supporter from Hong Kong, contributing to our educational initiatives and helping us reach more children in need.',
     },
     {
       name: 'Mr. Anand',
@@ -158,13 +166,6 @@ export const websiteContent: WebsiteContent = {
         'Advocate from Bangalore who volunteers his legal expertise to support our trust operations and provides guidance on legal matters, ensuring our programs comply with all regulations.',
     },
     {
-      name: 'Mrs. Mamtha',
-      type: 'donor',
-      contribution: 'Community Supporter',
-      description:
-        'Dedicated supporter from Bengaluru who has been actively contributing to our educational programs, helping us reach more children in need of financial assistance for their studies.',
-    },
-    {
       name: 'Mr. Nagendra',
       type: 'volunteer',
       contribution: 'Community Volunteer',
@@ -212,20 +213,6 @@ export const websiteContent: WebsiteContent = {
       contribution: 'Community Supporter',
       description:
         'Supportive donor from Bengaluru who contributes to our educational programs, helping us provide financial assistance and resources to students who need support to continue their studies.',
-    },
-    {
-      name: 'Mr. Chetan Kumar N',
-      type: 'volunteer',
-      contribution: 'Software Engineer',
-      description:
-        'Software Engineer from HSR, Bengaluru, who volunteers his technical expertise to help with our digital presence, website development, and technology solutions that enhance our operational efficiency.',
-    },
-    {
-      name: 'Mrs. Jeevitha S',
-      type: 'volunteer',
-      contribution: 'Software Engineer',
-      description:
-        'Software Engineer from HSR, Bengaluru, who contributes her technical skills to support our trust operations, helping with digital initiatives and technology-driven solutions for better student management.',
     },
   ],
   partnerNGOs: [
