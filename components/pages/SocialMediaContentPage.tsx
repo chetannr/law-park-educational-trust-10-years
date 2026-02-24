@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Card from '../ui/Card'
+import { DONATION_URL } from '@/data/constants'
 
 function SocialMediaContentPage() {
   const [copiedId, setCopiedId] = useState<string | null>(null)
@@ -36,6 +37,20 @@ function SocialMediaContentPage() {
               <p className="text-sm text-gray-600 mt-3">💡 <strong>Tip:</strong> After clicking "Copy", you'll see a confirmation message. Then simply paste (Ctrl+V / Cmd+V) into your social media platform!</p>
             </div>
           </Card>
+
+          <div className="mt-6 flex justify-center">
+            <a
+              href={DONATION_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-primary-700"
+            >
+              Donate
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
         </div>
 
         {/* Award Information */}
@@ -336,6 +351,7 @@ function SocialMediaContentPage() {
         <Card className="p-8 bg-blue-50">
           <h2 className="text-3xl font-bold mb-6">📝 Notes for Content Creation</h2>
           <ul className="space-y-3 text-gray-700">
+            <li><strong>Donate link:</strong> Include the donation page when inviting support: {DONATION_URL}</li>
             <li><strong>Video Upload:</strong> Once the 1-minute video is uploaded, add the URL to YouTube description, website awards section, social media posts, and WhatsApp messages.</li>
             <li><strong>Images to Include:</strong> Award certificate, photos with Union Ministers, award ceremony photos, Mrs. Charulatha M. R. receiving the award.</li>
             <li><strong>Timing:</strong> Post the content within 24-48 hours of the award ceremony for maximum impact.</li>
@@ -362,6 +378,8 @@ const instagramContent = `🏆 We are thrilled and honored to announce that Law 
 
 📚 Join us as we continue our mission to provide quality education to underprivileged children across India.
 
+💝 Support our cause: ${DONATION_URL}
+
 #BharatShikshaRatanAward #EducationForAll #LawParkEducationalTrust #SocialImpact #EducationMatters #TransformingLives #AwardWinner #NewDelhi #EducationSector #MakingADifference #CommunityImpact #10YearsOfService`
 
 const facebookContent = `🎉 We are incredibly proud and honored to share that Law Park Educational Trust has been awarded the prestigious BHARAT SHIKSHA RATAN AWARD! 🏆
@@ -386,6 +404,8 @@ Out of 25 awardees, we were honored to be recognized for our outstanding achieve
 
 Join us in this celebration and help us reach more children in need! 🌟
 
+💝 Donate to support our mission: ${DONATION_URL}
+
 #BharatShikshaRatanAward #EducationForAll #LawParkEducationalTrust #SocialImpact #EducationMatters`
 
 const youtubeContent = `🏆 Law Park Educational Trust Receives Prestigious Bharat Shiksha Ratan Award! 🎓
@@ -409,6 +429,8 @@ This award is a testament to the collective efforts of our trustees, donors, vol
 
 📚 Our Mission Continues:
 As we celebrate this achievement, we remain committed to our mission of bringing quality education to every child in need. Together, we can continue to make a positive impact in our society.
+
+💝 Donate to support our mission: ${DONATION_URL}
 
 🔔 Subscribe to our channel for more updates on our educational initiatives and impact stories.
 
@@ -444,6 +466,8 @@ We are thrilled to share that *Law Park Educational Trust* has received the pres
 
 📚 Join us as we continue our mission to provide quality education to underprivileged children across India.
 
+💝 Donate: ${DONATION_URL}
+
 #BharatShikshaRatanAward #EducationForAll #LawParkEducationalTrust`
 
 const whatsappLong = `🏆 *BHARAT SHIKSHA RATAN AWARD 2025* 🎓
@@ -478,6 +502,8 @@ All thanks to each one of you for being with us! This is our joint effort, and t
 
 📚 *Our Mission Continues:*
 As we celebrate this achievement, we remain committed to our mission of bringing quality education to every child in need. Join us as we continue our services and bring a change in our society!
+
+💝 Support us: ${DONATION_URL}
 
 🔗 Watch the award ceremony video: [Add video link once uploaded]
 

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Card from '../ui/Card'
+import { DONATION_URL } from '@/data/constants'
 
 const donorInviteFullLetter = `Dear Donor,
 
@@ -33,6 +34,8 @@ We're excited but need sponsorship to make it happen. Your support can bring smi
 
 🙏 We request your financial help for this noble cause. Together we can create a great change.
 
+💝 Donate: ${DONATION_URL}
+
 Contact: +919945665379
 #LawParkEducationalTrust #10YearsOfService #EducationForAll #Sponsorship #DonateForEducation #Bangalore #RuralEducation #NGOIndia #SupportChildren`
 
@@ -46,6 +49,8 @@ To celebrate this milestone, we want to bring all the children under our care to
 We are happy and excited to make this happen, but finance is our only constraint. We request your sponsorship for this event. It will be heartwarming for all of us to bring smiles to these children, and together we can create a great change in their lives.
 
 Hence we request your financial help for this noble cause. Awaiting a positive response from you.
+
+💝 Donate: ${DONATION_URL}
 
 Thank you.
 
@@ -63,6 +68,8 @@ We need sponsorship to make this happen. Your support will bring smiles and crea
 
 We request your financial help for this noble cause.
 
+💝 Donate: ${DONATION_URL}
+
 Contact: +919945665379
 
 #LawParkEducationalTrust #10YearsOfService #EducationForAll #Sponsorship #DonateForEducation #Bangalore #NGOIndia #SupportChildren`
@@ -77,6 +84,8 @@ We need *sponsorship* to make it happen. Your support can bring smiles and chang
 
 🙏 Requesting financial help for this noble cause.
 
+💝 Donate: ${DONATION_URL}
+
 Contact: +919945665379`
 
 const donorInviteWhatsappLong = `*Dear Donor,* 💌
@@ -90,6 +99,8 @@ Under our trust we help *children across India* with their education—rural sec
 We are happy and excited but *finance is our only constraint*. We request *sponsorship* for this event. It will be heartwarming to bring smiles to these children. Together we can create a great change.
 
 Hence we request *financial help* for this noble cause. Awaiting a positive response from you.
+
+💝 Donate: ${DONATION_URL}
 
 Thank You
 
@@ -136,6 +147,20 @@ function DonorInviteContentPage() {
               <p className="text-sm text-gray-600 mt-3">💡 <strong>Tip:</strong> After clicking &quot;Copy&quot;, you&apos;ll see a confirmation message. Then simply paste (Ctrl+V / Cmd+V) into your email, social media, or messaging app!</p>
             </div>
           </Card>
+
+          <div className="mt-6 flex justify-center">
+            <a
+              href={DONATION_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-primary-700"
+            >
+              Donate here
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
         </div>
 
         {/* Invite Information */}
@@ -470,6 +495,7 @@ function DonorInviteContentPage() {
         <Card className="p-8 bg-blue-50">
           <h2 className="text-3xl font-bold mb-6">📝 Notes for Content Creation</h2>
           <ul className="space-y-3 text-gray-700">
+            <li><strong>Donate link:</strong> Share the donation page with donors: {DONATION_URL}</li>
             <li><strong>Personalise:</strong> When emailing donors, you can add a short personal note before the main letter.</li>
             <li><strong>Follow-up:</strong> Share event date and venue once confirmed; send a thank-you after the event to sponsors.</li>
             <li><strong>Images:</strong> Use photos of children, tribal visits, or previous events to make posts and emails more engaging.</li>
