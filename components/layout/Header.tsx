@@ -1,10 +1,23 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
+  const isHome = pathname === '/'
+
+  function scrollToSection(id: string) {
+    if (!isHome) return
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  function closeMenuAndScroll(id: string) {
+    setIsMenuOpen(false)
+    scrollToSection(id)
+  }
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
@@ -29,92 +42,132 @@ function Header() {
             >
               Home
             </Link>
-            <a
-              href="#impact"
-              className="text-gray-900 transition-colors hover:text-primary-600"
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById('impact')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-            >
-              Impact
-            </a>
-            <a
-              href="#activities"
-              className="text-gray-900 transition-colors hover:text-primary-600"
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById('activities')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-            >
-              Activities
-            </a>
-            <a
-              href="#process"
-              className="text-gray-900 transition-colors hover:text-primary-600"
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-            >
-              Process
-            </a>
-            <a
-              href="#journey"
-              className="text-gray-900 transition-colors hover:text-primary-600"
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById('journey')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-            >
-              Journey
-            </a>
-            <a
-              href="#gallery"
-              className="text-gray-900 transition-colors hover:text-primary-600"
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-            >
-              Gallery
-            </a>
-            <a
-              href="#trustees"
-              className="text-gray-900 transition-colors hover:text-primary-600"
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById('trustees')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-            >
-              Trustees
-            </a>
-            <a
-              href="#testimonials"
-              className="text-gray-900 transition-colors hover:text-primary-600"
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-            >
-              Testimonials
-            </a>
-            <Link
-              href="/content"
-              className="text-gray-900 transition-colors hover:text-primary-600"
-            >
-              Content
-            </Link>
-            <a
-              href="#get-involved"
-              className="rounded-md bg-primary-600 px-4 py-2 text-white transition-colors hover:bg-primary-700"
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById('get-involved')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-            >
-              Get Involved
-            </a>
+            {isHome ? (
+              <>
+                <a
+                  href="#impact"
+                  className="text-gray-900 transition-colors hover:text-primary-600"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    scrollToSection('impact')
+                  }}
+                >
+                  Impact
+                </a>
+                <a
+                  href="#activities"
+                  className="text-gray-900 transition-colors hover:text-primary-600"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    scrollToSection('activities')
+                  }}
+                >
+                  Activities
+                </a>
+                <a
+                  href="#process"
+                  className="text-gray-900 transition-colors hover:text-primary-600"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    scrollToSection('process')
+                  }}
+                >
+                  Process
+                </a>
+                <a
+                  href="#journey"
+                  className="text-gray-900 transition-colors hover:text-primary-600"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    scrollToSection('journey')
+                  }}
+                >
+                  Journey
+                </a>
+                <a
+                  href="#gallery"
+                  className="text-gray-900 transition-colors hover:text-primary-600"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    scrollToSection('gallery')
+                  }}
+                >
+                  Gallery
+                </a>
+                <a
+                  href="#trustees"
+                  className="text-gray-900 transition-colors hover:text-primary-600"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    scrollToSection('trustees')
+                  }}
+                >
+                  Trustees
+                </a>
+                <a
+                  href="#testimonials"
+                  className="text-gray-900 transition-colors hover:text-primary-600"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    scrollToSection('testimonials')
+                  }}
+                >
+                  Testimonials
+                </a>
+                <Link
+                  href="/content"
+                  className="text-gray-900 transition-colors hover:text-primary-600"
+                >
+                  Content
+                </Link>
+                <a
+                  href="#get-involved"
+                  className="rounded-md bg-primary-600 px-4 py-2 text-white transition-colors hover:bg-primary-700"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    scrollToSection('get-involved')
+                  }}
+                >
+                  Get Involved
+                </a>
+              </>
+            ) : (
+              <>
+                <Link href="/#impact" className="text-gray-900 transition-colors hover:text-primary-600">
+                  Impact
+                </Link>
+                <Link href="/#activities" className="text-gray-900 transition-colors hover:text-primary-600">
+                  Activities
+                </Link>
+                <Link href="/#process" className="text-gray-900 transition-colors hover:text-primary-600">
+                  Process
+                </Link>
+                <Link href="/#journey" className="text-gray-900 transition-colors hover:text-primary-600">
+                  Journey
+                </Link>
+                <Link href="/#gallery" className="text-gray-900 transition-colors hover:text-primary-600">
+                  Gallery
+                </Link>
+                <Link href="/#trustees" className="text-gray-900 transition-colors hover:text-primary-600">
+                  Trustees
+                </Link>
+                <Link href="/#testimonials" className="text-gray-900 transition-colors hover:text-primary-600">
+                  Testimonials
+                </Link>
+                <Link
+                  href="/content"
+                  className="text-gray-900 transition-colors hover:text-primary-600"
+                >
+                  Content
+                </Link>
+                <Link
+                  href="/#get-involved"
+                  className="rounded-md bg-primary-600 px-4 py-2 text-white transition-colors hover:bg-primary-700"
+                >
+                  Get Involved
+                </Link>
+              </>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -161,101 +214,163 @@ function Header() {
               >
                 Home
               </Link>
-              <a
-                href="#impact"
-                className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
-                onClick={(e) => {
-                  e.preventDefault()
-                  setIsMenuOpen(false)
-                  document.getElementById('impact')?.scrollIntoView({ behavior: 'smooth' })
-                }}
-              >
-                Impact
-              </a>
-              <a
-                href="#activities"
-                className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
-                onClick={(e) => {
-                  e.preventDefault()
-                  setIsMenuOpen(false)
-                  document.getElementById('activities')?.scrollIntoView({ behavior: 'smooth' })
-                }}
-              >
-                Activities
-              </a>
-              <a
-                href="#process"
-                className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
-                onClick={(e) => {
-                  e.preventDefault()
-                  setIsMenuOpen(false)
-                  document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })
-                }}
-              >
-                Process
-              </a>
-              <a
-                href="#journey"
-                className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
-                onClick={(e) => {
-                  e.preventDefault()
-                  setIsMenuOpen(false)
-                  document.getElementById('journey')?.scrollIntoView({ behavior: 'smooth' })
-                }}
-              >
-                Journey
-              </a>
-              <a
-                href="#gallery"
-                className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
-                onClick={(e) => {
-                  e.preventDefault()
-                  setIsMenuOpen(false)
-                  document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })
-                }}
-              >
-                Gallery
-              </a>
-              <a
-                href="#trustees"
-                className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
-                onClick={(e) => {
-                  e.preventDefault()
-                  setIsMenuOpen(false)
-                  document.getElementById('trustees')?.scrollIntoView({ behavior: 'smooth' })
-                }}
-              >
-                Trustees
-              </a>
-              <a
-                href="#testimonials"
-                className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
-                onClick={(e) => {
-                  e.preventDefault()
-                  setIsMenuOpen(false)
-                  document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })
-                }}
-              >
-                Testimonials
-              </a>
-              <Link
-                href="/content"
-                className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Content
-              </Link>
-              <a
-                href="#get-involved"
-                className="block rounded-md bg-primary-600 px-3 py-2 text-base font-medium text-white hover:bg-primary-700"
-                onClick={(e) => {
-                  e.preventDefault()
-                  setIsMenuOpen(false)
-                  document.getElementById('get-involved')?.scrollIntoView({ behavior: 'smooth' })
-                }}
-              >
-                Get Involved
-              </a>
+              {isHome ? (
+                <>
+                  <a
+                    href="#impact"
+                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      closeMenuAndScroll('impact')
+                    }}
+                  >
+                    Impact
+                  </a>
+                  <a
+                    href="#activities"
+                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      closeMenuAndScroll('activities')
+                    }}
+                  >
+                    Activities
+                  </a>
+                  <a
+                    href="#process"
+                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      closeMenuAndScroll('process')
+                    }}
+                  >
+                    Process
+                  </a>
+                  <a
+                    href="#journey"
+                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      closeMenuAndScroll('journey')
+                    }}
+                  >
+                    Journey
+                  </a>
+                  <a
+                    href="#gallery"
+                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      closeMenuAndScroll('gallery')
+                    }}
+                  >
+                    Gallery
+                  </a>
+                  <a
+                    href="#trustees"
+                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      closeMenuAndScroll('trustees')
+                    }}
+                  >
+                    Trustees
+                  </a>
+                  <a
+                    href="#testimonials"
+                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      closeMenuAndScroll('testimonials')
+                    }}
+                  >
+                    Testimonials
+                  </a>
+                  <Link
+                    href="/content"
+                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Content
+                  </Link>
+                  <a
+                    href="#get-involved"
+                    className="block rounded-md bg-primary-600 px-3 py-2 text-base font-medium text-white hover:bg-primary-700"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      closeMenuAndScroll('get-involved')
+                    }}
+                  >
+                    Get Involved
+                  </a>
+                </>
+              ) : (
+                <>
+                  <Link
+                    href="/#impact"
+                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Impact
+                  </Link>
+                  <Link
+                    href="/#activities"
+                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Activities
+                  </Link>
+                  <Link
+                    href="/#process"
+                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Process
+                  </Link>
+                  <Link
+                    href="/#journey"
+                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Journey
+                  </Link>
+                  <Link
+                    href="/#gallery"
+                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Gallery
+                  </Link>
+                  <Link
+                    href="/#trustees"
+                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Trustees
+                  </Link>
+                  <Link
+                    href="/#testimonials"
+                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Testimonials
+                  </Link>
+                  <Link
+                    href="/content"
+                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Content
+                  </Link>
+                  <Link
+                    href="/#get-involved"
+                    className="block rounded-md bg-primary-600 px-3 py-2 text-base font-medium text-white hover:bg-primary-700"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Get Involved
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         )}
