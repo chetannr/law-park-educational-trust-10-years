@@ -13,7 +13,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/social-media-content`,
+      url: `${baseUrl}/content`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/content/award`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/content/donor-invite`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,

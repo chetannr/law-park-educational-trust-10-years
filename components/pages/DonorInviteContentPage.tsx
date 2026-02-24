@@ -3,7 +3,109 @@
 import { useState } from 'react'
 import Card from '../ui/Card'
 
-function SocialMediaContentPage() {
+const donorInviteFullLetter = `Dear Donor,
+
+With all due respect I introduce myself as Charulatha. M. R, Founder of Law Park Educational Trust, Bangalore.  I along with my husband Mr. Manjunatha. S. M started this educational Trust in the year 2012, but registered in the year 2016.  We, along with other like-minded individuals, have formed a team and are successfully carrying this trust forward.
+
+Under our trust we help children across India for their education.  We have been helping children residing in rural sector, children of HIV patients, children of acid attacked victims, tribal children and many such children.  We help these children by paying their school fees so no children under our care is left unschooled.
+
+With Tribal children, we stay with the children few days in their tribes and we teach and learn many activities and finally distribute school essentials to these children.
+
+This year we will be completing 10 years of our service in serving our Nation, to celebrate we wanted all the children under our care to visit Bangalore since we are arranging an event for these children and one day Bangalore tour (to any informative place) and children will take home surprise gifts and loads of good memory, as these children will be visiting Bangalore for the first time, in fact they will be stepping out from their abode very first time.
+We are happy and excited to work on this but finance is the only constraint, so we request sponsorship to this event, as this event will be heartwarming to all of us for bring smiles in these children.  We together can bring a great change in the lives of these children.
+Hence we request financial help for this noble cause. Awaiting a positive response from you.
+
+Thank You
+
+Regards
+Charulatha. M.R.
+Representing our entire Law Park Educational Trust's Team.
++919945665379`
+
+const donorInviteInstagramTitle = '💌 10 Years of Service – Help Us Bring Smiles to Children'
+const donorInviteInstagramCaption = `We're completing 10 years of serving our Nation through Law Park Educational Trust! 🌟
+
+We help children across India—rural, tribal, children of HIV patients and acid-attack survivors—by supporting their education so no child under our care is left unschooled.
+
+This year we want to celebrate by bringing ALL the children under our care to Bangalore: an event, a day tour, surprise gifts, and memories for a lifetime. For many, it will be their first time stepping out of their abode. 💫
+
+We're excited but need sponsorship to make it happen. Your support can bring smiles and change lives.
+
+🙏 We request your financial help for this noble cause. Together we can create a great change.
+
+Contact: +919945665379
+#LawParkEducationalTrust #10YearsOfService #EducationForAll #Sponsorship #DonateForEducation #Bangalore #RuralEducation #NGOIndia #SupportChildren`
+
+const donorInviteFacebookTitle = '10-Year Celebration – Sponsor Our Children\'s First Trip to Bangalore'
+const donorInviteFacebookContent = `Dear Friends and Supporters,
+
+Law Park Educational Trust is completing 10 years of service to our Nation. We help children across India—in rural areas, tribal communities, and children of HIV patients and acid-attack survivors—by supporting their education so no child under our care is left unschooled.
+
+To celebrate this milestone, we want to bring all the children under our care to Bangalore: an event, a one-day educational tour, surprise gifts, and lasting memories. For many of these children, it will be their first time visiting Bangalore—in fact, their first time stepping out of their abode.
+
+We are happy and excited to make this happen, but finance is our only constraint. We request your sponsorship for this event. It will be heartwarming for all of us to bring smiles to these children, and together we can create a great change in their lives.
+
+Hence we request your financial help for this noble cause. Awaiting a positive response from you.
+
+Thank you.
+
+Regards,
+Charulatha M. R.
+Representing Law Park Educational Trust's Team
++919945665379`
+
+const donorInviteYoutubeTitle = '10-Year Celebration | Sponsor Children\'s First Trip to Bangalore | Law Park Educational Trust'
+const donorInviteYoutubeDescription = `Law Park Educational Trust is completing 10 years of service. We help children across India—rural, tribal, children of HIV patients and acid-attack survivors—through education support so no child under our care is left unschooled.
+
+To celebrate, we want to bring all the children under our care to Bangalore: an event, a one-day tour, surprise gifts, and memories for a lifetime. For many, it will be their first time visiting Bangalore—their first time stepping out of their abode.
+
+We need sponsorship to make this happen. Your support will bring smiles and create lasting change in these children's lives.
+
+We request your financial help for this noble cause.
+
+Contact: +919945665379
+
+#LawParkEducationalTrust #10YearsOfService #EducationForAll #Sponsorship #DonateForEducation #Bangalore #NGOIndia #SupportChildren`
+
+const donorInviteWhatsappShort = `*10-Year Celebration – Sponsor Our Children's Trip to Bangalore* 💌
+
+Law Park Educational Trust is completing *10 years* of service. We help children across India with education support.
+
+To celebrate, we want to bring *all children under our care* to Bangalore—event, tour, gifts. For many, it will be their *first time* stepping out of their abode.
+
+We need *sponsorship* to make it happen. Your support can bring smiles and change lives.
+
+🙏 Requesting financial help for this noble cause.
+
+Contact: +919945665379`
+
+const donorInviteWhatsappLong = `*Dear Donor,* 💌
+
+With all due respect I introduce myself as *Charulatha M. R*, Founder of *Law Park Educational Trust*, Bangalore. Along with my husband *Mr. Manjunatha S. M* we started this Trust in 2012 (registered 2016). We, with like-minded individuals, are successfully carrying the trust forward.
+
+Under our trust we help *children across India* with their education—rural sector, children of HIV patients, acid-attack victims, tribal children. We pay school fees so no child under our care is left unschooled.
+
+*This year we complete 10 years* of service. To celebrate, we want *all children under our care* to visit Bangalore: an event, one-day Bangalore tour, surprise gifts. For many, it will be their *first time* visiting Bangalore—first time stepping out of their abode.
+
+We are happy and excited but *finance is our only constraint*. We request *sponsorship* for this event. It will be heartwarming to bring smiles to these children. Together we can create a great change.
+
+Hence we request *financial help* for this noble cause. Awaiting a positive response from you.
+
+Thank You
+
+Regards
+*Charulatha M. R.*
+Representing Law Park Educational Trust's Team
++919945665379`
+
+const donorInviteEmailSubjects = [
+  '10-Year Celebration – Sponsor Our Children\'s First Trip to Bangalore',
+  'Request for Sponsorship: Law Park Educational Trust 10-Year Event',
+  'Bring Smiles to Children – Support Our Bangalore Celebration',
+  'Your Support Can Change Lives: 10-Year Milestone Event',
+]
+
+function DonorInviteContentPage() {
   const [copiedId, setCopiedId] = useState<string | null>(null)
 
   const copyToClipboard = (text: string, id: string) => {
@@ -18,48 +120,80 @@ function SocialMediaContentPage() {
   return (
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="container-custom">
-        {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
-            Bharat Shiksha Ratan Award
+            Donor Invite
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-            Ready-to-use content for sharing the award achievement across social media and email
+            Sponsorship invite for the 10-year celebration event—bringing children to Bangalore for the first time
           </p>
-          
-          {/* How to Use Instructions */}
+
           <Card className="p-6 bg-blue-50 border-2 border-blue-200 max-w-4xl mx-auto">
             <h3 className="text-xl font-bold mb-3 text-blue-900">📋 How to Use This Page</h3>
             <div className="text-left text-gray-700 space-y-2">
-              <p><strong>Option 1 - Quick Copy:</strong> Click the "Copy" button next to any content section. The content will be copied to your clipboard instantly!</p>
+              <p><strong>Option 1 - Quick Copy:</strong> Click the &quot;Copy&quot; button next to any content section. The content will be copied to your clipboard instantly!</p>
               <p><strong>Option 2 - Manual Selection:</strong> You can also select and copy any text directly from the content boxes below.</p>
-              <p className="text-sm text-gray-600 mt-3">💡 <strong>Tip:</strong> After clicking "Copy", you'll see a confirmation message. Then simply paste (Ctrl+V / Cmd+V) into your social media platform!</p>
+              <p className="text-sm text-gray-600 mt-3">💡 <strong>Tip:</strong> After clicking &quot;Copy&quot;, you&apos;ll see a confirmation message. Then simply paste (Ctrl+V / Cmd+V) into your email, social media, or messaging app!</p>
             </div>
           </Card>
         </div>
 
-        {/* Award Information */}
+        {/* Invite Information */}
         <Card className="p-8 mb-8 bg-gradient-to-br from-primary-50 to-primary-100">
-          <h2 className="text-3xl font-bold mb-6 text-center">🏆 Award Information</h2>
+          <h2 className="text-3xl font-bold mb-6 text-center">💌 Invite Information</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
             <div>
-              <span className="font-semibold">Award:</span> Bharat Shiksha Ratan Award
+              <span className="font-semibold">Occasion:</span> 10-year celebration of service
             </div>
             <div>
-              <span className="font-semibold">Recipient:</span> Mrs. Charulatha M. R. (Founder)
+              <span className="font-semibold">From:</span> Charulatha M. R. (Founder)
             </div>
             <div>
-              <span className="font-semibold">Organization:</span> Economic and Social Development Foundation (E.S.D.F)
+              <span className="font-semibold">Organization:</span> Law Park Educational Trust, Bangalore
             </div>
             <div>
-              <span className="font-semibold">Date:</span> 19th December 2025
+              <span className="font-semibold">Ask:</span> Sponsorship for children&apos;s event and Bangalore visit
             </div>
             <div>
-              <span className="font-semibold">Location:</span> New Delhi
+              <span className="font-semibold">Highlights:</span> First-time Bangalore visit for many children; event, tour, gifts
             </div>
             <div>
-              <span className="font-semibold">Total Awardees:</span> 25
+              <span className="font-semibold">Contact:</span> +919945665379
             </div>
+          </div>
+        </Card>
+
+        {/* Full Letter */}
+        <Card className="p-8 mb-8">
+          <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
+            <h2 className="text-3xl font-bold">📄 Full Letter</h2>
+            <button
+              onClick={() => copyToClipboard(donorInviteFullLetter, 'full-letter')}
+              className={`px-6 py-3 rounded-lg font-semibold transition-all flex items-center gap-2 ${
+                copiedId === 'full-letter'
+                  ? 'bg-green-600 text-white'
+                  : 'bg-primary-600 text-white hover:bg-primary-700 hover:shadow-lg'
+              }`}
+            >
+              {copiedId === 'full-letter' ? (
+                <>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Copied!
+                </>
+              ) : (
+                <>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                  Copy letter
+                </>
+              )}
+            </button>
+          </div>
+          <div className="bg-gray-50 p-6 rounded-lg whitespace-pre-wrap text-gray-700 leading-relaxed border-2 border-gray-200 select-all cursor-text hover:border-primary-300 transition-colors">
+            {donorInviteFullLetter}
           </div>
         </Card>
 
@@ -69,7 +203,7 @@ function SocialMediaContentPage() {
             <h2 className="text-3xl font-bold">📱 Instagram Post</h2>
             <div className="flex gap-3">
               <button
-                onClick={() => copyToClipboard(instagramContent, 'instagram')}
+                onClick={() => copyToClipboard(donorInviteInstagramCaption, 'instagram')}
                 className={`px-6 py-3 rounded-lg font-semibold transition-all flex items-center gap-2 ${
                   copiedId === 'instagram'
                     ? 'bg-green-600 text-white'
@@ -99,14 +233,14 @@ function SocialMediaContentPage() {
               <h3 className="text-xl font-semibold mb-2">Title/Headline:</h3>
               <div className="bg-primary-50 p-4 rounded-lg border-2 border-primary-200">
                 <p className="text-lg font-bold text-primary-600 select-all">
-                  🏆 Bharat Shiksha Ratan Award - A Milestone Achievement! 🎓
+                  {donorInviteInstagramTitle}
                 </p>
               </div>
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-2">Caption:</h3>
               <div className="bg-gray-50 p-6 rounded-lg whitespace-pre-wrap text-gray-700 leading-relaxed border-2 border-gray-200 select-all cursor-text hover:border-primary-300 transition-colors">
-                {instagramContent}
+                {donorInviteInstagramCaption}
               </div>
             </div>
           </div>
@@ -118,7 +252,7 @@ function SocialMediaContentPage() {
             <h2 className="text-3xl font-bold">📘 Facebook Post</h2>
             <div className="flex gap-3">
               <button
-                onClick={() => copyToClipboard(facebookContent, 'facebook')}
+                onClick={() => copyToClipboard(donorInviteFacebookContent, 'facebook')}
                 className={`px-6 py-3 rounded-lg font-semibold transition-all flex items-center gap-2 ${
                   copiedId === 'facebook'
                     ? 'bg-green-600 text-white'
@@ -148,14 +282,14 @@ function SocialMediaContentPage() {
               <h3 className="text-xl font-semibold mb-2">Title:</h3>
               <div className="bg-primary-50 p-4 rounded-lg border-2 border-primary-200">
                 <p className="text-lg font-bold text-primary-600 select-all">
-                  🏆 Law Park Educational Trust Receives Prestigious Bharat Shiksha Ratan Award!
+                  {donorInviteFacebookTitle}
                 </p>
               </div>
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-2">Post Content:</h3>
               <div className="bg-gray-50 p-6 rounded-lg whitespace-pre-wrap text-gray-700 leading-relaxed border-2 border-gray-200 select-all cursor-text hover:border-primary-300 transition-colors">
-                {facebookContent}
+                {donorInviteFacebookContent}
               </div>
             </div>
           </div>
@@ -167,7 +301,7 @@ function SocialMediaContentPage() {
             <h2 className="text-3xl font-bold">📺 YouTube Video</h2>
             <div className="flex gap-3">
               <button
-                onClick={() => copyToClipboard(youtubeContent, 'youtube')}
+                onClick={() => copyToClipboard(donorInviteYoutubeDescription, 'youtube')}
                 className={`px-6 py-3 rounded-lg font-semibold transition-all flex items-center gap-2 ${
                   copiedId === 'youtube'
                     ? 'bg-green-600 text-white'
@@ -197,14 +331,14 @@ function SocialMediaContentPage() {
               <h3 className="text-xl font-semibold mb-2">Video Title:</h3>
               <div className="bg-red-50 p-4 rounded-lg border-2 border-red-200">
                 <p className="text-lg font-bold text-red-600 select-all">
-                  🏆 Bharat Shiksha Ratan Award 2025 | Law Park Educational Trust | New Delhi
+                  {donorInviteYoutubeTitle}
                 </p>
               </div>
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-2">Video Description:</h3>
               <div className="bg-gray-50 p-6 rounded-lg whitespace-pre-wrap text-gray-700 leading-relaxed text-sm border-2 border-gray-200 select-all cursor-text hover:border-red-300 transition-colors">
-                {youtubeContent}
+                {donorInviteYoutubeDescription}
               </div>
             </div>
           </div>
@@ -216,7 +350,7 @@ function SocialMediaContentPage() {
             <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
               <h2 className="text-2xl font-bold">💬 WhatsApp (Short)</h2>
               <button
-                onClick={() => copyToClipboard(whatsappShort, 'whatsapp-short')}
+                onClick={() => copyToClipboard(donorInviteWhatsappShort, 'whatsapp-short')}
                 className={`px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 text-sm ${
                   copiedId === 'whatsapp-short'
                     ? 'bg-green-700 text-white'
@@ -241,7 +375,7 @@ function SocialMediaContentPage() {
               </button>
             </div>
             <div className="bg-gray-50 p-6 rounded-lg whitespace-pre-wrap text-gray-700 leading-relaxed text-sm border-2 border-gray-200 select-all cursor-text hover:border-green-300 transition-colors">
-              {whatsappShort}
+              {donorInviteWhatsappShort}
             </div>
           </Card>
 
@@ -249,7 +383,7 @@ function SocialMediaContentPage() {
             <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
               <h2 className="text-2xl font-bold">💬 WhatsApp (Long)</h2>
               <button
-                onClick={() => copyToClipboard(whatsappLong, 'whatsapp-long')}
+                onClick={() => copyToClipboard(donorInviteWhatsappLong, 'whatsapp-long')}
                 className={`px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 text-sm ${
                   copiedId === 'whatsapp-long'
                     ? 'bg-green-700 text-white'
@@ -274,16 +408,16 @@ function SocialMediaContentPage() {
               </button>
             </div>
             <div className="bg-gray-50 p-6 rounded-lg whitespace-pre-wrap text-gray-700 leading-relaxed text-sm border-2 border-gray-200 select-all cursor-text hover:border-green-300 transition-colors">
-              {whatsappLong}
+              {donorInviteWhatsappLong}
             </div>
           </Card>
         </div>
 
         {/* Email Subject Lines */}
         <Card className="p-8 mb-8">
-          <h2 className="text-3xl font-bold mb-6">📧 Email Newsletter Subject Lines</h2>
+          <h2 className="text-3xl font-bold mb-6">📧 Email Subject Lines</h2>
           <div className="space-y-3">
-            {emailSubjects.map((subject, index) => {
+            {donorInviteEmailSubjects.map((subject, index) => {
               const emailId = `email-${index}`
               return (
                 <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg border-2 border-gray-200 hover:border-primary-300 transition-colors">
@@ -322,13 +456,13 @@ function SocialMediaContentPage() {
         <Card className="p-8 mb-8">
           <h2 className="text-3xl font-bold mb-6">🎯 Key Messages to Emphasize</h2>
           <ul className="space-y-3 list-disc list-inside text-gray-700">
-            <li><strong>Achievement:</strong> Prestigious national recognition</li>
-            <li><strong>Recognition:</strong> Out of 25 awardees, we were honored</li>
-            <li><strong>Credibility:</strong> Presented by Union Ministers</li>
-            <li><strong>Journey:</strong> 10 years of dedicated service</li>
-            <li><strong>Collective Effort:</strong> Thanks to all supporters</li>
-            <li><strong>Continued Mission:</strong> Commitment to continue the work</li>
-            <li><strong>Call to Action:</strong> Join us in our mission</li>
+            <li><strong>Milestone:</strong> 10 years of service to the Nation</li>
+            <li><strong>Reach:</strong> Children across India—rural, tribal, HIV-affected, acid-attack survivors</li>
+            <li><strong>Impact:</strong> School fees and essentials so no child under our care is left unschooled</li>
+            <li><strong>Celebration:</strong> Bringing all children to Bangalore—event, tour, gifts</li>
+            <li><strong>First time:</strong> For many, first time visiting Bangalore and stepping out of their abode</li>
+            <li><strong>Ask:</strong> Sponsorship to make the event possible</li>
+            <li><strong>Call to action:</strong> Financial help for this noble cause; contact for response</li>
           </ul>
         </Card>
 
@@ -336,10 +470,10 @@ function SocialMediaContentPage() {
         <Card className="p-8 bg-blue-50">
           <h2 className="text-3xl font-bold mb-6">📝 Notes for Content Creation</h2>
           <ul className="space-y-3 text-gray-700">
-            <li><strong>Video Upload:</strong> Once the 1-minute video is uploaded, add the URL to YouTube description, website awards section, social media posts, and WhatsApp messages.</li>
-            <li><strong>Images to Include:</strong> Award certificate, photos with Union Ministers, award ceremony photos, Mrs. Charulatha M. R. receiving the award.</li>
-            <li><strong>Timing:</strong> Post the content within 24-48 hours of the award ceremony for maximum impact.</li>
-            <li><strong>Engagement:</strong> Respond to comments and messages promptly to maintain engagement.</li>
+            <li><strong>Personalise:</strong> When emailing donors, you can add a short personal note before the main letter.</li>
+            <li><strong>Follow-up:</strong> Share event date and venue once confirmed; send a thank-you after the event to sponsors.</li>
+            <li><strong>Images:</strong> Use photos of children, tribal visits, or previous events to make posts and emails more engaging.</li>
+            <li><strong>Contact:</strong> Include phone number +919945665379 in all outreach so donors can respond easily.</li>
           </ul>
         </Card>
       </div>
@@ -347,148 +481,4 @@ function SocialMediaContentPage() {
   )
 }
 
-// Content strings
-const instagramContent = `🏆 We are thrilled and honored to announce that Law Park Educational Trust has received the prestigious BHARAT SHIKSHA RATAN AWARD! 🎓
-
-✨ This recognition was presented to our Founder, Mrs. Charulatha M. R., at the National Summit in New Delhi on 19th December 2025, by the Economic and Social Development Foundation (E.S.D.F).
-
-🌟 Out of 25 distinguished awardees, we were honored to receive this award, presented by Union Ministers:
-• Mr. Kamal Singh Negi (Cabinet Minister, New Delhi)
-• Mr. Dinesh Upadhyay (Ayush Minister)
-
-💫 This award is a testament to our 10 years of dedication in transforming lives through education. It represents the collective efforts of our trustees, volunteers, donors, and supporters who have been with us on this incredible journey.
-
-🙏 All thanks to each one of you for being with us! This is our joint effort, and together we continue to bring change in our society.
-
-📚 Join us as we continue our mission to provide quality education to underprivileged children across India.
-
-#BharatShikshaRatanAward #EducationForAll #LawParkEducationalTrust #SocialImpact #EducationMatters #TransformingLives #AwardWinner #NewDelhi #EducationSector #MakingADifference #CommunityImpact #10YearsOfService`
-
-const facebookContent = `🎉 We are incredibly proud and honored to share that Law Park Educational Trust has been awarded the prestigious BHARAT SHIKSHA RATAN AWARD! 🏆
-
-This distinguished recognition was presented to our Founder, Mrs. Charulatha M. R., at the National Summit held in New Delhi on 19th December 2025, by the Economic and Social Development Foundation (E.S.D.F).
-
-🌟 The award ceremony was graced by Union Ministers:
-• Mr. Kamal Singh Negi (Cabinet Minister, New Delhi)
-• Mr. Dinesh Upadhyay (Ayush Minister)
-
-Out of 25 awardees, we were honored to be recognized for our outstanding achievements and remarkable role in the education sector.
-
-💫 This award is a celebration of our 10-year journey dedicated to transforming lives through education. It represents the collective efforts of:
-• Our dedicated trustees
-• Generous donors
-• Committed volunteers
-• Supportive community members
-
-🙏 We extend our heartfelt gratitude to each and every one of you who has been part of this incredible journey. This recognition belongs to all of us!
-
-📚 As we move forward, we remain committed to our mission of providing quality education to underprivileged children across India. Together, we can continue to bring positive change in our society.
-
-Join us in this celebration and help us reach more children in need! 🌟
-
-#BharatShikshaRatanAward #EducationForAll #LawParkEducationalTrust #SocialImpact #EducationMatters`
-
-const youtubeContent = `🏆 Law Park Educational Trust Receives Prestigious Bharat Shiksha Ratan Award! 🎓
-
-We are thrilled to share this momentous achievement! Law Park Educational Trust has been honored with the Bharat Shiksha Ratan Award, presented by the Economic and Social Development Foundation (E.S.D.F) at the National Summit in New Delhi.
-
-📅 Date: 19th December 2025
-📍 Location: New Delhi
-👤 Recipient: Mrs. Charulatha M. R. (Founder, Law Park Educational Trust)
-🏛️ Presented By: Economic and Social Development Foundation (E.S.D.F)
-👔 Honored by: Union Ministers - Mr. Kamal Singh Negi (Cabinet Minister) & Mr. Dinesh Upadhyay (Ayush Minister)
-
-🌟 About the Award:
-This prestigious award recognizes outstanding achievements and remarkable contributions in the education sector. Out of 25 distinguished awardees, we were honored to receive this recognition for our decade-long commitment to transforming lives through education.
-
-💫 Our Journey:
-For 10 years, Law Park Educational Trust has been dedicated to providing quality education to underprivileged children across India. Through partially funded scholarships, we have helped countless students continue their education and achieve their dreams.
-
-🙏 Gratitude:
-This award is a testament to the collective efforts of our trustees, donors, volunteers, and supporters. We extend our heartfelt gratitude to everyone who has been part of this incredible journey.
-
-📚 Our Mission Continues:
-As we celebrate this achievement, we remain committed to our mission of bringing quality education to every child in need. Together, we can continue to make a positive impact in our society.
-
-🔔 Subscribe to our channel for more updates on our educational initiatives and impact stories.
-
-📞 Contact Us:
-Website: [Your Website URL]
-Email: [Your Email]
-Phone: [Your Phone Number]
-
-#BharatShikshaRatanAward #EducationForAll #LawParkEducationalTrust #SocialImpact #EducationMatters #TransformingLives #AwardWinner #NewDelhi #EducationSector #MakingADifference #CommunityImpact #10YearsOfService
-
----
-
-Timestamps:
-00:00 - Introduction
-00:15 - Award Ceremony Highlights
-00:45 - Acceptance by Mrs. Charulatha M. R.
-01:00 - Closing Message`
-
-const whatsappShort = `🏆 *Bharat Shiksha Ratan Award 2025* 🎓
-
-We are thrilled to share that *Law Park Educational Trust* has received the prestigious *Bharat Shiksha Ratan Award*!
-
-✨ *Award Details:*
-• Presented to: Mrs. Charulatha M. R. (Founder)
-• Date: 19th December 2025
-• Location: New Delhi
-• Organization: Economic and Social Development Foundation (E.S.D.F)
-• Presented by: Union Ministers - Mr. Kamal Singh Negi & Mr. Dinesh Upadhyay
-
-🌟 This award recognizes our 10 years of dedication in transforming lives through education.
-
-🙏 All thanks to each one of you for being with us! This is our joint effort, and together we continue to bring change in our society.
-
-📚 Join us as we continue our mission to provide quality education to underprivileged children across India.
-
-#BharatShikshaRatanAward #EducationForAll #LawParkEducationalTrust`
-
-const whatsappLong = `🏆 *BHARAT SHIKSHA RATAN AWARD 2025* 🎓
-
-We are incredibly proud and honored to announce that *Law Park Educational Trust* has received the prestigious *Bharat Shiksha Ratan Award*!
-
-✨ *Award Details:*
-• *Award:* Bharat Shiksha Ratan Award
-• *Recipient:* Mrs. Charulatha M. R. (Founder, Law Park Educational Trust)
-• *Date:* 19th December 2025
-• *Location:* New Delhi
-• *Organization:* Economic and Social Development Foundation (E.S.D.F)
-• *Presented By:* Union Ministers
-   - Mr. Kamal Singh Negi (Cabinet Minister, New Delhi)
-   - Mr. Dinesh Upadhyay (Ayush Minister)
-• *Total Awardees:* 25 (We were one of the honored recipients!)
-
-🌟 *What This Means:*
-This prestigious award recognizes our outstanding achievements and remarkable role in the education sector. It celebrates our 10-year journey dedicated to transforming lives through education.
-
-💫 *Our Journey:*
-For the past 10 years, Law Park Educational Trust has been committed to providing quality education to underprivileged children across India. Through partially funded scholarships, we have helped countless students continue their education and achieve their dreams.
-
-🙏 *Gratitude:*
-This award is a testament to the collective efforts of:
-• Our dedicated trustees
-• Generous donors
-• Committed volunteers
-• Supportive community members
-
-All thanks to each one of you for being with us! This is our joint effort, and together we continue to bring change in our society.
-
-📚 *Our Mission Continues:*
-As we celebrate this achievement, we remain committed to our mission of bringing quality education to every child in need. Join us as we continue our services and bring a change in our society!
-
-🔗 Watch the award ceremony video: [Add video link once uploaded]
-
-#BharatShikshaRatanAward #EducationForAll #LawParkEducationalTrust #SocialImpact #EducationMatters #TransformingLives`
-
-const emailSubjects = [
-  '🏆 We Won! Law Park Educational Trust Receives Bharat Shiksha Ratan Award',
-  'Celebrating a Milestone: Bharat Shiksha Ratan Award 2025',
-  'Award Recognition: Our Journey of 10 Years Honored in New Delhi',
-  'Thank You! Together We Achieved the Bharat Shiksha Ratan Award',
-]
-
-export default SocialMediaContentPage
-
+export default DonorInviteContentPage

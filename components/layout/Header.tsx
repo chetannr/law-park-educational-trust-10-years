@@ -99,6 +99,12 @@ function Header() {
             >
               Testimonials
             </a>
+            <Link
+              href="/content"
+              className="text-gray-900 transition-colors hover:text-primary-600"
+            >
+              Content
+            </Link>
             <a
               href="#get-involved"
               className="rounded-md bg-primary-600 px-4 py-2 text-white transition-colors hover:bg-primary-700"
@@ -232,6 +238,13 @@ function Header() {
               >
                 Testimonials
               </a>
+              <Link
+                href="/content"
+                className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Content
+              </Link>
               <a
                 href="#get-involved"
                 className="block rounded-md bg-primary-600 px-3 py-2 text-base font-medium text-white hover:bg-primary-700"
