@@ -96,6 +96,42 @@ export default function MagazinePage() {
             </Link>
           </div>
 
+          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <h2 className="text-xl font-bold text-gray-900 mb-2">Template 5</h2>
+            <p className="text-gray-600 mb-4">
+              Editorial Vogue-inspired design: deep navy + warm gold + cream palette, Playfair Display + Inter typography, full-bleed cover photo, oversized stat numbers, dark navy pull-quotes, Material Symbols Rounded icons, gold citation rules, and section image banners. The most polished template — designed for print impact.
+            </p>
+            <Link
+              href="/magazine/template-05.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-primary-700"
+            >
+              Open Template 5
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </Link>
+          </div>
+
+          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <h2 className="text-xl font-bold text-gray-900 mb-2">Template 6</h2>
+            <p className="text-gray-600 mb-4">
+              Editorial refinement of Template 5: cover photo as a real print-safe image element, &ldquo;Nominate a Child&rdquo; replaces donation ask on the close page, stats banner corrected (5+ districts in Karnataka), pandemic year entry rewritten with specificity, and donor voices pull-quote changed from call-to-action to reflection. The most editorially faithful version for an NGO anniversary magazine.
+            </p>
+            <Link
+              href="/magazine/template-06.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-primary-700"
+            >
+              Open Template 6
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </Link>
+          </div>
+
           <div className="rounded-lg border border-gray-200 bg-primary-50 p-4 text-sm text-gray-700">
             <p className="font-semibold text-gray-900 mb-1">Save as PDF (Chrome)</p>
             <p className="mb-0">
