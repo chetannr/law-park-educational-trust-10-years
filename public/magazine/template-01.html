@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Law Park Educational Trust – 10-Year Anniversary Magazine</title>
+  <style>
+    /* ============================================================
+       Print-ready A4 magazine – Law Park Educational Trust
+       Greens and neutrals · Georgia headings · system body font
+       ============================================================ */
+    :root {
+      --primary:        #15803d;
+      --primary-light:  #16a34a;
+      --primary-pale:   #f0fdf4;
+      --primary-soft:   #dcfce7;
+      --accent:         #92400e;
+      --text:           #1f2937;
+      --text-muted:     #6b7280;
+      --neutral-bg:     #f9fafb;
+      --neutral-alt:    #f3f4f6;
+      --border:         #e5e7eb;
+      --white:          #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @page {
+      size: A4 portrait;
+      margin: 15mm;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text);
+      background: #e5e7eb;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .magazine {
+      width: 210mm;
+      margin: 0 auto;
+      background: var(--white);
+    }
+
+    @media print {
+      body { background: var(--white); }
+      .magazine { box-shadow: none; }
+    }
+
+    /* ── Section wrappers ── */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 14mm 16mm;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .page + .page { page-break-before: always; }
+
+    /* ── Typography ── */
+    h1, h2, h3, h4 {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--primary);
+      page-break-after: avoid;
+    }
+    h1 { font-size: 30px; line-height: 1.2; }
+    h2 { font-size: 22px; line-height: 1.3; margin-bottom: 0.5em; }
+    h3 { font-size: 16px; line-height: 1.3; margin-bottom: 0.3em; }
+    h4 { font-size: 14px; color: var(--primary-light); margin-bottom: 0.25em; }
+    p  { font-size: 13.5px; margin-bottom: 0.8em; }
+    p:last-child { margin-bottom: 0; }
+    ul { padding-left: 1.2em; margin-bottom: 0.8em; }
+    li { font-size: 13.5px; margin-bottom: 0.3em; }
+    strong { color: var(--primary); }
+
+    .small { font-size: 12px; color: var(--text-muted); }
+    .muted { color: var(--text-muted); }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 2px solid var(--primary-soft);
+      margin: 1em 0;
+    }
+
+    /* ── Callout box ── */
+    .callout {
+      background: var(--primary-pale);
+      border-left: 4px solid var(--primary);
+      padding: 0.7em 1em;
+      border-radius: 0 6px 6px 0;
+      margin: 0.8em 0;
+      break-inside: avoid;
+    }
+    .callout strong { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--primary); margin-bottom: 0.2em; }
+    .callout p { font-size: 13px; margin: 0; }
+
+    /* ── Pull quote ── */
+    .pull-quote {
+      border-top: 3px solid var(--primary);
+      border-bottom: 3px solid var(--primary);
+      padding: 0.8em 1em;
+      margin: 1em 0;
+      text-align: center;
+      break-inside: avoid;
+    }
+    .pull-quote p {
+      font-family: Georgia, serif;
+      font-size: 16px;
+      font-style: italic;
+      color: var(--primary);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ── Two-column grid ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2em;
+    }
+    .col-item { break-inside: avoid; }
+
+    /* ── Three-column grid (for team supporters) ── */
+    .three-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.8em;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--neutral-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.8em 1em;
+      break-inside: avoid;
+    }
+
+    /* ── Tag / badge ── */
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 0.15em 0.55em;
+      border-radius: 99px;
+      margin-bottom: 0.3em;
+    }
+    .badge-green  { background: var(--primary-soft);  color: var(--primary); }
+    .badge-amber  { background: #fef3c7;               color: var(--accent);  }
+
+    /* ── Section header strip ── */
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      background: var(--primary);
+      display: inline-block;
+      padding: 0.25em 0.8em;
+      border-radius: 3px;
+      margin-bottom: 0.6em;
+    }
+
+    /* ── Timeline year pill ── */
+    .year-pill {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 0.2em 0.8em;
+      border-radius: 99px;
+      margin-bottom: 0.3em;
+      font-family: Georgia, serif;
+    }
+
+    /* ── Testimonial block ── */
+    .testimonial {
+      background: var(--white);
+      border-left: 4px solid var(--primary-light);
+      padding: 0.8em 1em;
+      border-radius: 0 6px 6px 0;
+      break-inside: avoid;
+    }
+    .testimonial p { font-size: 13px; font-style: italic; margin-bottom: 0.4em; }
+    .testimonial .attr { font-size: 12px; font-style: normal; color: var(--text-muted); font-weight: 600; }
+
+    /* ── Children story block ── */
+    .story-block {
+      background: var(--primary-pale);
+      border-radius: 8px;
+      padding: 1em 1.2em;
+      break-inside: avoid;
+      margin-bottom: 1em;
+    }
+    .story-block h3 { color: var(--primary); margin-bottom: 0.3em; }
+
+    /* ── Table ── */
+    table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+    th { background: var(--primary); color: var(--white); text-align: left; padding: 0.4em 0.6em; font-size: 12px; }
+    td { padding: 0.35em 0.6em; border-bottom: 1px solid var(--border); }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: var(--neutral-bg); }
+
+    /* ── Process steps ── */
+    .process-step {
+      display: flex;
+      gap: 0.8em;
+      align-items: flex-start;
+      margin-bottom: 0.9em;
+      break-inside: avoid;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      font-family: Georgia, serif;
+    }
+    .step-body { flex: 1; }
+    .step-body h4 { margin-bottom: 0.2em; }
+
+    /* ── Cover specific ── */
+    .cover-wrap {
+      min-height: 267mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: var(--primary-pale);
+      border-radius: 6px;
+      padding: 2em;
+    }
+    .cover-trust-name {
+      font-size: 34px;
+      color: var(--primary);
+      font-family: Georgia, serif;
+      line-height: 1.2;
+      margin-bottom: 0.4em;
+    }
+    .cover-years {
+      font-size: 18px;
+      color: var(--primary-light);
+      font-family: Georgia, serif;
+      margin-bottom: 0.8em;
+    }
+    .cover-tagline {
+      font-size: 15px;
+      font-style: italic;
+      color: var(--text-muted);
+      max-width: 380px;
+      margin: 0 auto 1.5em;
+      line-height: 1.6;
+    }
+    .cover-detail {
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+    }
+    .cover-ornament {
+      font-size: 48px;
+      margin-bottom: 1em;
+      line-height: 1;
+    }
+    .cover-logo {
+      width: 80px;
+      height: auto;
+      margin-bottom: 1em;
+      display: block;
+    }
+    .magazine-img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+      break-inside: avoid;
+    }
+    .magazine-img-wrap {
+      margin: 0.8em 0;
+      break-inside: avoid;
+    }
+    .magazine-img-wrap .magazine-caption {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 0.3em;
+    }
+    .award-img-wrap {
+      text-align: center;
+      margin: 1em 0;
+      break-inside: avoid;
+    }
+    .award-img-wrap .magazine-img {
+      max-width: 180px;
+      margin: 0 auto;
+    }
+
+    /* ── Award page ── */
+    .award-highlight {
+      background: var(--neutral-alt);
+      border: 2px solid var(--primary);
+      border-radius: 8px;
+      padding: 1.2em 1.5em;
+      margin: 1em 0;
+      break-inside: avoid;
+    }
+    .award-highlight h3 { font-size: 18px; }
+    .award-highlight .award-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4em 1em; margin-top: 0.8em; }
+    .award-highlight .award-meta div { font-size: 12.5px; }
+    .award-highlight .award-meta span { font-weight: 700; color: var(--primary); }
+
+    /* ── Support page ── */
+    .support-option {
+      display: flex;
+      gap: 0.8em;
+      align-items: flex-start;
+      padding: 0.8em;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-bottom: 0.7em;
+      background: var(--white);
+      break-inside: avoid;
+    }
+    .support-icon { font-size: 22px; flex-shrink: 0; }
+    .support-body h4 { color: var(--primary); margin-bottom: 0.2em; }
+    .support-body p { font-size: 13px; margin: 0; }
+    .donation-box {
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 8px;
+      padding: 1em 1.5em;
+      text-align: center;
+      margin: 1em 0;
+      break-inside: avoid;
+    }
+    .donation-box h3 { color: var(--white); font-size: 17px; margin-bottom: 0.3em; }
+    .donation-box .donate-url { font-size: 14px; font-weight: 700; letter-spacing: 0.02em; }
+    .donation-box p { font-size: 12.5px; color: #d1fae5; margin-top: 0.3em; }
+
+    /* ── Footer strip ── */
+    .page-footer {
+      position: absolute;
+      bottom: 8mm;
+      left: 16mm;
+      right: 16mm;
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 0.4em;
+    }
+  </style>
+</head>
+<body>
+<div class="magazine">
+
+  <!-- ═══════════════════════════════════════════════
+       PAGE 1 — COVER
+       ═══════════════════════════════════════════════ -->
+  <div class="page">
+    <div class="cover-wrap">
+      <img src="/logo.webp" alt="Law Park Educational Trust" class="cover-logo" width="80" height="80" />
+      <div class="cover-ornament">📚</div>
+      <div class="cover-trust-name">Law Park Educational Trust</div>
+      <div class="cover-years">Celebrating 10 Years · 2016 – 2025</div>
+      <div class="cover-tagline">"When it comes to education, no child deserves to be left behind."</div>
+      <hr class="divider" style="width:60px; border-top: 2px solid var(--primary); margin: 0 auto 1.5em;" />
+      <div class="cover-detail">HSR Layout, Bengaluru · Registered Educational Trust</div>
+      <div class="cover-detail" style="margin-top:0.4em;">Education · Hope · Change</div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════
+       PAGE 2 — NOTE FROM OUR TRUSTEES
+       ═══════════════════════════════════════════════ -->
+  <div class="page">
+    <span class="section-label">A Note from Our Trustees</span>
+    <h2>To Every Child, Every Donor, Every Well-Wisher</h2>
+    <hr class="divider" />
+
+    <p>Ten years ago, this journey began with a simple belief: every child, no matter where they are born or how much money their family has, deserves a chance to learn.</p>
+
+    <p>We started small — one child, one scholarship, one village visit. We drove to Chickaballapur, sat with children and their parents under open skies, and listened to stories of dreams that just needed a little help to come true.</p>
+
+    <p>Today, as we mark a decade of this work, we are filled with gratitude. Gratitude for the children who trusted us. Gratitude for the parents who believed us. Gratitude for every donor, volunteer, and partner who said: <em>"Yes, let's do this together."</em></p>
+
+    <p>This magazine is our way of saying thank you — and of reminding ourselves why we started.</p>
+
+    <div class="pull-quote">
+      <p>"Education is not a gift we give to children. It is a right that belongs to them. Our only job is to make sure nothing stands in the way."</p>
+    </div>
+
+    <p>We hope these pages make you smile, make you proud, and inspire you to walk a little further with us.</p>
+
+    <div style="margin-top: 2em; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em;">
+      <div class="card">
+        <h4>Mrs. Charulatha</h4>
+        <p class="small">Founder &amp; Managing Trustee<br />Law Park Educational Trust</p>
+      </div>
+      <div class="card">
+        <h4>Mr. S. M. Manjunatha</h4>
+        <p class="small">Trustee<br />Law Park Educational Trust</p>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Law Park Educational Trust · 10-Year Anniversary Magazine</span>
+      <span>lawparkeducationaltrust.org</span>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════
+       PAGE 3 — OUR STORY
+       ═══════════════════════════════════════════════ -->
+  <div class="page" style="background: var(--neutral-bg);">
+    <span class="section-label">Our Story</span>
+    <h2>10 Years of Believing in Every Child</h2>
+    <hr class="divider" />
+
+    <h3>The Problem We Decided to Solve</h3>
+    <p>Across India's villages and small towns, millions of children want to go to school. They are bright. They are curious. They are ready to learn. But somewhere between that dream and the classroom, money gets in the way.</p>
+    <p>Families without enough income are forced to make impossible choices. And quietly, one by one, children drop out — not because they don't want to study, but because nobody stepped in at the right moment.</p>
+    <p><strong>Law Park Educational Trust was born to be that step.</strong></p>
+
+    <div class="magazine-img-wrap">
+      <img src="/images/slide_03_Picture_1_00.jpg" alt="School visit" class="magazine-img" width="400" height="267" />
+      <p class="magazine-caption">Our first school visit — Chickaballapur</p>
+    </div>
+
+    <hr class="divider" />
+    <h3>Who We Are</h3>
+    <p>We are a registered educational trust based in HSR Layout, Bengaluru. Since 2016, we have been travelling to rural areas across Karnataka — from Chickaballapur to MM Hills tribal villages — to find children who need partial scholarship support to stay in school.</p>
+    <p>We don't just send money. We visit in person. We sit with families. We interview children. We pay fees directly to schools so every rupee reaches where it should.</p>
+
+    <hr class="divider" />
+    <h3>How It Works</h3>
+
+    <div class="process-step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h4>Identify</h4>
+        <p>School principals, well-wishers, and community members nominate deserving students from income-deprived backgrounds who need support to continue their education.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h4>Validate</h4>
+        <p>We visit the location, gather students and parents, and interview each family to verify their situation — with care, respect, and no shortcuts.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h4>Embrace</h4>
+        <p>We cover up to 75% of a child's tuition fees. Parents contribute the remaining part — because involvement creates ownership. Anything given fully free has no lasting value.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h4>Incubate</h4>
+        <p>Fees are paid directly to the school — not through parents — so children can focus solely on their studies and tap their fullest potential.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Did you know?</strong>
+      <p>We pay school fees directly to schools — not through parents — so every rupee is accountable and every child benefits.</p>
+    </div>
+
+    <div class="page-footer">
+      <span>Law Park Educational Trust · 10-Year Anniversary Magazine</span>
+      <span>journey.lawparkeducationaltrust.org</span>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════
+       PAGE 4 — TIMELINE 2016–2025 (Part 1)
+       ═══════════════════════════════════════════════ -->
+  <div class="page">
+    <span class="section-label">Ten Years, One Timeline</span>
+    <h2>2016 – 2025: A Journey in Milestones</h2>
+    <hr class="divider" />
+
+    <div class="two-col">
+
+      <div class="col-item">
+        <div class="card">
+          <span class="year-pill">2016</span>
+          <h3>Our First Scholarship</h3>
+          <p>Every journey begins somewhere. Ours began in Chickaballapur with <strong>one child</strong> receiving our very first scholarship. On that same visit, we distributed steel plates and steel glasses to <strong>150 students</strong> at a local school — small things that meant the world.</p>
+          <p class="small">📍 Chickaballapur</p>
+        </div>
+      </div>
+
+      <div class="col-item">
+        <div class="card">
+          <span class="year-pill">2017</span>
+          <h3>Growing Support</h3>
+          <p>One became ten. This year, <strong>10 students</strong> received scholarships in Chickaballapur. With each new child, our resolve grew stronger.</p>
+          <p class="small">📍 Chickaballapur</p>
+        </div>
+      </div>
+
+      <div class="col-item">
+        <div class="card">
+          <span class="year-pill">2018</span>
+          <h3>Building the Foundation</h3>
+          <p>We continued our work in Chickaballapur, deepening our presence and strengthening trust with the communities we served.</p>
+          <p class="small">📍 Chickaballapur</p>
+        </div>
+      </div>
+
+      <div class="col-item">
+        <div class="card">
+          <span class="year-pill">2019</span>
+          <h3>Growing Impact</h3>
+          <p>Scholarships reached more children as we expanded our support. Each new family we met reinforced how urgent this work truly is.</p>
+          <p class="small">📍 Chickaballapur</p>
+        </div>
+      </div>
+
+      <div class="col-item">
+        <div class="card">
+          <span class="year-pill">2020</span>
+          <h3>Pandemic Resilience</h3>
+          <p>The world came to a standstill — but our children's need for support did not. We found ways to continue our commitment through the challenging times of the pandemic.</p>
+        </div>
+      </div>
+
+      <div class="col-item">
+        <div class="card">
+          <span class="year-pill">2021</span>
+          <h3>A Significant Milestone</h3>
+          <p>More children received scholarships, marking a meaningful milestone in our journey. Every year, the trust grew — not just in numbers, but in the depth of the relationships we built.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="magazine-img-wrap two-col" style="margin-top:0.8em;">
+      <div><img src="/images/slide_09_Picture_1_00.jpg" alt="Library initiative" class="magazine-img" width="280" height="187" /><p class="magazine-caption">Library in a rural school</p></div>
+      <div><img src="/images/slide_18_Picture_2_00.jpg" alt="MM Hills visit" class="magazine-img" width="280" height="187" /><p class="magazine-caption">MM Hills — school bags &amp; stationery</p></div>
+    </div>
+    <div class="pull-quote" style="margin-top:1em;">
+      <p>"Ten years. Hundreds of children. Countless stories of hope."</p>
+    </div>
+
+    <div class="page-footer">
+      <span>Law Park Educational Trust · 10-Year Anniversary Magazine</span>
+      <span>Page 4 of 10</span>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════
+       PAGE 5 — TIMELINE 2022–2025 (Part 2)
+       ═══════════════════════════════════════════════ -->
+  <div class="page" style="background: var(--neutral-bg);">
+    <span class="section-label">Ten Years, One Timeline</span>
+    <h2>2022 – 2025: New Places, Bigger Dreams</h2>
+    <hr class="divider" />
+
+    <div class="col-item" style="margin-bottom: 1em;">
+      <div class="card">
+        <span class="year-pill">2022</span>
+        <h3>Opening the Doors of Libraries</h3>
+        <p>Books open worlds. We set up <strong>libraries in several rural schools</strong>, filling shelves with story books, academic books, and unused notebooks donated by generous supporters. We also held a rural scholarship event at our Law Park office premises.</p>
+        <div class="callout" style="margin-top:0.6em;">
+          <strong>From a village to a classroom</strong>
+          <p>"A library in your school means a world of stories that were never available before."</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-item" style="margin-bottom: 1em;">
+      <div class="card">
+        <span class="year-pill">2023</span>
+        <h3>New Places, New Dreams</h3>
+        <p>Our reach expanded to <strong>Mysore and H.D. Kote</strong>. We conducted career counselling sessions for <strong>9th and 10th standard students</strong> — helping young people think beyond today and plan for tomorrow.</p>
+        <p class="small">📍 Mysore · H.D. Kote</p>
+      </div>
+    </div>
+
+    <div class="col-item" style="margin-bottom: 1em;">
+      <div class="card">
+        <span class="year-pill">2024</span>
+        <h3>Going Further, Giving More</h3>
+        <p>Visited <strong>DMS Jnana Kuteera School</strong> for interviews and career counselling. Conducted scholarship interviews in <strong>Mulbagal</strong>. Distributed <strong>200 school bags, notebooks, and stationeries</strong> to tribal school children at MM Hills, marking the start of academic year 2024–25. Extended support to <strong>HIV-affected children</strong>.</p>
+        <p class="small">📍 Pandavapura · Mulbagal · MM Hills · H.D. Kote</p>
+      </div>
+    </div>
+
+    <div class="col-item" style="margin-bottom: 1em;">
+      <div class="card" style="border-color: var(--primary); border-width: 2px;">
+        <span class="year-pill">2025</span>
+        <h3>Our Biggest Year Yet</h3>
+        <ul style="margin-top: 0.4em;">
+          <li>Distributed <strong>300 school bags, notebooks &amp; stationeries</strong> to tribal children in H.D. Kote — in association with Nisarga Foundation</li>
+          <li>Conducted scholarship interviews in <strong>KGF and Kolar</strong></li>
+          <li>Distributed supplies to <strong>HIV-affected children and children with chronic health conditions</strong></li>
+          <li><strong>20 students</strong> received scholarships at DMS Jnana Kuteera School</li>
+        </ul>
+        <p class="small" style="margin-top: 0.5em;">📍 H.D. Kote · KGF · Kolar · Pandavapura</p>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Law Park Educational Trust · 10-Year Anniversary Magazine</span>
+      <span>journey.lawparkeducationaltrust.org</span>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════
+       PAGE 6 — WHAT WE DO (Part 1)
+       ═══════════════════════════════════════════════ -->
+  <div class="page">
+    <span class="section-label">What We Do</span>
+    <h2>More Than Scholarships — A Full Circle of Support</h2>
+    <hr class="divider" />
+    <p>When we say we support a child's education, we mean it fully. Here is everything we bring to a child's journey.</p>
+
+    <div class="two-col" style="margin-top: 0.8em;">
+
+      <div class="col-item">
+        <div class="card">
+          <h3>🎓 Partially Funded Scholarships</h3>
+          <p>We cover up to 75% of tuition fees for children from income-deprived families — allowing them to stay in school without the constant worry of fees hanging over their heads.</p>
+        </div>
+      </div>
+
+      <div class="col-item">
+        <div class="card">
+          <h3>🚗 We Travel to Meet the Kids</h3>
+          <p>Our team travels personally to villages, schools, and communities. We don't wait for children to come to us — we go to them. Face-to-face visits help us understand each child's real situation.</p>
+        </div>
+      </div>
+
+      <div class="col-item">
+        <div class="card">
+          <h3>🎒 Essential Supplies Distribution</h3>
+          <p>School bags. Notebooks. Pens. Stationery. Sanitary pads. Drawing kits. We distribute whatever a child needs to walk into school with confidence and dignity.</p>
+          <div class="callout" style="margin-top: 0.5em;">
+            <strong>Did you know?</strong>
+            <p>In 2024, we distributed 200 school bags to tribal school children in MM Hills. In 2025, that number grew to 300.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-item">
+        <div class="card">
+          <h3>🎮 Educational Games &amp; Activities</h3>
+          <p>Learning should be joyful. We organise fun, interactive games and activities that make children think, laugh, and discover — because curiosity is the best teacher.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="pull-quote" style="margin-top: 1em;">
+      <p>"Sometimes the smallest thing you give a child is the biggest thing they have ever received."</p>
+    </div>
+
+    <div class="page-footer">
+      <span>Law Park Educational Trust · 10-Year Anniversary Magazine</span>
+      <span>lawparkeducationaltrust.org</span>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════
+       PAGE 7 — WHAT WE DO (Part 2)
+       ═══════════════════════════════════════════════ -->
+  <div class="page" style="background: var(--neutral-bg);">
+    <span class="section-label">What We Do</span>
+    <h2>Learning, Culture, Careers &amp; Community</h2>
+    <hr class="divider" />
+
+    <div class="two-col">
+
+      <div class="col-item">
+        <div class="card">
+          <h3>📚 Cultural Awareness Programmes</h3>
+          <p>We share stories of language, heritage, and culture — like explaining how the Kannada language evolved through the origin of sounds (Varnamala). Children leave knowing their roots a little better.</p>
+        </div>
+      </div>
+
+      <div class="col-item">
+        <div class="card">
+          <h3>💼 Career Counselling</h3>
+          <p>For students in 9th and 10th standard, the future can feel confusing and far away. Our counselling sessions help them see what is possible, understand their options, and make confident choices about their education and career paths.</p>
+        </div>
+      </div>
+
+      <div class="col-item">
+        <div class="card">
+          <h3>📖 Library Setup in Rural Schools</h3>
+          <p>We set up libraries in rural schools with donated books — story books, academic texts, and unused notebooks — creating small, quiet corners where imagination can grow.</p>
+        </div>
+      </div>
+
+      <div class="col-item">
+        <div class="card">
+          <h3>🤝 Community Events &amp; Talent Showcases</h3>
+          <p>We organise events where children can sing, dance, and show their talents. These moments of celebration remind every child: <em>you are seen, you are valued.</em></p>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="divider" style="margin-top: 1.2em;" />
+    <h3 style="margin-top: 0.5em;">Our Reach</h3>
+    <div class="two-col" style="margin-top: 0.6em;">
+      <div class="card" style="text-align:center;">
+        <div style="font-size: 28px; font-family: Georgia, serif; color: var(--primary); font-weight: 700;">500+</div>
+        <p class="small" style="margin-top: 0.2em;">Students Supported</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-size: 28px; font-family: Georgia, serif; color: var(--primary); font-weight: 700;">10</div>
+        <p class="small" style="margin-top: 0.2em;">Years of Impact</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-size: 28px; font-family: Georgia, serif; color: var(--primary); font-weight: 700;">150+</div>
+        <p class="small" style="margin-top: 0.2em;">Schools Reached</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-size: 28px; font-family: Georgia, serif; color: var(--primary); font-weight: 700;">Several</div>
+        <p class="small" style="margin-top: 0.2em;">Donors &amp; Supporters</p>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Law Park Educational Trust · 10-Year Anniversary Magazine</span>
+      <span>journey.lawparkeducationaltrust.org</span>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════
+       PAGE 8 — CHILDREN'S VOICES
+       ═══════════════════════════════════════════════ -->
+  <div class="page">
+    <span class="section-label">Children's Voices</span>
+    <h2>Three Stories of Hope</h2>
+    <p class="small muted" style="margin-bottom: 0.8em;">Stories inspired by the real children we have met and supported. Names have been changed to protect privacy.</p>
+    <hr class="divider" />
+
+    <div class="magazine-img-wrap" style="margin-bottom: 1em;">
+      <img src="/images/slide_28_Picture_3_00.jpg" alt="Children at an event" class="magazine-img" width="400" height="267" />
+      <p class="magazine-caption">Celebrating learning together</p>
+    </div>
+
+    <div class="story-block">
+      <h3>Meena's Story — "I Almost Stopped Going to School"</h3>
+      <p>Meena was twelve when her father lost his daily wage work for two months. The school sent home a reminder about unpaid fees. She sat outside her house, wondering if she would have to stop studying.</p>
+      <p>Her teacher knew about Law Park Educational Trust. A few weeks later, a team visited her village, met her family, and asked Meena what she wanted to become.</p>
+      <p><em>"A teacher,"</em> she said quietly.</p>
+      <p>Her fees were taken care of. She is now in the 9th standard — and attended a career counselling session organised by the Trust. She knows exactly which stream she wants to take after 10th.</p>
+    </div>
+
+    <div class="story-block">
+      <h3>Raju's Story — "The School Bag Changed Everything"</h3>
+      <p>Raju lives near MM Hills. Until last year, he carried his books in a torn plastic bag. He was embarrassed to walk into school.</p>
+      <p>When the Trust visited with 300 school bags, Raju got a new one. It seems like a small thing. But for a ten-year-old boy, that bag meant he <em>belonged</em> — just like every other child. His mother says he now wakes up early every morning, packs his bag the night before, and never misses a day of school.</p>
+    </div>
+
+    <div class="story-block">
+      <h3>Sunita's Story — "A Library in My School"</h3>
+      <p>Sunita had never read a storybook. Her school had no library — just textbooks and chalk. When Law Park Educational Trust set up a small library, Sunita picked up a story about a girl who becomes a doctor. She read it three times.</p>
+      <p>Today she visits the library every week. She wants to be a doctor — because she read about one in a book that someone donated.</p>
+    </div>
+
+    <div class="pull-quote">
+      <p>"A donated book is not just paper and ink. It is someone's dream, passed on to a child who needed it."</p>
+    </div>
+
+    <div class="page-footer">
+      <span>Law Park Educational Trust · 10-Year Anniversary Magazine</span>
+      <span>lawparkeducationaltrust.org</span>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════
+       PAGE 9 — DONOR & VOLUNTEER VOICES
+       ═══════════════════════════════════════════════ -->
+  <div class="page" style="background: var(--primary-soft);">
+    <span class="section-label">Donor &amp; Volunteer Voices</span>
+    <h2>In Their Own Words</h2>
+    <p style="margin-bottom: 0.8em;">The people who make our work possible.</p>
+    <hr class="divider" />
+
+    <div class="two-col">
+
+      <div class="col-item">
+        <div class="testimonial">
+          <p>"I'm impressed with the dedication and focus in bringing children back to school. The approach of shortlisting each student to ensure their success is unparalleled. Appreciate this initiative from Law Park Educational Trust."</p>
+          <div class="attr">— Sreekanth, Director, Tech Hat Pvt. Ltd.</div>
+        </div>
+      </div>
+
+      <div class="col-item">
+        <div class="testimonial">
+          <p>"It is a genuine and selfless effort of the Trustees to provide financial and other educational resources to children in need — with the main goal of the right to education, regardless of socioeconomic background."</p>
+          <div class="attr">— Dr. Varalakshmi &amp; Dr. Nanda Kumar, Hershey, USA</div>
+        </div>
+      </div>
+
+      <div class="col-item">
+        <div class="testimonial">
+          <p>"Law Park Educational Trust is doing phenomenal work by facilitating the basic right of education to underprivileged children of our country at large."</p>
+          <div class="attr">— Aishwarya K, Director, Versalis International</div>
+        </div>
+      </div>
+
+      <div class="col-item">
+        <div class="testimonial">
+          <p>"I am amazed at the level of commitment the Trust puts in. It is a privilege to be part of something that provides education, books, gadgets, and benefits to economically backward students in rural areas."</p>
+          <div class="attr">— Ramya Balaji, Music Instructor</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="testimonial" style="margin-top: 1em; background: var(--white);">
+      <p>"They make the effort to know each child personally, understand their problems, and respond to their needs. That personal touch is what makes this work real."</p>
+      <div class="attr">— Mr. Nihar Panigrahi, Senior Software Engineer</div>
+    </div>
+
+    <div class="pull-quote" style="margin-top: 1em;">
+      <p>"Your yes could be the one that changes a life."</p>
+    </div>
+
+    <div class="page-footer">
+      <span>Law Park Educational Trust · 10-Year Anniversary Magazine</span>
+      <span>journey.lawparkeducationaltrust.org</span>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════
+       PAGE 10 — BHARAT SHIKSHA RATAN AWARD
+       ═══════════════════════════════════════════════ -->
+  <div class="page" style="background: var(--neutral-alt);">
+    <span class="section-label">Recognition &amp; Awards</span>
+    <h2>The Bharat Shiksha Ratan Award</h2>
+    <hr class="divider" />
+
+    <p>This is not just an award. It is confirmation of what hundreds of children, parents, donors, and volunteers have known for ten years: <strong>this work matters.</strong></p>
+
+    <div class="award-img-wrap">
+      <img src="/images/Bharat-Shiksha-Ratan-Award.jpg" alt="Bharat Shiksha Ratan Award" class="magazine-img" width="180" height="135" />
+    </div>
+    <div class="award-highlight">
+      <h3>🏆 Bharat Shiksha Ratan Award</h3>
+      <div class="award-meta">
+        <div><span>Date:</span> 19th December 2025</div>
+        <div><span>Location:</span> New Delhi</div>
+        <div><span>Awarded by:</span> Economic and Social Development Foundation (E.S.D.F.)</div>
+        <div><span>Recipient:</span> Mrs. Charulatha M. R. (Founder)</div>
+        <div><span>Presented by:</span> Mr. Kamal Singh Negi (Cabinet Minister) &amp; Mr. Dinesh Upadhyay (Ayush Minister)</div>
+        <div><span>Context:</span> Selected from 25 awardees at the National Summit</div>
+      </div>
+    </div>
+
+    <p style="margin-top: 1em;">This recognition was presented at a National Summit in New Delhi, honouring our decade-long commitment to transforming lives through education. Out of 25 awardees from across the country, Law Park Educational Trust was honoured to receive this distinguished award.</p>
+
+    <p>This award is a testament to our joint efforts and the collective impact we have made in bringing quality education to underprivileged children across India.</p>
+
+    <div class="pull-quote">
+      <p>"This award belongs to every child who dared to dream, every parent who trusted us, and every well-wisher who said yes."<br /><span style="font-size: 13px; font-style: normal; color: var(--text-muted);">— Mrs. Charulatha, Founder</span></p>
+    </div>
+
+    <p>This recognition is a testament to a decade of quiet, steady, determined work — done not for awards, but for the children. And yet, it is deeply meaningful to be seen, celebrated, and encouraged to keep going.</p>
+
+    <div class="page-footer">
+      <span>Law Park Educational Trust · 10-Year Anniversary Magazine</span>
+      <span>lawparkeducationaltrust.org</span>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════
+       PAGE 11 — OUR TEAM & PARTNERS
+       ═══════════════════════════════════════════════ -->
+  <div class="page">
+    <span class="section-label">Our Team &amp; Partners</span>
+    <h2>The People Behind the Work</h2>
+    <hr class="divider" />
+
+    <h3>The Trustees</h3>
+    <div class="two-col" style="margin: 0.6em 0 1em;">
+      <div class="card">
+        <span class="badge badge-green">Managing Trustee</span>
+        <h4>Mrs. Charulatha</h4>
+        <p class="small">Founder of Law Park Educational Trust. In her young age she used to teach poor children in her locality free of cost — that was the foundation for this Trust. She holds a B.A. Economics (Chennai), LLB (Bangalore), and PGDIPRL from National Law School of India University. Long before the Trust was registered, she was already paying school fees for children who needed help. That spirit lives on in every scholarship we give.</p>
+      </div>
+      <div class="card">
+        <span class="badge badge-green">Trustee</span>
+        <h4>Mr. S. M. Manjunatha</h4>
+        <p class="small">Hailing from the small village of Sadenahalli, Karnataka, he was the first in his family to leave the village to study in the city. He graduated in Law from Bangalore, encouraged his fellow friends and cousins to follow in his footsteps, and funded many children from his village who have now grown into well-settled, contributing members of society.</p>
+      </div>
+    </div>
+
+    <h3>Our Volunteers &amp; Supporters</h3>
+    <table style="margin-top: 0.5em;">
+      <tr><th>Name</th><th>Role</th><th>City</th><th>Type</th></tr>
+      <tr><td>Geetha Jayaram</td><td>Education Counselor</td><td>HSR, Bengaluru</td><td><span class="badge badge-green">Volunteer</span></td></tr>
+      <tr><td>Mr. Chetan Kumar N</td><td>Software Engineer</td><td>HSR, Bengaluru</td><td><span class="badge badge-green">Volunteer</span></td></tr>
+      <tr><td>Mrs. Jeevitha S</td><td>Software Engineer</td><td>HSR, Bengaluru</td><td><span class="badge badge-green">Volunteer</span></td></tr>
+      <tr><td>Mr. Sai Prashanth Pillarisetty</td><td>International Donor &amp; Supporter</td><td>—</td><td><span class="badge badge-amber">Donor</span></td></tr>
+      <tr><td>Mr. Anand</td><td>Program Manager</td><td>USA</td><td><span class="badge badge-amber">Donor</span></td></tr>
+      <tr><td>Mr. Sreekanth</td><td>Director, Tech Hat</td><td>Bangalore</td><td><span class="badge badge-green">Volunteer</span></td></tr>
+      <tr><td>Mrs. Nandini</td><td>Lead Consultant, ITC</td><td>Bangalore</td><td><span class="badge badge-green">Volunteer</span></td></tr>
+      <tr><td>K. Krishnapriya</td><td>Customer Support Manager</td><td>Bangalore</td><td><span class="badge badge-green">Volunteer</span></td></tr>
+      <tr><td>Roopa Gante</td><td>Senior Product Developer, Gainwell</td><td>Bangalore</td><td><span class="badge badge-green">Volunteer</span></td></tr>
+      <tr><td>Ms. Navya</td><td>Public Health Research Associate, IPH</td><td>Bangalore</td><td><span class="badge badge-green">Volunteer</span></td></tr>
+      <tr><td>Dr. Adarsh</td><td>Manager, Avanti Pet Care</td><td>Hyderabad</td><td><span class="badge badge-amber">Donor</span></td></tr>
+      <tr><td>Mrs. Bhavya</td><td>Home maker</td><td>Bangalore</td><td><span class="badge badge-amber">Donor</span></td></tr>
+      <tr><td>Mr. Rajesh</td><td>Advocate</td><td>Bangalore</td><td><span class="badge badge-green">Volunteer</span></td></tr>
+      <tr><td>Mr. Nagendra</td><td>Community Volunteer</td><td>Bengaluru</td><td><span class="badge badge-green">Volunteer</span></td></tr>
+      <tr><td>Dr. Nanda Kumar</td><td>International Supporter</td><td>USA</td><td><span class="badge badge-amber">Donor</span></td></tr>
+      <tr><td>Mr. Venkat</td><td>Advocate</td><td>Bengaluru</td><td><span class="badge badge-green">Volunteer</span></td></tr>
+      <tr><td>Mrs. Lavanya</td><td>Community Supporter</td><td>Bengaluru</td><td><span class="badge badge-amber">Donor</span></td></tr>
+      <tr><td>Mrs. Sumithra</td><td>Partner, Royal Enfield</td><td>Bengaluru</td><td><span class="badge badge-amber">Donor</span></td></tr>
+      <tr><td>Ms. Pragya</td><td>Community Volunteer</td><td>Bengaluru</td><td><span class="badge badge-green">Volunteer</span></td></tr>
+      <tr><td>Mrs. Neha</td><td>Community Supporter</td><td>Bengaluru</td><td><span class="badge badge-amber">Donor</span></td></tr>
+    </table>
+
+    <div class="callout" style="margin-top: 1em;">
+      <strong>Partner NGO</strong>
+      <p><strong>Nisarga Foundation</strong> — In 2025, we partnered with Nisarga Foundation to distribute 300 school bags, notebooks, and stationeries to tribal children in H.D. Kote.</p>
+    </div>
+
+    <div class="page-footer">
+      <span>Law Park Educational Trust · 10-Year Anniversary Magazine</span>
+      <span>journey.lawparkeducationaltrust.org</span>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════
+       PAGE 12 — HOW YOU CAN HELP
+       ═══════════════════════════════════════════════ -->
+  <div class="page" style="background: var(--primary-pale);">
+    <span class="section-label">How You Can Help</span>
+    <h2>Every Contribution Keeps a Child in School</h2>
+    <hr class="divider" />
+
+    <p>Ten years in, we are still driven by the same belief: a child's right to education should never depend on how much money their family has.</p>
+    <p>Here is how you can be part of that.</p>
+
+    <div style="margin-top: 0.8em;">
+
+      <div class="support-option">
+        <div class="support-icon">💝</div>
+        <div class="support-body">
+          <h4>Donate</h4>
+          <p>Your donation helps pay up to 75% of a child's school fees. Fees are paid directly to the school — so every rupee is accountable and every child benefits.</p>
+        </div>
+      </div>
+
+      <div class="support-option">
+        <div class="support-icon">🙌</div>
+        <div class="support-body">
+          <h4>Volunteer</h4>
+          <p>Do you have skills in education, counselling, technology, legal support, or community outreach? We welcome volunteers who can give their time and expertise.</p>
+        </div>
+      </div>
+
+      <div class="support-option">
+        <div class="support-icon">🤝</div>
+        <div class="support-body">
+          <h4>Partner With Us</h4>
+          <p>If you represent a company, school, or organisation that shares our values, we would love to explore how we can work together — through CSR programmes, supply drives, or joint events.</p>
+        </div>
+      </div>
+
+      <div class="support-option">
+        <div class="support-icon">📢</div>
+        <div class="support-body">
+          <h4>Spread the Word</h4>
+          <p>Share our story. Post about our work. Introduce us to someone who might want to help. Sometimes the most powerful thing you can do is tell someone else about us.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="donation-box">
+      <h3>Donate Online</h3>
+      <div class="donate-url">razorpay.me/@lawparkeducationaltrust</div>
+      <p>Secure · Instant · Every rupee goes to a child's education</p>
+    </div>
+
+    <div class="card" style="margin-top: 0.8em;">
+      <h4>Get in Touch</h4>
+      <div class="two-col" style="margin-top: 0.5em;">
+        <div>
+          <p class="small"><strong>Law Park Educational Trust</strong><br />
+          No 19/A-1, 14th 'B' Cross, 2nd A Main Rd,<br />
+          6th Sector, HSR Layout, Bengaluru – 560102</p>
+        </div>
+        <div>
+          <p class="small"><strong>Phone:</strong> +91 99456 65379<br />
+          <strong>Email:</strong> lawparktrust@gmail.com<br />
+          <strong>Website:</strong> lawparkeducationaltrust.org<br />
+          <strong>Journey:</strong> journey.lawparkeducationaltrust.org</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Law Park Educational Trust · 10-Year Anniversary Magazine · 2016–2025</span>
+      <span>lawparkeducationaltrust.org</span>
+    </div>
+  </div>
+
+</div><!-- /.magazine -->
+</body>
+</html>

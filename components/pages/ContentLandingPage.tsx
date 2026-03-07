@@ -17,6 +17,28 @@ function ContentLandingPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <Link href="/content/magazine" className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 rounded-lg">
+            <Card className="p-8 h-full" hover>
+              <div className="flex flex-col h-full">
+                <div className="mb-4 text-4xl" aria-hidden>
+                  📖
+                </div>
+                <h2 className="text-2xl font-bold mb-3 text-gray-900">
+                  Magazine
+                </h2>
+                <p className="text-gray-600 flex-1 mb-6">
+                  Print-ready A4 magazine templates for the 10-year anniversary. Open a template and export to PDF from the browser.
+                </p>
+                <span className="text-primary-600 font-semibold inline-flex items-center gap-2">
+                  View templates
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+            </Card>
+          </Link>
+
           <Link href="/content/award" className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 rounded-lg">
             <Card className="p-8 h-full" hover>
               <div className="flex flex-col h-full">
