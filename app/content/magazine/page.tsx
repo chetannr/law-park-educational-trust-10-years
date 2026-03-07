@@ -78,6 +78,24 @@ export default function MagazinePage() {
             </Link>
           </div>
 
+          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <h2 className="text-xl font-bold text-gray-900 mb-2">Template 4</h2>
+            <p className="text-gray-600 mb-4">
+              Same content as Template 2 with a magazine look: abstract background (subtle purple and green gradients), double frame (outer + inset border) on every page, and a soft frame on the cover. Best for a polished print feel.
+            </p>
+            <Link
+              href="/magazine/template-04.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-primary-700"
+            >
+              Open Template 4
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </Link>
+          </div>
+
           <div className="rounded-lg border border-gray-200 bg-primary-50 p-4 text-sm text-gray-700">
             <p className="font-semibold text-gray-900 mb-1">Save as PDF (Chrome)</p>
             <p className="mb-0">
