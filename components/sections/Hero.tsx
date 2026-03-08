@@ -1,16 +1,20 @@
+const NAVY = '#1c1c2e'
+const GOLD = '#c9903e'
+const GOLD_LIGHT = '#e0b06a'
+
 function Hero() {
   const imagePath = '/images/slide_28_Picture_3_00'
-  
+
   return (
-    <section className="relative min-h-[600px] sm:min-h-[700px] flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+    <section className="relative overflow-hidden" style={{ minHeight: '92vh' }}>
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <picture>
           <source srcSet={`${imagePath}.webp`} type="image/webp" />
           <img
             src={`${imagePath}.jpg`}
             alt="Children learning and education"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
             loading="eager"
             fetchPriority="high"
             width={1920}
@@ -18,32 +22,114 @@ function Hero() {
             decoding="async"
           />
         </picture>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/50" />
+        {/* Vogue-style gradient: photo visible top-right, dark bottom-left for text */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `linear-gradient(135deg, ${NAVY}ee 0%, ${NAVY}bb 40%, ${NAVY}55 70%, transparent 100%)`,
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `linear-gradient(to top, ${NAVY}cc 0%, transparent 50%)`,
+          }}
+        />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
-        <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl drop-shadow-lg">
-            <span className="block">10 Years of</span>
-            <span className="block text-primary-400">Transforming Lives</span>
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-white/95 sm:text-xl drop-shadow-md">
-            Law Park Educational Trust helps children from rural areas across India get their right to education through partially funded scholarships.
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
-            <a
-              href="#get-involved"
-              className="rounded-md bg-primary-600 px-6 py-3 text-base font-semibold text-white shadow-lg transition-colors hover:bg-primary-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white focus-visible:ring-2 focus-visible:ring-white"
+      {/* Editorial content — left-aligned */}
+      <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-10 lg:px-16 w-full h-full flex flex-col justify-center" style={{ paddingTop: '18vh', paddingBottom: '120px' }}>
+        <div className="max-w-2xl">
+
+          {/* Gold overline */}
+          <div className="flex items-center gap-3 mb-6">
+            <div style={{ width: 40, height: 2, background: GOLD, borderRadius: 1 }} />
+            <span
+              className="text-xs font-semibold tracking-widest uppercase"
+              style={{ color: GOLD_LIGHT, fontFamily: 'Quicksand, sans-serif', letterSpacing: '0.22em' }}
             >
-              Get Involved
-            </a>
+              10-Year Anniversary · 2016 – 2025
+            </span>
+          </div>
+
+          {/* Headline */}
+          <h1
+            className="font-serif font-black text-white leading-tight mb-6"
+            style={{ fontSize: 'clamp(2.6rem, 6vw, 4.2rem)', lineHeight: 1.05 }}
+          >
+            A Decade of<br />
+            <span style={{ color: GOLD_LIGHT }}>Believing in</span><br />
+            Every Child
+          </h1>
+
+          {/* Gold rule */}
+          <div style={{ width: 56, height: 3, background: GOLD, marginBottom: '1.4rem', borderRadius: 2 }} />
+
+          {/* Subtext */}
+          <p
+            className="text-white/85 leading-relaxed mb-10"
+            style={{ fontSize: '1.1rem', maxWidth: 480, fontFamily: 'Quicksand, sans-serif', fontWeight: 400 }}
+          >
+            Law Park Educational Trust reaches children in rural Karnataka — providing scholarships, supplies, and the belief that no child should be left behind.
+          </p>
+
+          {/* Actions */}
+          <div className="flex flex-wrap items-center gap-4">
             <a
               href="#journey"
-              className="text-base font-semibold leading-6 text-white transition-colors hover:text-primary-300 drop-shadow-md underline underline-offset-4"
+              className="inline-flex items-center gap-2 font-semibold text-sm px-7 py-3 transition-all"
+              style={{
+                background: GOLD,
+                color: NAVY,
+                fontFamily: 'Quicksand, sans-serif',
+                letterSpacing: '0.04em',
+              }}
             >
-              Learn more <span aria-hidden="true">→</span>
+              Our Journey
             </a>
+            <a
+              href="#impact"
+              className="inline-flex items-center gap-2 font-semibold text-sm px-7 py-3 transition-all border"
+              style={{
+                borderColor: 'rgba(255,255,255,0.4)',
+                color: 'rgba(255,255,255,0.9)',
+                fontFamily: 'Quicksand, sans-serif',
+                letterSpacing: '0.04em',
+              }}
+            >
+              See Our Impact →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom stat strip — anchored to bottom of hero */}
+      <div
+        className="absolute bottom-0 left-0 right-0 z-10"
+        style={{ background: `${NAVY}f0`, borderTop: `2px solid ${GOLD}40` }}
+      >
+        <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
+          <div className="grid grid-cols-3 divide-x" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
+            {[
+              { num: '500+', label: 'Students Supported' },
+              { num: '10 Yrs', label: 'Of Continuous Impact' },
+              { num: '5+ Districts', label: 'Across Karnataka' },
+            ].map((s) => (
+              <div key={s.label} className="text-center py-5 px-4">
+                <div
+                  className="font-serif font-black"
+                  style={{ fontSize: '1.6rem', color: GOLD_LIGHT, lineHeight: 1 }}
+                >
+                  {s.num}
+                </div>
+                <div
+                  className="mt-1 font-medium uppercase tracking-wider"
+                  style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.55)', fontFamily: 'Quicksand, sans-serif', letterSpacing: '0.14em' }}
+                >
+                  {s.label}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

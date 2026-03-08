@@ -35,7 +35,7 @@ function StatCard({ label, value, suffix, customText }: { label: string; value: 
       { threshold: 0.5 }
     )
 
-    const element = document.getElementById(`stat-${label}`)
+    const element = document.getElementById(`stat-impact-${label}`)
     if (element) {
       observer.observe(element)
     }
@@ -48,38 +48,97 @@ function StatCard({ label, value, suffix, customText }: { label: string; value: 
   }, [value, label, hasAnimated, customText])
 
   return (
-    <div id={`stat-${label}`} className="text-center">
-      <div className="text-4xl font-bold text-primary-600 sm:text-5xl">
+    <div id={`stat-impact-${label}`} className="text-center">
+      <div
+        className="font-serif font-black"
+        style={{ fontSize: 'clamp(2.2rem, 5vw, 3rem)', color: '#e0b06a', lineHeight: 1 }}
+      >
         {customText || `${count.toLocaleString()}${suffix || ''}`}
       </div>
-      <div className="mt-2 text-base text-gray-600 sm:text-lg">{label}</div>
+      <div
+        className="mt-3 font-medium uppercase tracking-wider"
+        style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)', fontFamily: 'Quicksand, sans-serif', letterSpacing: '0.14em' }}
+      >
+        {label}
+      </div>
     </div>
   )
 }
 
+const NAVY = '#1c1c2e'
+const GOLD = '#c9903e'
+const GOLD_LIGHT = '#e0b06a'
+
 function ImpactOverview() {
   return (
-    <section id="impact" className="bg-white py-16 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+    <section id="impact" style={{ background: NAVY }} className="py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
+
+        {/* Section label */}
+        <div className="flex items-center gap-3 mb-3">
+          <div style={{ width: 32, height: 2, background: GOLD, borderRadius: 1 }} />
+          <span
+            className="text-xs font-semibold tracking-widest uppercase"
+            style={{ color: GOLD, fontFamily: 'Quicksand, sans-serif', letterSpacing: '0.2em' }}
+          >
             Our Impact
+          </span>
+        </div>
+
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
+          <h2
+            className="font-serif font-bold text-white"
+            style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', lineHeight: 1.15, maxWidth: 480 }}
+          >
+            Ten years of showing up,<br />
+            <span style={{ color: GOLD_LIGHT }}>one child at a time.</span>
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
-            Over the past 10 years, we've made a meaningful difference in the lives of hundreds of children across rural India.
+          <p
+            className="text-white/60 leading-relaxed"
+            style={{ fontFamily: 'Quicksand, sans-serif', maxWidth: 360, fontSize: '0.95rem' }}
+          >
+            From a single scholarship in Chickaballapur in 2016 to five districts across Karnataka in 2025 — here is what a decade looks like in numbers.
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-2 gap-8 sm:grid-cols-4">
+
+        {/* Stats grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-px" style={{ background: 'rgba(255,255,255,0.08)' }}>
           {stats.map((stat) => (
-            <StatCard
+            <div
               key={stat.label}
-              label={stat.label}
-              value={stat.value}
-              suffix={stat.suffix}
-              customText={stat.customText}
-            />
+              id={`stat-${stat.label}`}
+              style={{ background: NAVY }}
+              className="px-8 py-10 text-center"
+            >
+              <StatCard
+                label={stat.label}
+                value={stat.value}
+                suffix={stat.suffix}
+                customText={stat.customText}
+              />
+            </div>
           ))}
         </div>
+
+        {/* Pull quote */}
+        <div
+          className="mt-12 text-center"
+          style={{ borderTop: `1px solid rgba(255,255,255,0.1)`, paddingTop: '2rem' }}
+        >
+          <p
+            className="font-serif italic"
+            style={{ color: GOLD_LIGHT, fontSize: '1.1rem', maxWidth: 560, margin: '0 auto' }}
+          >
+            "When it comes to education, no child deserves to be left behind."
+          </p>
+          <div className="flex items-center justify-center gap-2 mt-3">
+            <div style={{ width: 20, height: 1.5, background: GOLD, borderRadius: 1 }} />
+            <span style={{ color: 'rgba(255,255,255,0.45)', fontFamily: 'Quicksand, sans-serif', fontSize: '0.75rem', letterSpacing: '0.1em' }}>
+              Mrs. Charulatha, Founder
+            </span>
+          </div>
+        </div>
+
       </div>
     </section>
   )

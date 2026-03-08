@@ -1,5 +1,3 @@
-import Card from '../ui/Card'
-
 export interface Trustee {
   name: string
   role: string
@@ -11,40 +9,73 @@ interface TrusteesProps {
   trustees: Trustee[]
 }
 
+const NAVY = '#1c1c2e'
+const GOLD = '#c9903e'
+const CREAM = '#faf8f3'
+
 export function Trustees({ trustees }: TrusteesProps) {
   return (
-    <section id="trustees" className="section-padding bg-gray-50">
-      <div className="container-custom">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Our Trustees
+    <section id="trustees" style={{ background: CREAM }} className="py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
+
+        <div className="mb-14">
+          <div className="flex items-center gap-3 mb-3">
+            <div style={{ width: 32, height: 2, background: GOLD, borderRadius: 1 }} />
+            <span
+              className="text-xs font-semibold uppercase"
+              style={{ color: GOLD, fontFamily: 'Quicksand, sans-serif', letterSpacing: '0.2em' }}
+            >
+              Leadership
+            </span>
+          </div>
+          <h2
+            className="font-serif font-bold"
+            style={{ color: NAVY, fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', lineHeight: 1.15 }}
+          >
+            The People Behind the Work
           </h2>
-          <p className="text-lg max-w-2xl mx-auto text-gray-600">
-            Meet the dedicated individuals leading our mission to transform lives through education.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
           {trustees.map((trustee, index) => (
-            <Card key={index} hover className="p-6">
+            <div
+              key={index}
+              className="bg-white flex gap-5 p-6"
+              style={{ borderTop: `3px solid ${GOLD}` }}
+            >
               {trustee.image && (
-                <div className="mb-4">
-                  <img
-                    src={trustee.image}
-                    alt={trustee.name}
-                    className="w-32 h-32 rounded-full object-cover mx-auto"
-                    loading="lazy"
-                  />
-                </div>
+                <img
+                  src={trustee.image}
+                  alt={trustee.name}
+                  className="w-20 h-20 object-cover shrink-0"
+                  style={{ borderRadius: 2 }}
+                  loading="lazy"
+                />
               )}
-              <div className="text-center">
-                <h3 className="text-xl font-bold mb-2">{trustee.name}</h3>
-                <p className="text-primary-600 font-semibold mb-4">{trustee.role}</p>
-                <p className="text-gray-600 leading-relaxed">{trustee.bio}</p>
+              <div>
+                <span
+                  className="text-xs font-semibold uppercase tracking-widest block mb-1"
+                  style={{ color: GOLD, fontFamily: 'Quicksand, sans-serif', letterSpacing: '0.16em' }}
+                >
+                  {trustee.role}
+                </span>
+                <h3
+                  className="font-serif font-bold mb-2"
+                  style={{ color: NAVY, fontSize: '1.15rem' }}
+                >
+                  {trustee.name}
+                </h3>
+                <p
+                  className="text-gray-500 text-sm leading-relaxed"
+                  style={{ fontFamily: 'Quicksand, sans-serif' }}
+                >
+                  {trustee.bio}
+                </p>
               </div>
-            </Card>
+            </div>
           ))}
         </div>
+
       </div>
     </section>
   )
