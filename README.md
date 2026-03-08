@@ -1,14 +1,14 @@
 # Law Park Educational Trust - Website
 
-A modern, beautiful website showcasing the 10-year journey of Law Park Educational Trust, an NGO dedicated to helping children from rural areas across India get their right to education through partially funded scholarships.
+A modern, beautiful website showcasing the 10-year journey of Law Park Educational Trust, an NGO dedicated to helping children from rural areas across India get their right to education through funded scholarships.
 
 ## Mission
 
-Law Park Educational Trust helps children from rural areas across India get their right to education through partially funded scholarships.
+Law Park Educational Trust helps children from rural areas across India get their right to education through funded scholarships.
 
 ## What We Offer
 
-- **Partially Funded Scholarships**: Making quality education accessible to rural children
+- **Funded Scholarships**: Making quality education accessible to rural children
 - **Travel & Community Engagement**: Our team travels to meet the kids and build meaningful connections
 - **Essential Supplies**: Distribution of school bags, notebooks, pens, stationery, sanitary pads, drawing kits, and more
 - **Educational Activities**: Fun educational games, interactive learning sessions, and talent showcases

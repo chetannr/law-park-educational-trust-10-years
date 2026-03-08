@@ -36,7 +36,7 @@ export function Trustees({ trustees }: TrusteesProps) {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {trustees.map((trustee, index) => (
             <div
               key={index}

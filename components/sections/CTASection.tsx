@@ -52,7 +52,7 @@ function CTASection() {
             <div className="flex items-center gap-2 mt-2">
               <div style={{ width: 16, height: 1.5, background: GOLD, borderRadius: 1 }} />
               <span style={{ color: 'rgba(255,255,255,0.4)', fontFamily: 'Quicksand, sans-serif', fontSize: '0.72rem', letterSpacing: '0.1em' }}>
-                Mrs. Charulatha, Founder
+                Charulatha, Founder
               </span>
             </div>
           </div>
@@ -118,7 +118,9 @@ function CTASection() {
               </div>
               <div>
                 <span style={{ color: GOLD, fontWeight: 600, display: 'block', marginBottom: 2 }}>Support</span>
-                razorpay.me/@lawparkeducationaltrust
+                <a href="https://razorpay.me/@lawparkeducationaltrust" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{ color: 'inherit' }}>
+                  razorpay.me/@lawparkeducationaltrust
+                </a>
               </div>
             </div>
           </div>

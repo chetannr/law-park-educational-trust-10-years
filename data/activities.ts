@@ -2,8 +2,8 @@ import type { Activity } from '../types'
 
 export const activities: Activity[] = [
   {
-    title: 'Partially Funded Scholarships',
-    description: 'We help children from rural areas across India get their right to education through partially funded scholarships, making quality education accessible.',
+    title: 'Funded Scholarships',
+    description: 'We help children from rural areas across India get their right to education through funded scholarships, making quality education accessible.',
     icon: '🎓',
   },
   {

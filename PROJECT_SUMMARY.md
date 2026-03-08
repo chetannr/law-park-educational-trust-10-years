@@ -2,7 +2,7 @@
 
 ## Overview
 
-A fresh, modern website built to showcase the 10-year journey of Law Park Educational Trust, an NGO dedicated to helping children from rural areas across India access quality education through partially funded scholarships.
+A fresh, modern website built to showcase the 10-year journey of Law Park Educational Trust, an NGO dedicated to helping children from rural areas across India access quality education through funded scholarships.
 
 ## Project Location
 
@@ -30,7 +30,7 @@ A fresh, modern website built to showcase the 10-year journey of Law Park Educat
 
 ### 3. Activities Section
 - 8 comprehensive activity cards showcasing:
-  - Partially Funded Scholarships
+  - Funded Scholarships
   - Travel & Community Engagement
   - Essential Supplies Distribution
   - Educational Games & Activities

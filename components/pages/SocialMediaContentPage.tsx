@@ -61,7 +61,7 @@ function SocialMediaContentPage() {
               <span className="font-semibold">Award:</span> Bharat Shiksha Ratan Award
             </div>
             <div>
-              <span className="font-semibold">Recipient:</span> Mrs. Charulatha M. R. (Founder)
+              <span className="font-semibold">Recipient:</span> Charulatha M. R. (Founder)
             </div>
             <div>
               <span className="font-semibold">Organization:</span> Economic and Social Development Foundation (E.S.D.F)
@@ -353,7 +353,7 @@ function SocialMediaContentPage() {
           <ul className="space-y-3 text-gray-700">
             <li><strong>Donate link:</strong> Include the donation page when inviting support: {DONATION_URL}</li>
             <li><strong>Video Upload:</strong> Once the 1-minute video is uploaded, add the URL to YouTube description, website awards section, social media posts, and WhatsApp messages.</li>
-            <li><strong>Images to Include:</strong> Award certificate, photos with Union Ministers, award ceremony photos, Mrs. Charulatha M. R. receiving the award.</li>
+            <li><strong>Images to Include:</strong> Award certificate, photos with Union Ministers, award ceremony photos, Charulatha M. R. receiving the award.</li>
             <li><strong>Timing:</strong> Post the content within 24-48 hours of the award ceremony for maximum impact.</li>
             <li><strong>Engagement:</strong> Respond to comments and messages promptly to maintain engagement.</li>
           </ul>
@@ -366,7 +366,7 @@ function SocialMediaContentPage() {
 // Content strings
 const instagramContent = `🏆 We are thrilled and honored to announce that Law Park Educational Trust has received the prestigious BHARAT SHIKSHA RATAN AWARD! 🎓
 
-✨ This recognition was presented to our Founder, Mrs. Charulatha M. R., at the National Summit in New Delhi on 19th December 2025, by the Economic and Social Development Foundation (E.S.D.F).
+✨ This recognition was presented to our Founder, Charulatha M. R., at the National Summit in New Delhi on 19th December 2025, by the Economic and Social Development Foundation (E.S.D.F).
 
 🌟 Out of 25 distinguished awardees, we were honored to receive this award, presented by Union Ministers:
 • Mr. Kamal Singh Negi (Cabinet Minister, New Delhi)
@@ -384,7 +384,7 @@ const instagramContent = `🏆 We are thrilled and honored to announce that Law 
 
 const facebookContent = `🎉 We are incredibly proud and honored to share that Law Park Educational Trust has been awarded the prestigious BHARAT SHIKSHA RATAN AWARD! 🏆
 
-This distinguished recognition was presented to our Founder, Mrs. Charulatha M. R., at the National Summit held in New Delhi on 19th December 2025, by the Economic and Social Development Foundation (E.S.D.F).
+This distinguished recognition was presented to our Founder, Charulatha M. R., at the National Summit held in New Delhi on 19th December 2025, by the Economic and Social Development Foundation (E.S.D.F).
 
 🌟 The award ceremony was graced by Union Ministers:
 • Mr. Kamal Singh Negi (Cabinet Minister, New Delhi)
@@ -414,7 +414,7 @@ We are thrilled to share this momentous achievement! Law Park Educational Trust 
 
 📅 Date: 19th December 2025
 📍 Location: New Delhi
-👤 Recipient: Mrs. Charulatha M. R. (Founder, Law Park Educational Trust)
+👤 Recipient: Charulatha M. R. (Founder, Law Park Educational Trust)
 🏛️ Presented By: Economic and Social Development Foundation (E.S.D.F)
 👔 Honored by: Union Ministers - Mr. Kamal Singh Negi (Cabinet Minister) & Mr. Dinesh Upadhyay (Ayush Minister)
 
@@ -422,7 +422,7 @@ We are thrilled to share this momentous achievement! Law Park Educational Trust 
 This prestigious award recognizes outstanding achievements and remarkable contributions in the education sector. Out of 25 distinguished awardees, we were honored to receive this recognition for our decade-long commitment to transforming lives through education.
 
 💫 Our Journey:
-For 10 years, Law Park Educational Trust has been dedicated to providing quality education to underprivileged children across India. Through partially funded scholarships, we have helped countless students continue their education and achieve their dreams.
+For 10 years, Law Park Educational Trust has been dedicated to providing quality education to underprivileged children across India. Through funded scholarships, we have helped countless students continue their education and achieve their dreams.
 
 🙏 Gratitude:
 This award is a testament to the collective efforts of our trustees, donors, volunteers, and supporters. We extend our heartfelt gratitude to everyone who has been part of this incredible journey.
@@ -446,7 +446,7 @@ Phone: [Your Phone Number]
 Timestamps:
 00:00 - Introduction
 00:15 - Award Ceremony Highlights
-00:45 - Acceptance by Mrs. Charulatha M. R.
+00:45 - Acceptance by Charulatha M. R.
 01:00 - Closing Message`
 
 const whatsappShort = `🏆 *Bharat Shiksha Ratan Award 2025* 🎓
@@ -454,7 +454,7 @@ const whatsappShort = `🏆 *Bharat Shiksha Ratan Award 2025* 🎓
 We are thrilled to share that *Law Park Educational Trust* has received the prestigious *Bharat Shiksha Ratan Award*!
 
 ✨ *Award Details:*
-• Presented to: Mrs. Charulatha M. R. (Founder)
+• Presented to: Charulatha M. R. (Founder)
 • Date: 19th December 2025
 • Location: New Delhi
 • Organization: Economic and Social Development Foundation (E.S.D.F)
@@ -476,7 +476,7 @@ We are incredibly proud and honored to announce that *Law Park Educational Trust
 
 ✨ *Award Details:*
 • *Award:* Bharat Shiksha Ratan Award
-• *Recipient:* Mrs. Charulatha M. R. (Founder, Law Park Educational Trust)
+• *Recipient:* Charulatha M. R. (Founder, Law Park Educational Trust)
 • *Date:* 19th December 2025
 • *Location:* New Delhi
 • *Organization:* Economic and Social Development Foundation (E.S.D.F)
@@ -489,7 +489,7 @@ We are incredibly proud and honored to announce that *Law Park Educational Trust
 This prestigious award recognizes our outstanding achievements and remarkable role in the education sector. It celebrates our 10-year journey dedicated to transforming lives through education.
 
 💫 *Our Journey:*
-For the past 10 years, Law Park Educational Trust has been committed to providing quality education to underprivileged children across India. Through partially funded scholarships, we have helped countless students continue their education and achieve their dreams.
+For the past 10 years, Law Park Educational Trust has been committed to providing quality education to underprivileged children across India. Through funded scholarships, we have helped countless students continue their education and achieve their dreams.
 
 🙏 *Gratitude:*
 This award is a testament to the collective efforts of:

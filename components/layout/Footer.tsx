@@ -6,7 +6,7 @@ function Footer() {
           <div>
             <h3 className="mb-4 text-lg font-semibold">Law Park Educational Trust</h3>
             <p className="text-gray-400">
-              Helping children from rural areas across India get their right to education through partially funded scholarships.
+              Helping children from rural areas across India get their right to education through funded scholarships.
             </p>
           </div>
           <div>

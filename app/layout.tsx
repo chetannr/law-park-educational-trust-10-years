@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     default: 'Law Park Educational Trust - 10 Years of Transforming Lives',
     template: '%s | Law Park Educational Trust',
   },
-  description: 'Law Park Educational Trust helps children from rural areas across India get their right to education through partially funded scholarships. Join us in making a difference.',
+  description: 'Law Park Educational Trust helps children from rural areas across India get their right to education through funded scholarships. Join us in making a difference.',
   keywords: ['education', 'scholarships', 'rural education', 'India', 'NGO', 'educational trust', 'children education', 'charity'],
   authors: [{ name: 'Law Park Educational Trust' }],
   robots: {
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://journey.lawparkeducationaltrust.org/',
     title: 'Law Park Educational Trust - 10 Years of Transforming Lives',
-    description: 'Law Park Educational Trust helps children from rural areas across India get their right to education through partially funded scholarships. Join us in making a difference.',
+    description: 'Law Park Educational Trust helps children from rural areas across India get their right to education through funded scholarships. Join us in making a difference.',
     siteName: 'Law Park Educational Trust',
     locale: 'en_US',
     images: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Law Park Educational Trust - 10 Years of Transforming Lives',
-    description: 'Law Park Educational Trust helps children from rural areas across India get their right to education through partially funded scholarships.',
+    description: 'Law Park Educational Trust helps children from rural areas across India get their right to education through funded scholarships.',
     images: ['/images/slide_03_Picture_1_00.jpg'],
   },
   alternates: {
@@ -74,7 +74,7 @@ const organizationSchema = {
   name: 'Law Park Educational Trust',
   url: 'https://journey.lawparkeducationaltrust.org/',
   logo: 'https://journey.lawparkeducationaltrust.org/logo.webp',
-  description: 'Law Park Educational Trust helps children from rural areas across India get their right to education through partially funded scholarships.',
+  description: 'Law Park Educational Trust helps children from rural areas across India get their right to education through funded scholarships.',
   foundingDate: '2016',
   contactPoint: {
     '@type': 'ContactPoint',
@@ -99,7 +99,7 @@ const websiteSchema = {
   '@type': 'WebSite',
   name: 'Law Park Educational Trust',
   url: 'https://journey.lawparkeducationaltrust.org/',
-  description: '10 Years of Transforming Lives - Helping children from rural areas across India get their right to education through partially funded scholarships.',
+  description: '10 Years of Transforming Lives - Helping children from rural areas across India get their right to education through funded scholarships.',
 }
 
 // WebPage Schema.org structured data
@@ -107,7 +107,7 @@ const webpageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Law Park Educational Trust - 10 Years of Transforming Lives',
-  description: 'Law Park Educational Trust helps children from rural areas across India get their right to education through partially funded scholarships.',
+  description: 'Law Park Educational Trust helps children from rural areas across India get their right to education through funded scholarships.',
   url: 'https://journey.lawparkeducationaltrust.org/',
   inLanguage: 'en-US',
   isPartOf: {

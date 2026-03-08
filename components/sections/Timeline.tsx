@@ -255,9 +255,15 @@ function Timeline() {
                             <p className="text-gray-700 leading-relaxed">{milestone.description}</p>
 
                             {milestone.impact && (
-                              <div className="mt-4 inline-flex items-center rounded-full bg-primary-100 px-4 py-2">
-                                <span className="text-sm font-semibold text-primary-700">
-                                  ✨ Impact: {milestone.impact}
+                              <div
+                                className="mt-5 flex items-start gap-3 px-4 py-3"
+                                style={{ background: '#1c1c2e', borderLeft: '3px solid #c9903e' }}
+                              >
+                                <span
+                                  className="font-serif italic leading-snug"
+                                  style={{ color: '#e0b06a', fontSize: '0.88rem' }}
+                                >
+                                  {milestone.impact}
                                 </span>
                               </div>
                             )}
