@@ -76,6 +76,56 @@ export function SupportersAndPartners({ supporters, partnerNGOs }: SupportersAnd
           </div>
         </div>
 
+        {/* Team pull-quotes */}
+        {supporters.some((s) => s.quote) && (
+          <div className="mb-16">
+            <h3
+              className="font-semibold uppercase tracking-widest text-xs mb-8"
+              style={{ color: GOLD, fontFamily: 'Quicksand, sans-serif', letterSpacing: '0.18em' }}
+            >
+              Voices from Our Team
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {supporters
+                .filter((s) => s.quote)
+                .map((supporter, index) => (
+                  <div
+                    key={index}
+                    className="p-5"
+                    style={{ background: NAVY, borderLeft: `3px solid ${GOLD}` }}
+                  >
+                    <p
+                      className="font-serif italic leading-relaxed mb-4"
+                      style={{ color: '#e0b06a', fontSize: '0.92rem' }}
+                    >
+                      &ldquo;{supporter.quote}&rdquo;
+                    </p>
+                    <div className="flex items-center gap-2">
+                      <div
+                        style={{ width: 20, height: 2, background: GOLD, borderRadius: 1 }}
+                      />
+                      <div>
+                        <span
+                          className="font-semibold"
+                          style={{ color: '#fff', fontFamily: 'Quicksand, sans-serif', fontSize: '0.78rem' }}
+                        >
+                          {supporter.name}
+                        </span>
+                        {supporter.contribution && (
+                          <span
+                            style={{ color: '#9a9aaa', fontFamily: 'Quicksand, sans-serif', fontSize: '0.7rem' }}
+                          >
+                            {' '}&middot; {supporter.contribution}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        )}
+
         {/* Partner NGOs */}
         <div>
           <h3

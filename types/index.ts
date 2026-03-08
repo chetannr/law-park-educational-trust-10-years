@@ -52,6 +52,7 @@ export interface Supporter {
   contribution?: string
   description?: string
   image?: string
+  quote?: string
 }
 
 export interface PartnerNGO {

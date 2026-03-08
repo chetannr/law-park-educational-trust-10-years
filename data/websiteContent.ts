@@ -88,6 +88,7 @@ export const websiteContent: WebsiteContent = {
       contribution: 'Education Counselor',
       description:
         'Education counselor from HSR, Bengaluru, providing valuable guidance and counseling to students, helping them make informed decisions about their academic paths and career choices.',
+      quote: 'When a student finds clarity about their future, you can see the change in their eyes — that moment makes every conversation worthwhile.',
     },
     {
       name: 'Mr. Chetan Kumar N',
@@ -95,6 +96,7 @@ export const websiteContent: WebsiteContent = {
       contribution: 'Software Engineer',
       description:
         'Software Engineer from HSR, Bengaluru, who volunteers his technical expertise to help with our digital presence, website development, and technology solutions that enhance our operational efficiency.',
+      quote: 'Technology should serve the mission quietly — if a parent can track their child\'s scholarship in two taps, we\'ve done our job.',
     },
     {
       name: 'Mrs. Jeevitha S',
@@ -102,6 +104,7 @@ export const websiteContent: WebsiteContent = {
       contribution: 'Software Engineer',
       description:
         'Software Engineer from HSR, Bengaluru, who contributes her technical skills to support our trust operations, helping with digital initiatives and technology-driven solutions for better student management.',
+      quote: 'Building systems for Law Park reminded me why I became an engineer — to solve problems that actually matter to people.',
     },
     {
       name: 'Mr. Sai Prashanth Pillarisetty',
@@ -109,54 +112,63 @@ export const websiteContent: WebsiteContent = {
       contribution: 'International Donor & Supporter',
       description:
         'A committed donor and supporter, actively driving scholarships and programs while championing digital transformation. Plays a pivotal role in shaping future initiatives through strategic guidance and visionary advice.',
+      quote: 'Distance doesn\'t dilute purpose. From across the world, I\'ve watched one scholarship at a time quietly rewrite a family\'s story.',
     },
     {
       name: 'Mr. Anand',
       type: 'donor',
       contribution: 'Program Manager',
       description: 'Program Manager from USA, supporting our mission through strategic contributions and program development initiatives.',
+      quote: 'Good programs don\'t need grand gestures — they need consistent people showing up for children who have no safety net.',
     },
     {
       name: 'Mr. Sreekanth',
       type: 'volunteer',
       contribution: 'Director',
       description: 'Director at Techhat, Bangalore, providing valuable support and guidance to our trust operations and educational programs.',
+      quote: 'What struck me about Law Park is how methodically they verify every child\'s need before committing — that rigour builds lasting trust.',
     },
     {
       name: 'Mrs. Nandini',
       type: 'volunteer',
       contribution: 'Lead Consultant - ITC',
       description: 'Lead Consultant at ITC, Bangalore, contributing expertise and support to our educational initiatives and student development programs.',
+      quote: 'I\'ve seen how the trust turns a small annual contribution into a child\'s entire year of school — the accountability is extraordinary.',
     },
     {
       name: 'K. Krishnapriya',
       type: 'volunteer',
       contribution: 'Customer Support Manager',
       description: 'Customer Support Manager from Bangalore, actively volunteering and supporting our trust activities and student assistance programs.',
+      quote: 'Every field visit teaches me something new about resilience — these children carry ambition that most of us take for granted.',
     },
     {
       name: 'Roopa Gante',
       type: 'volunteer',
       contribution: 'Senior Professional Product Developer',
       description: 'Senior Professional Product Developer at Gainwell Technologies (Former HP), contributing technical expertise and support to our trust operations and digital initiatives.',
+      quote: 'After two decades in tech, volunteering here grounds me — it\'s the most honest work I do all week.',
     },
     {
       name: 'Ms. Navya',
       type: 'volunteer',
       contribution: 'Public Health Research Associate',
       description: 'Public Health Research Associate at IPH, Bangalore, providing valuable support and expertise to our educational and community development programs.',
+      quote: 'Education and health are two sides of the same coin — a child who stays in school is a child who stays well.',
     },
     {
       name: 'Dr. Adarsh',
       type: 'donor',
       contribution: 'Manager (Product & Trade)',
       description: 'Manager (Product & Trade) at Avanti Pet Care Pvt. Ltd., Hyderabad, supporting our mission through generous contributions to educational programs.',
+      quote: 'I trust Law Park because they share exactly where every rupee goes — there\'s no ambiguity, just results.',
     },
     {
       name: 'Mrs. Bhavya',
       type: 'donor',
       contribution: 'Home maker',
       description: 'Home maker from Bangalore, generously supporting our educational initiatives and contributing to the growth and development of underprivileged students.',
+      quote: 'As a mother, I know what education means to a family. Supporting even one child feels like investing in an entire household\'s future.',
     },
     {
       name: 'Mr. Rajesh',
@@ -164,6 +176,7 @@ export const websiteContent: WebsiteContent = {
       contribution: 'Advocate',
       description:
         'Advocate from Bangalore who volunteers his legal expertise to support our trust operations and provides guidance on legal matters, ensuring our programs comply with all regulations.',
+      quote: 'The law exists to protect the vulnerable — helping this trust stay compliant means protecting the children it serves.',
     },
     {
       name: 'Mr. Nagendra',
@@ -171,6 +184,7 @@ export const websiteContent: WebsiteContent = {
       contribution: 'Community Volunteer',
       description:
         'Active volunteer from Bengaluru who assists with field visits, student interviews, and community outreach programs, playing a crucial role in identifying and supporting deserving students.',
+      quote: 'The field visits changed me. You sit in a one-room home and realise that a school fee is the only thing standing between a child and their dream.',
     },
     {
       name: 'Dr. Nanda Kumar',
@@ -178,6 +192,7 @@ export const websiteContent: WebsiteContent = {
       contribution: 'International Supporter',
       description:
         'Generous donor from USA who has been supporting our scholarship programs from abroad, helping bridge the gap for students who need financial assistance to continue their education.',
+      quote: 'Living abroad, you search for ways to give back that are genuine. Law Park\'s transparency made that search very short.',
     },
     {
       name: 'Mr. Venkat',
@@ -185,6 +200,7 @@ export const websiteContent: WebsiteContent = {
       contribution: 'Advocate',
       description:
         'Advocate from Bengaluru who provides legal support and guidance to our trust, ensuring all our operations are conducted in compliance with legal requirements and best practices.',
+      quote: 'A well-governed trust earns the right to ask for nothing — people come to it because the work speaks clearly.',
     },
     {
       name: 'Mrs. Lavanya',
@@ -192,6 +208,7 @@ export const websiteContent: WebsiteContent = {
       contribution: 'Community Supporter',
       description:
         'Supportive donor from Bengaluru who contributes to our educational initiatives, helping us provide financial assistance to students from economically disadvantaged backgrounds.',
+      quote: 'It started as a small annual contribution. Then I met the children — now it\'s personal, and I couldn\'t stop if I tried.',
     },
     {
       name: 'Mrs. Sumithra',
@@ -199,6 +216,7 @@ export const websiteContent: WebsiteContent = {
       contribution: 'Partner - Royal Enfield',
       description:
         'Partner from Royal Enfield, Bengaluru, who has been instrumental in providing corporate support for our educational programs, contributing to the success of our scholarship initiatives.',
+      quote: 'Corporate support works best when it\'s personal. Knowing exactly which schools benefit makes the partnership feel real.',
     },
     {
       name: 'Ms. Pragya',
@@ -206,6 +224,7 @@ export const websiteContent: WebsiteContent = {
       contribution: 'Community Volunteer',
       description:
         'Active volunteer from Bengaluru who assists with various trust activities including organizing events, coordinating with schools, and providing ongoing support to students and their families.',
+      quote: 'Organising a school event sounds simple until you see a child receive their first backpack — then you understand why every detail matters.',
     },
     {
       name: 'Mrs. Neha',
@@ -213,6 +232,7 @@ export const websiteContent: WebsiteContent = {
       contribution: 'Community Supporter',
       description:
         'Supportive donor from Bengaluru who contributes to our educational programs, helping us provide financial assistance and resources to students who need support to continue their studies.',
+      quote: 'Ten years of quiet, steady work — no flashy campaigns, just children staying in school. That\'s what convinced me.',
     },
   ],
   partnerNGOs: [
