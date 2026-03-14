@@ -1,18 +1,18 @@
-Dear Donor,
+Dear Madam,
 
-With all due respect I introduce myself as Charulatha. M. R, Founder of Law Park Educational Trust, Bangalore.  I along with my husband Mr. Manjunatha. S. M started this educational Trust in the year 2012, but registered in the year 2016.  We, along with other like-minded individuals, have formed a team and are successfully carrying this trust forward.
+With all respect I introduce myself as Charulatha. M. R, Founder of Law Park Educational Trust, Bangalore. We as a team are helping children across India for their education. We have been helping children residing in the rural sector, children of HIV patients, children of acid-attack victims, tribal children and many such children. We help these children by paying their school fees so no child under our care is left unschooled.
 
-Under our trust we help children across India for their education.  We have been helping children residing in rural sector, children of HIV patients, children of acid attacked victims, tribal children and many such children.  We help these children by paying their school fees so no children under our care is left unschooled.
+With tribal children, we stay with the children for a few days and we teach and learn many activities and finally distribute school essentials to these children.
 
-With Tribal children, we stay with the children few days in their tribes and we teach and learn many activities and finally distribute school essentials to these children.  
+We now want to create an opportunity for these little ones to meet and interact with you. Not everybody gets a chance to meet you, but we are putting our best efforts to organize an event where children from several districts come together and have their most treasured, memorable time with you. This will be their life achievement.
 
-This year we will be completing 10 years of our service in serving our Nation, to celebrate we wanted all the children under our care to visit Bangalore since we are arranging an event for these children and one day Bangalore tour (to any informative place) and children will take home surprise gifts and loads of good memory, as these children will be visiting Bangalore for the first time, in fact they will be stepping out from their abode very first time. 
-We are happy and excited to work on this but finance is the only constraint, so we request sponsorship to this event, as this event will be heartwarming to all of us for bring smiles in these children.  We together can bring a great change in the lives of these children.  
-Hence we request financial help for this noble cause. Awaiting a positive response from you.  
+Thus on ________________ we would like to invite you to our 10 years of our noble service in the field of education for mankind and to organize an interaction session with children from rural and tribal areas, children of HIV patients and many children longing to meet you.
 
-Thank You 
+We will be immensely happy to receive you and our goal achieved in creating this event where little ones with extraordinary intelligence interact with you.
 
-Regards 
-Charulatha. M.R. 
-Representing our entire Law Park Educational Trust’s Team. 
+Thank You
+
+Regards
+Charulatha. M.R.
+Representing our entire Law Park Educational Trust's Team.
 +919945665379

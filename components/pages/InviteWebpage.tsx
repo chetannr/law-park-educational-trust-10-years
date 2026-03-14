@@ -4,8 +4,8 @@ import Link from 'next/link'
 import { DONATION_URL } from '@/data/constants'
 import { getImageSources } from '@/utils/image'
 
-const HERO_IMAGE = 'images/slide_28_Picture_3_00.jpg'
-const STORY_IMAGE = 'images/slide_27_Picture_1_00.jpg'
+const HERO_IMAGE = 'images/slide_28_Picture_3_00.webp'
+const STORY_IMAGE = 'images/slide_27_Picture_1_00.webp'
 
 function InviteWebpage() {
   const heroSources = getImageSources(HERO_IMAGE)
@@ -17,10 +17,10 @@ function InviteWebpage() {
       <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white section-padding">
         <div className="container-custom text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
-            10 Years of Service – Help Us Bring Children to Bangalore
+            10 Years of Noble Service – Invitation to an Interaction with Children
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-8">
-            Sponsor our celebration event and give children their first trip to the city. Your support brings smiles and lasting change.
+            We invite you to our 10 years of service in the field of education for mankind and to an interaction session with children from rural and tribal areas, and children longing to meet you.
           </p>
           <a
             href={DONATION_URL}
@@ -59,13 +59,13 @@ function InviteWebpage() {
               <h2 className="text-3xl font-bold mb-6 text-gray-900">Our Story</h2>
               <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
             <p>
-              Law Park Educational Trust is completing 10 years of service to our Nation. We help children across India—in rural areas, tribal communities, and children of HIV patients and acid-attack survivors—by supporting their education so no child under our care is left unschooled.
+              With all respect I introduce myself as Charulatha. M. R, Founder of Law Park Educational Trust, Bangalore. We as a team are helping children across India for their education. We have been helping children residing in the rural sector, children of HIV patients, children of acid-attack victims, tribal children and many such children. We help these children by paying their school fees so no child under our care is left unschooled.
             </p>
             <p>
-              To celebrate this milestone, we want to bring all the children under our care to Bangalore: an event, a one-day educational tour, surprise gifts, and lasting memories. For many of these children, it will be their first time visiting Bangalore—in fact, their first time stepping out of their abode.
+              With tribal children, we stay with the children for a few days and we teach and learn many activities and finally distribute school essentials to these children.
             </p>
             <p>
-              We need your sponsorship to make this happen. Your support will be heartwarming for all of us and will create a great change in these children&apos;s lives.
+              We now want to create an opportunity for these little ones to meet and interact with you. Not everybody gets a chance to meet you, but we are putting our best efforts to organize an event where children from several districts come together and have their most treasured, memorable time with you. This will be their life achievement.
             </p>
               </div>
             </div>
@@ -88,15 +88,15 @@ function InviteWebpage() {
       {/* Key points */}
       <section className="py-16 bg-white">
         <div className="container-custom max-w-3xl">
-          <h2 className="text-3xl font-bold mb-8 text-gray-900">Why Your Support Matters</h2>
+          <h2 className="text-3xl font-bold mb-8 text-gray-900">Why This Event Matters</h2>
           <ul className="space-y-4 text-gray-700 text-lg">
             <li className="flex gap-3">
               <span className="text-primary-600 font-bold shrink-0">•</span>
-              <span>Law Park Educational Trust – 10 years of service to the Nation</span>
+              <span>Law Park Educational Trust – 10 years of noble service in the field of education for mankind</span>
             </li>
             <li className="flex gap-3">
               <span className="text-primary-600 font-bold shrink-0">•</span>
-              <span>Supporting children across India: rural, tribal, HIV-affected, acid-attack survivors</span>
+              <span>Children from rural and tribal areas, children of HIV patients and many children longing to meet you</span>
             </li>
             <li className="flex gap-3">
               <span className="text-primary-600 font-bold shrink-0">•</span>
@@ -104,11 +104,11 @@ function InviteWebpage() {
             </li>
             <li className="flex gap-3">
               <span className="text-primary-600 font-bold shrink-0">•</span>
-              <span>Celebrating with a Bangalore event: one-day tour, surprise gifts, memories for a lifetime</span>
+              <span>An interaction session where little ones with extraordinary intelligence meet and interact with you</span>
             </li>
             <li className="flex gap-3">
               <span className="text-primary-600 font-bold shrink-0">•</span>
-              <span>For many children, this will be their first time visiting Bangalore—first time stepping out of their abode</span>
+              <span>This will be their life achievement – a most treasured, memorable time</span>
             </li>
           </ul>
         </div>
@@ -117,9 +117,9 @@ function InviteWebpage() {
       {/* CTA */}
       <section className="section-padding bg-primary-50">
         <div className="container-custom text-center max-w-2xl">
-          <h2 className="text-3xl font-bold mb-4 text-gray-900">Support This Cause</h2>
+          <h2 className="text-3xl font-bold mb-4 text-gray-900">Invitation</h2>
           <p className="text-xl text-gray-700 mb-8">
-            Your support can bring smiles and create lasting change in these children&apos;s lives. We request your financial help for this noble cause.
+            We would like to invite you to our 10 years of our noble service in the field of education for mankind and to organize an interaction session with children from rural and tribal areas, children of HIV patients and many children longing to meet you. We will be immensely happy to receive you.
           </p>
           <a
             href={DONATION_URL}

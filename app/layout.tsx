@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: '/images/slide_03_Picture_1_00.jpg',
+        url: '/images/slide_03_Picture_1_00.webp',
         width: 960,
         height: 540,
         alt: 'Law Park Educational Trust - 10 Years of Transforming Lives',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Law Park Educational Trust - 10 Years of Transforming Lives',
     description: 'Law Park Educational Trust helps children from rural areas across India get their right to education through funded scholarships.',
-    images: ['/images/slide_03_Picture_1_00.jpg'],
+    images: ['/images/slide_03_Picture_1_00.webp'],
   },
   alternates: {
     canonical: 'https://journey.lawparkeducationaltrust.org/',
@@ -132,7 +132,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#15803d" />
         <meta name="msapplication-navbutton-color" content="#15803d" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <link rel="preload" href="/images/steel-plate-and-glass-distributed-to-these-children.jpeg" as="image" type="image/jpeg" />
+        <link rel="preload" href="/images/steel-plate-and-glass-distributed-to-these-children.webp" as="image" type="image/webp" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script

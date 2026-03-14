@@ -5,18 +5,18 @@ export const childrenStories: ChildStory[] = [
     gender: 'Female',
     summary:
       'Father expired while the child was 8 years old. When the child was to write her 10th final exams, mother was diagnosed with stroke which later was diagnosed with brain tumour. No financial help from any of her relatives. Law Park Educational Trust helped this child study till 12th. May 2025 her mother expired. We decided to completely bring this child to our care, but her disappeared relatives appeared and wanted her to get married. We stood for this child and now this child is completely under our care and she is doing her under graduation happily.',
-    image: '/images/1st-Child-1.jpeg',
+    image: '/images/1st-Child-1.webp',
   },
   {
     summary:
       'Mother of these children (one female and one male child) expired due to illness. Same year father expired due to depression. The children’s uncle (mother’s younger brother) is taking care of them. He decided not to marry and his only wish is to take care of these children. But his poverty is a biggest challenge. They are now under our care.',
-    image: '/images/1st-Child-2.jpeg',
+    image: '/images/1st-Child-2.webp',
   },
   {
     gender: 'Female',
     summary:
       'This child is taken care of by her grandmother. Mother left this child and married another. Father doesn’t even care about this child and stays away somewhere. Her grandmother at this old age earns for this child’s future and takes care of the child.',
-    image: '/images/1st-Child-3.jpeg',
+    image: '/images/1st-Child-3.webp',
   },
   {
     gender: '4 female children',

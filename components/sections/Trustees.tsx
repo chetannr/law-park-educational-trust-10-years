@@ -15,7 +15,7 @@ const CREAM = '#faf8f3'
 
 export function Trustees({ trustees }: TrusteesProps) {
   return (
-    <section id="trustees" style={{ background: CREAM }} className="py-20 sm:py-28">
+    <section id="trustees" style={{ background: CREAM }} className="pt-20 sm:pt-28">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
 
         <div className="mb-14">

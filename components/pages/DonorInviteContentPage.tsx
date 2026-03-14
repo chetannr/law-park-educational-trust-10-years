@@ -4,17 +4,17 @@ import { useState } from 'react'
 import Card from '../ui/Card'
 import { DONATION_URL } from '@/data/constants'
 
-const donorInviteFullLetter = `Dear Donor,
+const donorInviteFullLetter = `Dear Madam,
 
-With all due respect I introduce myself as Charulatha. M. R, Founder of Law Park Educational Trust, Bangalore.  I along with my husband Mr. Manjunatha. S. M started this educational Trust in the year 2012, but registered in the year 2016.  We, along with other like-minded individuals, have formed a team and are successfully carrying this trust forward.
+With all respect I introduce myself as Charulatha. M. R, Founder of Law Park Educational Trust, Bangalore. We as a team are helping children across India for their education. We have been helping children residing in the rural sector, children of HIV patients, children of acid-attack victims, tribal children and many such children. We help these children by paying their school fees so no child under our care is left unschooled.
 
-Under our trust we help children across India for their education.  We have been helping children residing in rural sector, children of HIV patients, children of acid attacked victims, tribal children and many such children.  We help these children by paying their school fees so no children under our care is left unschooled.
+With tribal children, we stay with the children for a few days and we teach and learn many activities and finally distribute school essentials to these children.
 
-With Tribal children, we stay with the children few days in their tribes and we teach and learn many activities and finally distribute school essentials to these children.
+We now want to create an opportunity for these little ones to meet and interact with you. Not everybody gets a chance to meet you, but we are putting our best efforts to organize an event where children from several districts come together and have their most treasured, memorable time with you. This will be their life achievement.
 
-This year we will be completing 10 years of our service in serving our Nation, to celebrate we wanted all the children under our care to visit Bangalore since we are arranging an event for these children and one day Bangalore tour (to any informative place) and children will take home surprise gifts and loads of good memory, as these children will be visiting Bangalore for the first time, in fact they will be stepping out from their abode very first time.
-We are happy and excited to work on this but finance is the only constraint, so we request sponsorship to this event, as this event will be heartwarming to all of us for bring smiles in these children.  We together can bring a great change in the lives of these children.
-Hence we request financial help for this noble cause. Awaiting a positive response from you.
+Thus on ________________ we would like to invite you to our 10 years of our noble service in the field of education for mankind and to organize an interaction session with children from rural and tribal areas, children of HIV patients and many children longing to meet you.
+
+We will be immensely happy to receive you and our goal achieved in creating this event where little ones with extraordinary intelligence interact with you.
 
 Thank You
 
@@ -136,7 +136,7 @@ function DonorInviteContentPage() {
             Donor Invite
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-            Sponsorship invite for the 10-year celebration event—bringing children to Bangalore for the first time
+            Invitation to our 10 years of noble service—interaction session with children from rural, tribal, and other communities
           </p>
 
           <Card className="p-6 bg-blue-50 border-2 border-blue-200 max-w-4xl mx-auto">
@@ -168,7 +168,7 @@ function DonorInviteContentPage() {
           <h2 className="text-3xl font-bold mb-6 text-center">💌 Invite Information</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
             <div>
-              <span className="font-semibold">Occasion:</span> 10-year celebration of service
+              <span className="font-semibold">Occasion:</span> 10 years of noble service in the field of education for mankind
             </div>
             <div>
               <span className="font-semibold">From:</span> Charulatha M. R. (Founder)
@@ -177,10 +177,10 @@ function DonorInviteContentPage() {
               <span className="font-semibold">Organization:</span> Law Park Educational Trust, Bangalore
             </div>
             <div>
-              <span className="font-semibold">Ask:</span> Sponsorship for children&apos;s event and Bangalore visit
+              <span className="font-semibold">Ask:</span> Invitation to an interaction session with children
             </div>
             <div>
-              <span className="font-semibold">Highlights:</span> First-time Bangalore visit for many children; event, tour, gifts
+              <span className="font-semibold">Highlights:</span> Children from rural, tribal, HIV-affected and other communities; most treasured, memorable time
             </div>
             <div>
               <span className="font-semibold">Contact:</span> +919945665379
@@ -191,7 +191,7 @@ function DonorInviteContentPage() {
         {/* Full Letter */}
         <Card className="p-8 mb-8">
           <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
-            <h2 className="text-3xl font-bold">📄 Full Letter</h2>
+            <h2 className="text-3xl font-bold">📄 Full Letter (Invite to Dignitary)</h2>
             <button
               onClick={() => copyToClipboard(donorInviteFullLetter, 'full-letter')}
               className={`px-6 py-3 rounded-lg font-semibold transition-all flex items-center gap-2 ${
@@ -481,13 +481,13 @@ function DonorInviteContentPage() {
         <Card className="p-8 mb-8">
           <h2 className="text-3xl font-bold mb-6">🎯 Key Messages to Emphasize</h2>
           <ul className="space-y-3 list-disc list-inside text-gray-700">
-            <li><strong>Milestone:</strong> 10 years of service to the Nation</li>
+            <li><strong>Milestone:</strong> 10 years of noble service in the field of education for mankind</li>
             <li><strong>Reach:</strong> Children across India—rural, tribal, HIV-affected, acid-attack survivors</li>
             <li><strong>Impact:</strong> School fees and essentials so no child under our care is left unschooled</li>
-            <li><strong>Celebration:</strong> Bringing all children to Bangalore—event, tour, gifts</li>
-            <li><strong>First time:</strong> For many, first time visiting Bangalore and stepping out of their abode</li>
-            <li><strong>Ask:</strong> Sponsorship to make the event possible</li>
-            <li><strong>Call to action:</strong> Financial help for this noble cause; contact for response</li>
+            <li><strong>Event:</strong> Interaction session where children from several districts meet and interact with you</li>
+            <li><strong>Opportunity:</strong> Most treasured, memorable time—their life achievement</li>
+            <li><strong>Ask:</strong> Invitation to the event on the date to be filled</li>
+            <li><strong>Closing:</strong> Immensely happy to receive you; goal achieved in creating this event</li>
           </ul>
         </Card>
 

@@ -22,8 +22,8 @@ export default function HomePage() {
       <Timeline />
       <ChildrenStories />
       <Gallery />
-      <Trustees trustees={websiteContent.trustees} />
       <Awards awards={websiteContent.awards} />
+      <Trustees trustees={websiteContent.trustees} />
       <SupportersAndPartners
         supporters={websiteContent.supporters}
         teamMembers={websiteContent.teamMembers}

@@ -3,7 +3,7 @@ const GOLD = '#c9903e'
 const GOLD_LIGHT = '#e0b06a'
 
 function Hero() {
-  const imagePath = '/images/steel-plate-and-glass-distributed-to-these-children.jpeg'
+  const imagePath = '/images/steel-plate-and-glass-distributed-to-these-children.webp'
 
   return (
     <section className="relative overflow-hidden" style={{ minHeight: '92vh' }}>
