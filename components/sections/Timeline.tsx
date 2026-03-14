@@ -20,6 +20,130 @@ function getAllImages() {
   return allImages
 }
 
+// ——— Travel-magazine spread: one column = hero image, other = editorial (year, title, copy, gallery) ———
+
+interface SpreadImageBlockProps {
+  milestone: Milestone
+  featuredImage: string | undefined
+  openLightbox: (milestone: Milestone, index: number) => void
+  getImageSources: typeof getImageSources
+}
+
+function SpreadImageBlock({ milestone, featuredImage, openLightbox, getImageSources }: SpreadImageBlockProps) {
+  if (!featuredImage) return null
+  return (
+    <button
+      type="button"
+      onClick={() => openLightbox(milestone, 0)}
+      className="group relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-gray-100 sm:aspect-[3/2] md:min-h-[320px] md:aspect-auto"
+      aria-label={`View ${milestone.title} photos`}
+    >
+      <picture>
+        <source srcSet={getImageSources(`images/${featuredImage}`).webp} type="image/webp" />
+        <img
+          src={getImageSources(`images/${featuredImage}`).fallback}
+          alt={milestone.title}
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+        />
+      </picture>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 p-5 text-left sm:p-6">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/90">
+          {milestone.year}
+        </p>
+        <p className="mt-1 text-lg font-semibold text-white sm:text-xl">
+          {milestone.title}
+        </p>
+        {milestone.location && (
+          <p className="mt-0.5 text-sm text-white/80">
+            {milestone.location}
+          </p>
+        )}
+      </div>
+    </button>
+  )
+}
+
+interface SpreadEditorialBlockProps {
+  milestone: Milestone
+  openLightbox: (milestone: Milestone, index: number) => void
+  getImageSources: typeof getImageSources
+}
+
+function SpreadEditorialBlock({ milestone, openLightbox, getImageSources }: SpreadEditorialBlockProps) {
+  return (
+    <div className="flex flex-col justify-center px-0 py-4 md:py-6 md:pl-8 lg:pl-10">
+      <span className="font-serif text-6xl font-bold tabular-nums text-primary-200 md:text-7xl lg:text-8xl">
+        {milestone.year}
+      </span>
+      <h3 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+        {milestone.title}
+      </h3>
+      {milestone.location && (
+        <p className="mt-1 text-sm font-medium uppercase tracking-wider text-primary-600">
+          {milestone.location}
+        </p>
+      )}
+      <p className="mt-4 font-serif text-gray-700 leading-relaxed">
+        {milestone.description}
+      </p>
+      {milestone.impact && (
+        <div
+          className="mt-5 flex items-start gap-3 px-4 py-3"
+          style={{ background: '#1c1c2e', borderLeft: '3px solid #c9903e' }}
+        >
+          <span
+            className="font-serif italic leading-snug"
+            style={{ color: '#e0b06a', fontSize: '0.88rem' }}
+          >
+            {milestone.impact}
+          </span>
+        </div>
+      )}
+      {milestone.images.length > 1 && (
+        <div className="mt-6">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-gray-500">
+            Gallery — {milestone.images.length} photos
+          </p>
+          <div className="grid grid-cols-4 gap-2 sm:grid-cols-5">
+            {milestone.images.slice(0, 6).map((image, imgIndex) => (
+              <button
+                key={imgIndex}
+                type="button"
+                onClick={() => openLightbox(milestone, imgIndex)}
+                className="group relative aspect-square overflow-hidden rounded-md"
+                aria-label={`View ${milestone.title} - Image ${imgIndex + 1}`}
+              >
+                <picture>
+                  <source srcSet={getImageSources(`images/${image}`).webp} type="image/webp" />
+                  <img
+                    src={getImageSources(`images/${image}`).fallback}
+                    alt=""
+                    className="h-full w-full object-cover transition-transform duration-200 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                </picture>
+                <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/25" />
+              </button>
+            ))}
+            {milestone.images.length > 6 && (
+              <button
+                type="button"
+                onClick={() => openLightbox(milestone, 0)}
+                className="flex aspect-square items-center justify-center rounded-md bg-primary-600 text-sm font-medium text-white transition-colors hover:bg-primary-700"
+                aria-label={`View all ${milestone.images.length} photos`}
+              >
+                +{milestone.images.length - 6}
+              </button>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
 function Timeline() {
   const [selectedImage, setSelectedImage] = useState<{ milestone: Milestone; index: number; globalIndex: number } | null>(null)
   const [showIntro, setShowIntro] = useState(false)
@@ -181,143 +305,82 @@ function Timeline() {
 
   return (
     <>
-      <section id="journey" className="bg-gradient-to-b from-gray-50 to-white py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section id="journey" className="bg-white py-16 sm:py-20 md:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <h2 className="font-serif text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Our 10-Year Journey
             </h2>
-            <p className="mt-4 text-lg text-gray-600">
-              From our first scholarship in 2016 to supporting 550+ students across multiple locations.
+            <p className="mt-4 font-serif text-lg italic text-gray-600">
+              From our first scholarship in 2016 to supporting 550+ students across Karnataka.
             </p>
           </div>
 
-          <div className="mt-16">
-            <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-1/2 hidden h-full w-0.5 -translate-x-1/2 bg-primary-200 md:block" />
-
-              <div className="space-y-16">
-                {milestones.map((milestone, index) => {
-                  const isEven = index % 2 === 0
-                  const featuredImage = milestone.images[0]
-
-                  return (
-                    <div
-                      key={milestone.year}
-                      className={`relative flex flex-col md:flex-row ${
-                        isEven ? 'md:flex-row-reverse' : ''
-                      }`}
-                    >
-                      {/* Year marker */}
-                      <div className="relative z-10 flex items-center justify-center md:w-1/2">
-                        <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary-600 text-white shadow-xl ring-4 ring-white transition-all hover:scale-110 hover:bg-primary-700">
-                          <span className="text-xl font-bold">{milestone.year}</span>
-                        </div>
+          {/* Travel-magazine spread: each row = image | editorial, alternating */}
+          <div className="mt-14 md:mt-20">
+            {milestones.map((milestone, index) => {
+              const isEven = index % 2 === 0
+              const featuredImage = milestone.images[0]
+              const isFirst = index === 0
+              const isLast = index === milestones.length - 1
+              const rounding =
+                isFirst && isLast
+                  ? 'rounded-xl'
+                  : isFirst
+                    ? 'rounded-t-xl'
+                    : isLast
+                      ? 'rounded-b-xl'
+                      : 'rounded-none'
+              return (
+                <div
+                  key={milestone.year}
+                  id={`year-${milestone.year}`}
+                  className={`scroll-mt-24 ${rounding} px-2 py-10 sm:px-4 md:py-14 md:px-6 lg:py-16 ${
+                    index > 0 ? 'mt-16 border-t border-gray-200/80 md:mt-20' : ''
+                  } ${
+                    index % 2 === 0 ? 'bg-white' : 'bg-gray-50/80 md:bg-primary-50/40'
+                  }`}
+                >
+                  <article
+                    className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 md:items-stretch lg:gap-16"
+                  >
+                  {isEven ? (
+                    <>
+                      <SpreadImageBlock
+                        milestone={milestone}
+                        featuredImage={featuredImage}
+                        openLightbox={openLightbox}
+                        getImageSources={getImageSources}
+                      />
+                      <SpreadEditorialBlock
+                        milestone={milestone}
+                        openLightbox={openLightbox}
+                        getImageSources={getImageSources}
+                      />
+                    </>
+                  ) : (
+                    <>
+                      <div className="order-2 md:order-1">
+                        <SpreadEditorialBlock
+                          milestone={milestone}
+                          openLightbox={openLightbox}
+                          getImageSources={getImageSources}
+                        />
                       </div>
-
-                      {/* Content Card */}
-                      <div className="mt-6 flex-1 md:mt-0 md:w-1/2">
-                        <div className="mx-4 overflow-hidden rounded-xl bg-white shadow-lg transition-all hover:shadow-xl">
-                          {/* Featured Image */}
-                          {featuredImage && (
-                            <button
-                              type="button"
-                              onClick={() => openLightbox(milestone, 0)}
-                              className="relative h-64 w-full overflow-hidden sm:h-80"
-                              aria-label={`View ${milestone.title} photos`}
-                            >
-                              <picture>
-                                <source srcSet={getImageSources(`images/${featuredImage}`).webp} type="image/webp" />
-                                <img
-                                  src={getImageSources(`images/${featuredImage}`).fallback}
-                                  alt={milestone.title}
-                                  className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
-                                  loading="lazy"
-                                />
-                              </picture>
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0" />
-                              <div className="absolute bottom-0 left-0 right-0 p-6">
-                                <h3 className="text-2xl font-bold text-white">
-                                  {milestone.title}
-                                </h3>
-                                {milestone.location && (
-                                  <p className="mt-1 text-sm text-white/90">
-                                    📍 {milestone.location}
-                                  </p>
-                                )}
-                              </div>
-                            </button>
-                          )}
-
-                          {/* Content */}
-                          <div className="p-6">
-                            <p className="text-gray-700 leading-relaxed">{milestone.description}</p>
-
-                            {milestone.impact && (
-                              <div
-                                className="mt-5 flex items-start gap-3 px-4 py-3"
-                                style={{ background: '#1c1c2e', borderLeft: '3px solid #c9903e' }}
-                              >
-                                <span
-                                  className="font-serif italic leading-snug"
-                                  style={{ color: '#e0b06a', fontSize: '0.88rem' }}
-                                >
-                                  {milestone.impact}
-                                </span>
-                              </div>
-                            )}
-
-                            {/* Image Gallery */}
-                            {milestone.images.length > 1 && (
-                              <div className="mt-6">
-                                <p className="mb-3 text-sm font-medium text-gray-700">
-                                  View More Photos ({milestone.images.length})
-                                </p>
-                                <div className="grid grid-cols-3 gap-2 sm:grid-cols-4">
-                                  {milestone.images.slice(1, 7).map((image, imgIndex) => (
-                                    <button
-                                      key={imgIndex}
-                                      type="button"
-                                      onClick={() => openLightbox(milestone, imgIndex + 1)}
-                                      className="group relative aspect-square overflow-hidden rounded-lg"
-                                      aria-label={`View ${milestone.title} - Image ${imgIndex + 2}`}
-                                    >
-                                      <picture>
-                                        <source srcSet={getImageSources(`images/${image}`).webp} type="image/webp" />
-                                        <img
-                                          src={getImageSources(`images/${image}`).fallback}
-                                          alt={`${milestone.title} - Image ${imgIndex + 2}`}
-                                          className="h-full w-full object-cover transition-transform duration-200 group-hover:scale-110"
-                                          loading="lazy"
-                                        />
-                                      </picture>
-                                      <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/20" />
-                                    </button>
-                                  ))}
-                                  {milestone.images.length > 7 && (
-                                    <button
-                                      type="button"
-                                      onClick={() => openLightbox(milestone, 0)}
-                                      className="group relative flex aspect-square items-center justify-center overflow-hidden rounded-lg bg-primary-600 text-white transition-colors hover:bg-primary-700"
-                                      aria-label={`View all ${milestone.images.length} photos`}
-                                    >
-                                      <span className="text-sm font-medium">
-                                        +{milestone.images.length - 7}
-                                      </span>
-                                    </button>
-                                  )}
-                                </div>
-                              </div>
-                            )}
-                          </div>
-                        </div>
+                      <div className="order-1 md:order-2">
+                        <SpreadImageBlock
+                          milestone={milestone}
+                          featuredImage={featuredImage}
+                          openLightbox={openLightbox}
+                          getImageSources={getImageSources}
+                        />
                       </div>
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
+                    </>
+                  )}
+                  </article>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
