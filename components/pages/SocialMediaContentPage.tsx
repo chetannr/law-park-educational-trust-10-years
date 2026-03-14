@@ -32,9 +32,9 @@ function SocialMediaContentPage() {
           <Card className="p-6 bg-blue-50 border-2 border-blue-200 max-w-4xl mx-auto">
             <h3 className="text-xl font-bold mb-3 text-blue-900">📋 How to Use This Page</h3>
             <div className="text-left text-gray-700 space-y-2">
-              <p><strong>Option 1 - Quick Copy:</strong> Click the "Copy" button next to any content section. The content will be copied to your clipboard instantly!</p>
+              <p><strong>Option 1 - Quick Copy:</strong> Click the &quot;Copy&quot; button next to any content section. The content will be copied to your clipboard instantly!</p>
               <p><strong>Option 2 - Manual Selection:</strong> You can also select and copy any text directly from the content boxes below.</p>
-              <p className="text-sm text-gray-600 mt-3">💡 <strong>Tip:</strong> After clicking "Copy", you'll see a confirmation message. Then simply paste (Ctrl+V / Cmd+V) into your social media platform!</p>
+              <p className="text-sm text-gray-600 mt-3">💡 <strong>Tip:</strong> After clicking &quot;Copy&quot;, you&apos;ll see a confirmation message. Then simply paste (Ctrl+V / Cmd+V) into your social media platform!</p>
             </div>
           </Card>
 

@@ -6,7 +6,7 @@ export const milestones: Milestone[] = [
     title: 'Our First Scholarship',
     description: 'It was the first child to whom we gave scholarship and this was our first school visit. We distributed steel plates and steel glass to 150 students in Chickaballapur.',
     location: 'Chickaballapur',
-    images: ['slide_03_Picture_1_00.jpg', 'slide_04_Picture_4_00.jpg'],
+    images: ['slide_03_Picture_1_00.jpg', 'slide_04_Picture_4_00.jpg', 'steel-plate-and-glass-distributed-to-these-children.jpeg'],
     impact: '1 scholarship, 150 students received supplies',
   },
   {
@@ -14,7 +14,7 @@ export const milestones: Milestone[] = [
     title: 'Growing Support',
     description: '10 students were given scholarship, marking our continued commitment to supporting education in rural areas.',
     location: 'Chickaballapur',
-    images: ['slide_05_Picture_1_00.jpg'],
+    images: ['slide_05_Picture_1_00.jpg', '2017.jpeg', '2017-1.jpeg', '2017-2.jpeg'],
     impact: '10 students',
   },
   {

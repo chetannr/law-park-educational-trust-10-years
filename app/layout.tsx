@@ -132,8 +132,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#15803d" />
         <meta name="msapplication-navbutton-color" content="#15803d" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <link rel="preload" href="/images/slide_28_Picture_3_00.webp" as="image" type="image/webp" />
-        <link rel="preload" href="/images/slide_28_Picture_3_00.jpg" as="image" type="image/jpeg" />
+        <link rel="preload" href="/images/steel-plate-and-glass-distributed-to-these-children.jpeg" as="image" type="image/jpeg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script

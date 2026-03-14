@@ -14,7 +14,7 @@ const GOLD = '#c9903e'
 const GOLD_LIGHT = '#e0b06a'
 
 export function Testimonials({ testimonials }: TestimonialsProps) {
-  const displayTestimonials = testimonials.slice(0, 6)
+  const displayTestimonials = testimonials.slice(0, 12)
 
   return (
     <section id="testimonials" className="bg-white py-20 sm:py-28">

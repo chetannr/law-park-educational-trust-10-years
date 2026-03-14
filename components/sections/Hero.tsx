@@ -3,25 +3,22 @@ const GOLD = '#c9903e'
 const GOLD_LIGHT = '#e0b06a'
 
 function Hero() {
-  const imagePath = '/images/slide_28_Picture_3_00'
+  const imagePath = '/images/steel-plate-and-glass-distributed-to-these-children.jpeg'
 
   return (
     <section className="relative overflow-hidden" style={{ minHeight: '92vh' }}>
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <picture>
-          <source srcSet={`${imagePath}.webp`} type="image/webp" />
-          <img
-            src={`${imagePath}.jpg`}
-            alt="Children learning and education"
-            className="w-full h-full object-cover object-center"
-            loading="eager"
-            fetchPriority="high"
-            width={1920}
-            height={1080}
-            decoding="async"
-          />
-        </picture>
+        <img
+          src={imagePath}
+          alt="Children learning and education"
+          className="w-full h-full object-cover object-center"
+          loading="eager"
+          fetchPriority="high"
+          width={1920}
+          height={1080}
+          decoding="async"
+        />
         {/* Vogue-style gradient: photo visible top-right, dark bottom-left for text */}
         <div
           className="absolute inset-0"
@@ -70,7 +67,7 @@ function Hero() {
             className="text-white/85 leading-relaxed mb-10"
             style={{ fontSize: '1.1rem', maxWidth: 480, fontFamily: 'Quicksand, sans-serif', fontWeight: 400 }}
           >
-            Law Park Educational Trust reaches children in rural Karnataka — providing scholarships, supplies, and the belief that no child should be left behind.
+            Law Park Educational Trust reaches children in rural India — providing scholarships, supplies, and the belief that no child should be left behind.
           </p>
 
           {/* Actions */}

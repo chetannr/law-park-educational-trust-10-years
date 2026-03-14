@@ -97,7 +97,7 @@ function ImpactOverview() {
             className="text-white/60 leading-relaxed"
             style={{ fontFamily: 'Quicksand, sans-serif', maxWidth: 360, fontSize: '0.95rem' }}
           >
-            From a single scholarship in Chickaballapur in 2016 to five districts across Karnataka in 2025 — here is what a decade looks like in numbers.
+            From a single scholarship in Chickaballapur in 2016 to 10+ districts across Karnataka — here is what a decade looks like in numbers.
           </p>
         </div>
 
@@ -129,7 +129,7 @@ function ImpactOverview() {
             className="font-serif italic"
             style={{ color: GOLD_LIGHT, fontSize: '1.1rem', maxWidth: 560, margin: '0 auto' }}
           >
-            "When it comes to education, no child deserves to be left behind."
+            &quot;When it comes to education, no child deserves to be left behind.&quot;
           </p>
           <div className="flex items-center justify-center gap-2 mt-3">
             <div style={{ width: 20, height: 1.5, background: GOLD, borderRadius: 1 }} />

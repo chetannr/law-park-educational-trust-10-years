@@ -68,8 +68,8 @@ export function Awards({ awards }: AwardsProps) {
                   ].map(({ label, value }) => (
                     <div key={label} className="flex gap-3 mb-2">
                       <span
-                        className="shrink-0 text-xs font-semibold uppercase tracking-wider"
-                        style={{ color: GOLD, fontFamily: 'Quicksand, sans-serif', minWidth: 90, paddingTop: 2, letterSpacing: '0.1em' }}
+                        className="shrink-0 text-xs font-semibold uppercase tracking-wider w-[100px]"
+                        style={{ color: GOLD, fontFamily: 'Quicksand, sans-serif', minWidth: 101, paddingTop: 2, letterSpacing: '0.1em' }}
                       >
                         {label}
                       </span>
@@ -103,6 +103,7 @@ export function Awards({ awards }: AwardsProps) {
                     className="overflow-hidden flex-1 p-4"
                     style={{ border: `3px solid ${GOLD}40`, margin: 12 }}
                   >
+                    {/* eslint-disable-next-line @next/next/no-img-element -- static export; images unoptimized */}
                     <img
                       src={award.certificateImage}
                       alt={`${award.title} Certificate`}
@@ -115,6 +116,7 @@ export function Awards({ awards }: AwardsProps) {
                   <div className="grid grid-cols-2 gap-2 p-3 pt-0">
                     {award.images.map((image, imgIndex) => (
                       <div key={imgIndex} className="overflow-hidden" style={{ height: 120 }}>
+                        {/* eslint-disable-next-line @next/next/no-img-element -- static export; images unoptimized */}
                         <img
                           src={image}
                           alt={`${award.title} - ${imgIndex + 1}`}

@@ -3,6 +3,7 @@ import ImpactOverview from '@/components/sections/ImpactOverview'
 import Activities from '@/components/sections/Activities'
 import { Process } from '@/components/sections/Process'
 import Timeline from '@/components/sections/Timeline'
+import { ChildrenStories } from '@/components/sections/ChildrenStories'
 import Gallery from '@/components/sections/Gallery'
 import { Trustees } from '@/components/sections/Trustees'
 import { SupportersAndPartners } from '@/components/sections/SupportersAndPartners'
@@ -19,11 +20,13 @@ export default function HomePage() {
       <Activities />
       <Process process={websiteContent.process} />
       <Timeline />
+      <ChildrenStories />
       <Gallery />
       <Trustees trustees={websiteContent.trustees} />
       <Awards awards={websiteContent.awards} />
       <SupportersAndPartners
         supporters={websiteContent.supporters}
+        teamMembers={websiteContent.teamMembers}
         partnerNGOs={websiteContent.partnerNGOs}
       />
       <Testimonials testimonials={websiteContent.testimonials} />

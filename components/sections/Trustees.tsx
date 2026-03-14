@@ -44,13 +44,16 @@ export function Trustees({ trustees }: TrusteesProps) {
               style={{ borderTop: `3px solid ${GOLD}` }}
             >
               {trustee.image && (
-                <img
-                  src={trustee.image}
-                  alt={trustee.name}
-                  className="w-20 h-20 object-cover shrink-0"
-                  style={{ borderRadius: 2 }}
-                  loading="lazy"
-                />
+                <>
+                  {/* eslint-disable-next-line @next/next/no-img-element -- static export; images unoptimized */}
+                  <img
+                    src={trustee.image}
+                    alt={trustee.name}
+                    className="w-20 h-20 object-cover shrink-0"
+                    style={{ borderRadius: 2 }}
+                    loading="lazy"
+                  />
+                </>
               )}
               <div>
                 <span

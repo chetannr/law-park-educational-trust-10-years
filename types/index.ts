@@ -73,3 +73,9 @@ export interface Award {
   images?: string[]
   certificateImage?: string
 }
+
+export interface ChildStory {
+  gender?: string
+  summary: string
+  image?: string
+}

@@ -40,7 +40,7 @@ function Footer() {
               <div>
                 <p className="font-semibold text-white mb-1">Address</p>
                 <p>
-                  No 19/A-1, 14th 'B' Cross, 2nd A Main Rd, 6th Sector, HSR Layout, Bengaluru, Karnataka 560102
+                  No 19/A-1, 14th &apos;B&apos; Cross, 2nd A Main Rd, 6th Sector, HSR Layout, Bengaluru, Karnataka 560102
                 </p>
               </div>
               <div>

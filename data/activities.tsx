@@ -1,4 +1,4 @@
-import { GraduationCap, MapPin, Package, Puzzle, BookOpen, Briefcase, Library, Users } from 'lucide-react'
+import { GraduationCap, MapPin, Package, Puzzle, BookOpen, Briefcase, Library, Users, MessageCircle } from 'lucide-react'
 import type { Activity } from '../types'
 
 export const activities: Activity[] = [
@@ -41,5 +41,10 @@ export const activities: Activity[] = [
     title: 'Community Engagement',
     description: 'We organize community events, talent showcases, and interactive sessions where children can express themselves through singing, dancing, and other activities.',
     icon: <Users className="w-10 h-10 text-gold-500" strokeWidth={1.5} />,
+  },
+  {
+    title: 'Parent Counselling',
+    description: 'We offer parent counselling to support families in understanding their children\'s educational needs, fostering a supportive home environment for learning.',
+    icon: <MessageCircle className="w-10 h-10 text-gold-500" strokeWidth={1.5} />,
   },
 ]

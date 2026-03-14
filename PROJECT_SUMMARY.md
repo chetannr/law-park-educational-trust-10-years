@@ -81,7 +81,7 @@ law-park-educational-trust/
 │   │       └── Card.tsx
 │   ├── data/
 │   │   ├── milestones.ts    # 10-year journey data
-│   │   ├── activities.ts    # Activity descriptions
+│   │   ├── activities.tsx   # Activity descriptions (with icons)
 │   │   └── stats.ts         # Impact statistics
 │   ├── routes/
 │   │   ├── __root.tsx       # Root layout

@@ -24,14 +24,11 @@ function Header() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center">
-            <picture>
-              <source srcSet="/logo.webp" type="image/webp" />
-              <img 
-                src="/logo.png"
-                alt="Law Park Educational Trust"
-                className="h-12 w-auto"
-              />
-            </picture>
+            <img
+              src="/images/logo-copy.png"
+              alt="Law Park Educational Trust"
+              className="h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}

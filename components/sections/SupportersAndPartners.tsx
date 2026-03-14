@@ -2,6 +2,7 @@ import type { Supporter, PartnerNGO } from '../../types'
 
 interface SupportersAndPartnersProps {
   supporters: Supporter[]
+  teamMembers?: string[]
   partnerNGOs: PartnerNGO[]
 }
 
@@ -9,7 +10,8 @@ const NAVY = '#1c1c2e'
 const GOLD = '#c9903e'
 const CREAM = '#faf8f3'
 
-export function SupportersAndPartners({ supporters, partnerNGOs }: SupportersAndPartnersProps) {
+export function SupportersAndPartners({ supporters, teamMembers, partnerNGOs }: SupportersAndPartnersProps) {
+  const teamList = teamMembers && teamMembers.length > 0 ? teamMembers : supporters.map((s) => s.name)
   return (
     <section id="supporters-partners" style={{ background: CREAM }} className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
@@ -41,35 +43,17 @@ export function SupportersAndPartners({ supporters, partnerNGOs }: SupportersAnd
             Our Team
           </h3>
           <div className="flex flex-wrap gap-2">
-            {supporters.map((supporter, index) => (
+            {teamList.map((name, index) => (
               <div
                 key={index}
                 className="bg-white flex items-center gap-2 px-4 py-2"
                 style={{ border: `1px solid rgba(201,144,62,0.25)` }}
               >
-                {supporter.image && (
-                  <img
-                    src={supporter.image}
-                    alt={supporter.name}
-                    className="w-7 h-7 object-cover rounded-full shrink-0"
-                    loading="lazy"
-                  />
-                )}
-                <div>
-                  <div
-                    className="font-semibold leading-tight"
-                    style={{ color: NAVY, fontFamily: 'Quicksand, sans-serif', fontSize: '0.82rem' }}
-                  >
-                    {supporter.name}
-                  </div>
-                  {supporter.contribution && (
-                    <div
-                      className="leading-tight"
-                      style={{ color: '#9a9aaa', fontFamily: 'Quicksand, sans-serif', fontSize: '0.7rem' }}
-                    >
-                      {supporter.contribution}
-                    </div>
-                  )}
+                <div
+                  className="font-semibold leading-tight"
+                  style={{ color: NAVY, fontFamily: 'Quicksand, sans-serif', fontSize: '0.82rem' }}
+                >
+                  {name}
                 </div>
               </div>
             ))}

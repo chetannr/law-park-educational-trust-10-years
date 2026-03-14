@@ -40,14 +40,14 @@ function CTASection() {
               className="leading-relaxed mb-3"
               style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'Quicksand, sans-serif', fontSize: '1rem', maxWidth: 440 }}
             >
-              Every child we've supported was found because someone cared enough to reach out. If you know a child who needs help, tell us. If you can give your time, we welcome you. If you want to be part of this story, there's a place for you here.
+              Every child we&apos;ve supported was found because someone cared enough to reach out. If you know a child who needs help, tell us. If you can give your time, we welcome you. If you want to be part of this story, there&apos;s a place for you here.
             </p>
 
             <p
               className="font-serif italic"
               style={{ color: GOLD_LIGHT, fontSize: '1rem', marginTop: '1.5rem' }}
             >
-              "When it comes to education, no child deserves to be left behind."
+              &quot;When it comes to education, no child deserves to be left behind.&quot;
             </p>
             <div className="flex items-center gap-2 mt-2">
               <div style={{ width: 16, height: 1.5, background: GOLD, borderRadius: 1 }} />

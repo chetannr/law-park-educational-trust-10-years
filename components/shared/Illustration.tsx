@@ -14,13 +14,16 @@ export function Illustration({ name, className = '' }: IllustrationProps) {
   const localPath = `/illustrations/${name}.svg`
   
   return (
-    <img
+    <>
+      {/* eslint-disable-next-line @next/next/no-img-element -- static export; illustrations from public */}
+      <img
       src={localPath}
       alt=""
       className={className}
       loading="lazy"
       aria-hidden="true"
     />
+    </>
   )
 }
 

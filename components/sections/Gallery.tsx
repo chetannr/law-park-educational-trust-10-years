@@ -89,7 +89,7 @@ function Gallery() {
               Gallery
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Moments from our journey - the smiles, the learning, and the impact we've created together.
+              Moments from our journey - the smiles, the learning, and the impact we&apos;ve created together.
             </p>
           </div>
 

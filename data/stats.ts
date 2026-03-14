@@ -3,7 +3,7 @@ import type { Stat } from '../types'
 export const stats: Stat[] = [
   {
     label: 'Students Supported',
-    value: 500,
+    value: 1000,
     suffix: '+',
   },
   {
@@ -12,14 +12,13 @@ export const stats: Stat[] = [
     suffix: '',
   },
   {
-    label: 'Schools Reached',
+    label: 'Villages Reached',
     value: 150,
     suffix: '+',
   },
   {
-    label: 'Donors',
-    value: 0,
-    suffix: '',
-    customText: 'Several',
+    label: 'Districts Reached',
+    value: 10,
+    suffix: '+',
   },
 ]

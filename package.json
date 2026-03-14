@@ -10,31 +10,31 @@
     "optimize-images": "node scripts/optimize-images.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
-    "autoprefixer": "^10.4.23",
-    "lucide-react": "^0.562.0",
-    "next": "^16.1.1",
-    "postcss": "^8.5.6",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "tailwindcss": "^4.1.18"
+    "autoprefixer": "^10.4.27",
+    "lucide-react": "^0.577.0",
+    "next": "^16.1.6",
+    "postcss": "^8.5.8",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "tailwindcss": "^4.2.1"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.3",
-    "@tailwindcss/postcss": "^4.1.18",
+    "@eslint/eslintrc": "^3.3.5",
+    "@tailwindcss/postcss": "^4.2.1",
     "@types/babel__core": "^7.20.5",
-    "@types/node": "^25.0.3",
+    "@types/node": "^25.5.0",
     "@types/prop-types": "^15.7.15",
-    "@types/react": "^19.2.7",
+    "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "eslint": "^9.39.2",
-    "eslint-config-next": "^16.1.1",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.1.6",
     "eslint-plugin-react-hooks": "^7.0.1",
-    "globals": "^16.5.0",
+    "globals": "^17.4.0",
     "sharp": "^0.34.5",
     "typescript": "~5.9.3",
-    "typescript-eslint": "^8.50.1"
+    "typescript-eslint": "^8.57.0"
   }
 }

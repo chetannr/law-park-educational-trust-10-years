@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export', // Static export for GitHub Pages
+  turbopack: {
+    root: __dirname, // Silence "inferred workspace root" when multiple lockfiles exist
+  },
   images: {
     unoptimized: true, // Required for static export
   },

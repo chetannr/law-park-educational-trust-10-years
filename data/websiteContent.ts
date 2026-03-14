@@ -15,6 +15,7 @@ export interface WebsiteContent {
   trustees: Trustee[]
   testimonials: Testimonial[]
   supporters: Supporter[]
+  teamMembers: string[]
   partnerNGOs: PartnerNGO[]
   awards: Award[]
 }
@@ -79,6 +80,111 @@ export const websiteContent: WebsiteContent = {
       text: 'Charulata ji and Manjunath ji, you are highly motivated to do good for underprivileged children through Law Park Educational Trust. They make the effort to know each of the children personally and understand their problems and needs.',
       author: 'Mr. Nihar Panigrahi',
       role: 'Senior Software Engineer',
+    },
+    {
+      text: 'I am proud of you for the mission you have started in providing education to the poor and needy. This is such an incredible job you are doing to the society. I am happy to support and join with you in this journey of your service. My best wishes to you and your team for all success to accomplish your mission.',
+      author: 'Krishnapriya',
+      role: 'Customer Support Leader, French MNC Company',
+    },
+    {
+      text: 'I think the organization has done an amazing job. I know how challenging it is just running a small centre like ours and appreciate the enormous effort put in by you and your team. It takes huge effort to organize such programs.',
+      author: 'Rajesh Reddy',
+      role: 'Advocate, Bangalore',
+    },
+    {
+      text: 'First of all congratulations to you and your team. Amazing! You have got an incredible message as blessings from a legendary person. Have a growth wherein you serve the people in need even more better. My support and wishes undoubtedly will travel with you.',
+      author: 'Kavitha Hari',
+      role: 'Skybloo, Chennai',
+    },
+    {
+      text: 'Your service to needy children for education is noble. I am happy to donate to the cause. I am impressed by your help to poor children longing for education. I join you by my contribution.',
+      author: 'P.V. Rangaiah',
+      role: 'Retired Senior Manager, UB Group, Chennai',
+    },
+    {
+      text: 'We wish to extend our sincere appreciation of your gesture of helping the needy children through scholarship in pursuing their education through the Law Park Educational Trust in the greater interest of serving the society. Thanking you once again and looking forward for your partnership in helping deserving children in the coming years for education.',
+      author: 'Rajan Varghese T',
+      role: 'Supporter',
+    },
+    {
+      text: 'I am deeply appreciative of your support to take care deserving students for the education and financial support, your generosity has inspired me to help others, I was very happy and appreciative.',
+      author: 'S. Sumesh',
+      role: 'Supporter',
+    },
+    {
+      text: 'Good work very proud of you and I should thank you for making me a part in your good work.',
+      author: 'Reshma',
+      role: 'Rainbow Properties',
+    },
+    {
+      text: 'Very happy to hear that your trust is doing good.',
+      author: 'Chandrashekar',
+      role: 'Supporter',
+    },
+    {
+      text: 'Way to Go!! Kudos.. When people find it demanding to educate one student, you are enlightening a BUNCH of underprivileged but well-deserved students. Hats off.',
+      author: 'Sathyabrata',
+      role: 'Software Engineer, Orissa',
+    },
+    {
+      text: 'Great to hear, let me know if you need any help- anytime. I would be more than happy to be part of great work you guys are doing. Count me in as well – let me know if you have more kids.',
+      author: 'Shoban',
+      role: 'USA',
+    },
+    {
+      text: 'Great work Charu, very easy to think good things but only few progress to implement the good thoughts. Salute to work of Charu.',
+      author: 'Thirunarayanan',
+      role: 'Chartered Accountant, Dubai',
+    },
+    {
+      text: 'Congratulations and proud of what you guys are doing. So proud to be associated with this organization.',
+      author: 'Sai Prasanth',
+      role: 'Hong Kong',
+    },
+    {
+      text: 'Real proud moment and we are all in to support you charu.',
+      author: 'Sridhya Mahalingam',
+      role: 'USA',
+    },
+    {
+      text: 'Charu and Manjunatha — You are doing an outstanding service by providing education to these children. This is the contribution to people and society. Best wishes to continue your excellent services.',
+      author: 'K.V. Ramani',
+      role: 'Founder and Chancellor of SAI UNIVERSITY, Chairman Managing Director, Digital Holdings Pvt. Ltd.',
+    },
+    {
+      text: 'Thank you very much charulatha madam, you are doing very great and noble service to deserving and financially poor students who are unable to continue their studies. I once again thank you and your noble service.',
+      author: 'Madhav Reddy',
+      role: 'Supporter',
+    },
+    {
+      text: 'Ms. Charulatha, Appreciation for the value of routine, ordinary, mundane rhythms of doing work each day each week with care. Keep up the good work.',
+      author: 'R. Guru Subramanian',
+      role: 'HCL Technologies, Delhi',
+    },
+    {
+      text: 'We are glad to meet a Team like yours and we are very happy for the Charitable Trust that you are running for all those children who deserve. I congratulate entire team for being identified by the great people and its all because of your hard work, interest and concern on the children and also the importance of education for the children. Let you Trust achieve more blessings by serving the needy and my support will always be with you throughout the journey.',
+      author: 'Bhavya Shravanth',
+      role: 'Bangalore',
+    },
+    {
+      text: 'Really awesome job you guys doing and I appreciate you. Good luck for your journey.',
+      author: 'Damodaran',
+      role: 'Chennai',
+    },
+    {
+      text: 'Thank you so much for the amazing job that you do. Knowing that you care for the kids giving them the confidence and reassurance. I just hope Law Park Educational Trust will continue to be hardworking and helpful to many children as possible. I am just humbled to volunteer for the organization.',
+      author: 'Dr. Adarsh Babu',
+      role: 'Bangalore',
+    },
+    {
+      text: 'Kudos to your efforts in investing your time & energy in creating better lives for the needy and deserving children. You are not only impacting the children but on a whole your efforts will create a better society for next generation to live. Truly appreciate your efforts and good luck to LAW PARK EDUCATIONAL TRUST in this journey. We will be glad to support you in this wonderful journey in any way possible.',
+      author: 'Arun AK',
+      role: 'CEO, INFINPRO CONSULTANTS',
+    },
+    {
+      text: "Law Park is striving to bring a smile on the face of many young kids and parents. I am enthralled with the team members who are working towards making this society a better place and happier by educating the next generation. I am delighted to be associated with Law Park and support their cause in making difference in people's lives.",
+      author: 'Anand Gopi',
+      role: 'USA',
     },
   ],
   supporters: [
@@ -344,6 +450,35 @@ export const websiteContent: WebsiteContent = {
     { name: 'Roopa', type: 'donor', contribution: 'Bengaluru' },
     { name: 'Sasidhar Narayana', type: 'donor', contribution: 'USA' },
   ],
+  teamMembers: [
+    'Charulatha',
+    'Manjunatha',
+    'Chethan',
+    'Jeevitha',
+    'Geetha',
+    'Bhavya',
+    'Sreekanth',
+    'Sai Prashanth',
+    'Anand',
+    'Adarsh',
+    'Rajesh',
+    'Kajol',
+    'Ankitha',
+    'Kavitha',
+    'Sumithra',
+    'Venkat',
+    'Neha',
+    'Krishnapriya',
+    'Pragya',
+    'Mamtha',
+    'Nithin',
+    'Navya',
+    'Nandini',
+    'Nagendran',
+    'Roopa',
+    'Lavanya',
+    'Shivani',
+  ],
   partnerNGOs: [
     {
       name: 'Rural Education Foundation',
@@ -362,6 +497,24 @@ export const websiteContent: WebsiteContent = {
       focus: 'Accessible Education',
       description:
         'This partnership helps us reach a wider network of schools and students. Through joint programs, we conduct awareness campaigns, organize educational workshops, and facilitate teacher training programs in underserved communities.',
+    },
+    {
+      name: 'Belaku Trust',
+      focus: 'Handling HIV patients',
+      description:
+        'We work with Belaku Trust, Bangarpet, to support children of HIV-affected families, ensuring they receive educational support and continuity in school.',
+    },
+    {
+      name: 'Soukhya Samrudhi Samsthe',
+      focus: 'Handling HIV patients',
+      description:
+        'Our collaboration with Soukhya Samrudhi Samsthe, Kolar, helps us reach and support children from HIV-affected households with scholarships and school supplies.',
+    },
+    {
+      name: 'District Health & Family Welfare Department, Kolar',
+      focus: 'Government partnership',
+      description:
+        'We partner with the District Health & Family Welfare Department, Kolar, to identify and support children from vulnerable families, including those affected by chronic health conditions.',
     },
   ],
   awards: [
