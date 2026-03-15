@@ -442,7 +442,7 @@ export const websiteContent: WebsiteContent = {
     { name: 'PG Baskar', type: 'donor', contribution: 'Germany' },
     { name: 'Ganesh', type: 'donor', contribution: 'USA' },
     { name: 'Veena', type: 'donor', contribution: 'Bengaluru' },
-    { name: 'Chethan', type: 'donor', contribution: 'Bengaluru' },
+    { name: 'Chetan', type: 'donor', contribution: 'Bengaluru' },
     { name: 'Sunitha and Raj', type: 'donor', contribution: 'USA' },
     { name: 'ChandraShekar', type: 'donor', contribution: 'Bengaluru' },
     { name: 'Vidya and Vinod', type: 'donor', contribution: 'USA' },
@@ -456,7 +456,7 @@ export const websiteContent: WebsiteContent = {
   teamMembers: [
     'Charulatha M. R.',
     'Manjunatha',
-    'Chethan',
+    'Chetan',
     'Jeevitha',
     'Geetha',
     'Bhavya',
