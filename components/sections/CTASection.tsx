@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const NAVY = '#1c1c2e'
 const GOLD = '#c9903e'
 const GOLD_LIGHT = '#e0b06a'
@@ -109,18 +111,33 @@ function CTASection() {
 
             {/* Contact strip */}
             <div
-              className="mt-2 px-6 py-4 text-xs grid grid-cols-2 gap-2"
+              className="mt-2 px-6 py-4 text-xs"
               style={{ borderTop: `1px solid rgba(255,255,255,0.1)`, color: 'rgba(255,255,255,0.4)', fontFamily: 'Quicksand, sans-serif' }}
             >
-              <div>
-                <span style={{ color: GOLD, fontWeight: 600, display: 'block', marginBottom: 2 }}>Email</span>
-                lawparktrust@gmail.com
+              <div className="grid grid-cols-2 gap-2 mb-4">
+                <div>
+                  <span style={{ color: GOLD, fontWeight: 600, display: 'block', marginBottom: 2 }}>Email</span>
+                  lawparktrust@gmail.com
+                </div>
+                <div>
+                  <span style={{ color: GOLD, fontWeight: 600, display: 'block', marginBottom: 2 }}>Support</span>
+                  <a href="https://razorpay.me/@lawparkeducationaltrust" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{ color: 'inherit' }}>
+                    razorpay.me/@lawparkeducationaltrust
+                  </a>
+                </div>
               </div>
-              <div>
-                <span style={{ color: GOLD, fontWeight: 600, display: 'block', marginBottom: 2 }}>Support</span>
-                <a href="https://razorpay.me/@lawparkeducationaltrust" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{ color: 'inherit' }}>
-                  razorpay.me/@lawparkeducationaltrust
-                </a>
+              <div className="flex flex-col items-start gap-2">
+                <span style={{ color: GOLD, fontWeight: 600, display: 'block' }}>Scan to pay (UPI)</span>
+                <div className="bg-white rounded-lg p-2" style={{ maxWidth: 200 }}>
+                  <Image
+                    src="/images/mhaks.16@oksbi.jpeg"
+                    alt="Scan to pay with any UPI app — Law Park Educational Trust"
+                    width={200}
+                    height={260}
+                    className="w-full h-auto rounded"
+                  />
+                </div>
+                <span style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.5)' }}>UPI ID: mhaks.16@oksbi</span>
               </div>
             </div>
           </div>
