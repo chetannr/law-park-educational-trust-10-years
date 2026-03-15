@@ -47,7 +47,7 @@ export const websiteContent: WebsiteContent = {
   trustees: [
     {
       name: 'Charulatha M. R.',
-      role: 'Managing Trustee',
+      role: 'Founder & Managing Trustee',
       bio: 'Charulatha, Founder of Law Park Educational Trust, during her young age used to teach poor children in her locality free of cost. That was the foundation to start this Educational Trust in the name of Law Park Educational Trust. She did her B.A Economics, Chennai and did her L.LB., at Bangalore and completed with PGDIPRL in National Law School of India, University, Bangalore. Charulatha, always encouraged children to study and many times she would pay fees to those children even before she started this Trust. Most of the times she is surrounded with children asking doubts in their studies which continued even today.',
     },
     {

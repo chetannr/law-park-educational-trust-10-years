@@ -4,13 +4,13 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Law Park Educational Trust</h3>
+            <h3 className="mb-4 text-lg font-semibold text-[#e0b06a]">Law Park Educational Trust</h3>
             <p className="text-gray-400">
               Helping children from rural areas across India get their right to education through funded scholarships.
             </p>
           </div>
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
+            <h3 className="mb-4 text-lg font-semibold text-[#e0b06a]">Quick Links</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
                 <a href="#journey" className="hover:text-white transition-colors">
@@ -35,7 +35,7 @@ function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Contact</h3>
+            <h3 className="mb-4 text-lg font-semibold text-[#e0b06a]">Contact</h3>
             <div className="space-y-3 text-gray-400">
               <div>
                 <p className="font-semibold text-white mb-1">Address</p>
