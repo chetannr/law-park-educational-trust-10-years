@@ -27,6 +27,7 @@ export default function HomePage() {
       <SupportersAndPartners
         supporters={websiteContent.supporters}
         teamMembers={websiteContent.teamMembers}
+        donors={websiteContent.donors}
         partnerNGOs={websiteContent.partnerNGOs}
       />
       <Testimonials testimonials={websiteContent.testimonials} />

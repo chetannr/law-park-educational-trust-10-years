@@ -42,7 +42,7 @@ export function Process({ process }: ProcessProps) {
         <div className="relative">
           {/* Horizontal connector line (desktop) */}
           <div
-            className="hidden lg:block absolute top-9 left-0 right-0"
+            className="hidden lg:block absolute top-6.5 left-0 right-0"
             style={{
               height: 1,
               background: `linear-gradient(to right, transparent, ${GOLD}60, ${GOLD}60, transparent)`,

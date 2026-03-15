@@ -3,6 +3,7 @@ import type { Supporter, PartnerNGO } from '../../types'
 interface SupportersAndPartnersProps {
   supporters: Supporter[]
   teamMembers?: string[]
+  donors?: string[]
   partnerNGOs: PartnerNGO[]
 }
 
@@ -10,7 +11,7 @@ const NAVY = '#1c1c2e'
 const GOLD = '#c9903e'
 const CREAM = '#faf8f3'
 
-export function SupportersAndPartners({ supporters, teamMembers, partnerNGOs }: SupportersAndPartnersProps) {
+export function SupportersAndPartners({ supporters, teamMembers, donors = [], partnerNGOs }: SupportersAndPartnersProps) {
   const teamList = teamMembers && teamMembers.length > 0 ? teamMembers : supporters.map((s) => s.name)
   const sortedTeamList = [...teamList].sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))
   const sortedSupportersWithQuotes = [...supporters]
@@ -108,6 +109,34 @@ export function SupportersAndPartners({ supporters, teamMembers, partnerNGOs }: 
                     </div>
                   </div>
                 ))}
+            </div>
+          </div>
+        )}
+
+        {/* Our Donors — chip style */}
+        {donors.length > 0 && (
+          <div className="mb-16">
+            <h3
+              className="font-semibold uppercase tracking-widest text-xs mb-6"
+              style={{ color: GOLD, fontFamily: 'Quicksand, sans-serif', letterSpacing: '0.18em' }}
+            >
+              Our Donors
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {donors.map((label, index) => (
+                <div
+                  key={index}
+                  className="bg-white flex items-center gap-2 px-4 py-2"
+                  style={{ border: `1px solid rgba(201,144,62,0.25)` }}
+                >
+                  <div
+                    className="font-semibold leading-tight"
+                    style={{ color: NAVY, fontFamily: 'Quicksand, sans-serif', fontSize: '0.82rem' }}
+                  >
+                    {label}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         )}
