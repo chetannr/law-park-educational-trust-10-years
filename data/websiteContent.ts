@@ -45,7 +45,7 @@ export const websiteContent: WebsiteContent = {
   },
   trustees: [
     {
-      name: 'Charulatha',
+      name: 'Charulatha M. R.',
       role: 'Managing Trustee',
       bio: 'Charulatha, Founder of Law Park Educational Trust, during her young age used to teach poor children in her locality free of cost. That was the foundation to start this Educational Trust in the name of Law Park Educational Trust. She did her B.A Economics, Chennai and did her L.LB., at Bangalore and completed with PGDIPRL in National Law School of India, University, Bangalore. Charulatha, always encouraged children to study and many times she would pay fees to those children even before she started this Trust. Most of the times she is surrounded with children asking doubts in their studies which continued even today.',
     },
@@ -371,6 +371,7 @@ export const websiteContent: WebsiteContent = {
     { name: 'Manivanan', type: 'donor', contribution: 'Bengaluru' },
     { name: 'Amar', type: 'donor', contribution: 'Bengaluru' },
     { name: 'Rashmi', type: 'donor', contribution: 'Bengaluru' },
+    { name: 'V. Saravanan', type: 'donor', contribution: 'Chennai' },
     { name: 'Vijay Kumar', type: 'donor', contribution: 'Kerala' },
     { name: 'Kamalesh', type: 'donor', contribution: 'Bengaluru' },
     { name: 'Babu', type: 'donor', contribution: 'Bengaluru' },
@@ -402,6 +403,7 @@ export const websiteContent: WebsiteContent = {
     { name: 'Sireesh Auto Pvt Ltd', type: 'donor', contribution: 'Bengaluru' },
     { name: 'Sushmitha', type: 'donor', contribution: 'UK' },
     { name: 'Jaganath A.S.', type: 'donor', contribution: 'Abu Dhabi' },
+    { name: 'Janardhan', type: 'donor', contribution: 'Bengaluru' },
     { name: 'Amara Ram', type: 'donor', contribution: 'Bengaluru' },
     { name: 'Gagan Karthik Sripuram', type: 'donor', contribution: 'Bengaluru' },
     { name: 'Swapna Sreedhar Murthy', type: 'donor', contribution: 'Bengaluru' },
@@ -415,6 +417,7 @@ export const websiteContent: WebsiteContent = {
     { name: 'Ganpat', type: 'donor', contribution: 'Somvarpet' },
     { name: 'Johnson Andrews', type: 'donor', contribution: 'USA' },
     { name: 'Zoho Corp', type: 'donor' },
+    { name: 'Adarsh', type: 'donor', contribution: 'Infinpro consultant, Chennai' },
     { name: 'Arun', type: 'donor', contribution: 'Chennai' },
     { name: 'Chetan Kumar N', type: 'donor', contribution: 'Bengaluru' },
     { name: 'Sasidhar', type: 'donor', contribution: 'USA' },
@@ -451,7 +454,7 @@ export const websiteContent: WebsiteContent = {
     { name: 'Sasidhar Narayana', type: 'donor', contribution: 'USA' },
   ],
   teamMembers: [
-    'Charulatha',
+    'Charulatha M. R.',
     'Manjunatha',
     'Chethan',
     'Jeevitha',

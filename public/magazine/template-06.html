@@ -967,13 +967,13 @@
       z-index: 0;
     }
 
-    /* Dark overlay – rich and deep */
+    /* Lighter overlay – lets cover image and logo show through */
     .cover-page::before {
       content: '';
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(165deg, rgba(28, 28, 46, .82) 0%, rgba(28, 28, 46, .92) 60%, rgba(12, 10, 20, .97) 100%);
+        linear-gradient(165deg, rgba(28, 28, 46, .35) 0%, rgba(28, 28, 46, .5) 50%, rgba(28, 28, 46, .65) 100%);
       pointer-events: none;
       z-index: 1;
     }
@@ -1000,10 +1000,17 @@
 
     .cover-logo-wrap {
       margin-bottom: 14mm;
+      padding: 10px 14px;
+      background: rgba(250, 248, 243, .92);
+      border-radius: 6px;
+      display: inline-block;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, .15);
     }
 
     .cover-logo {
-      width: 220px;
+      width: 200px;
+      height: auto;
+      max-height: 48px;
       object-fit: contain;
       display: block;
     }
@@ -1155,7 +1162,7 @@
 
       <div class="cover-top">
         <div class="cover-logo-wrap">
-          <img src="../images/logo-copy.png" alt="Law Park Educational Trust" class="cover-logo" />
+          <img src="/images/logo-copy.png" alt="Law Park Educational Trust" class="cover-logo" />
         </div>
 
         <div class="cover-pre-rule">
@@ -1228,7 +1235,7 @@
         <div class="two-col" style="margin-top: 0.8em;">
           <div class="trustee">
             <span class="role-tag">Founder &amp; Managing Trustee</span>
-            <h4>Charulatha</h4>
+            <h4>Charulatha M. R.</h4>
             <p>Law Park Educational Trust, Bengaluru</p>
           </div>
           <div class="trustee">
@@ -1430,7 +1437,7 @@
             <p>Scholarships reached more children. Each new family we met reinforced how urgent this work truly is.</p>
             <span class="loc">Chickaballapur</span>
             <div class="img-wrap" style="margin-top:0.45em;">
-              <img src="/images/slide_06_Picture_1_00.webp" alt="Growing impact 2019" style="width:100%; height:72px; object-fit:cover; display:block;" />
+              <img src="/images/slide_06_Picture_3_01.webp" alt="Growing impact 2019" style="width:100%; height:72px; object-fit:cover; display:block;" />
               <div class="cap">2019 Chickaballapur</div>
             </div>
           </div>
@@ -2064,7 +2071,7 @@
         </div>
 
         <p style="text-align:right; color:var(--ink-muted); font-family:'Inter',sans-serif; font-size:11px; font-style:italic; display:flex; align-items:center; justify-content:flex-end; gap:0.5em;"><span
-            style="display:inline-block; width:16px; height:1.5px; background:var(--gold); border-radius:1px;"></span> Charulatha, Founder</p>
+            style="display:inline-block; width:16px; height:1.5px; background:var(--gold); border-radius:1px;"></span> Charulatha M. R., Founder</p>
       </div>
 
       <div class="running-foot">
@@ -2095,7 +2102,7 @@
         <div class="two-col" style="margin-bottom:1em;">
           <div class="trustee">
             <span class="role-tag">Founder &amp; Managing Trustee</span>
-            <h4>Charulatha</h4>
+            <h4>Charulatha M. R.</h4>
             <p>In her young age she used to teach poor children in her locality free of cost that was the foundation for this Trust. Holds a B.A. Economics, LLB, and PGDIPRL from National Law School of India
               University. Long before the Trust was registered, she was already paying school fees for children who needed help.</p>
           </div>
@@ -2110,146 +2117,145 @@
         <hr class="rule-gold" />
         <h3 style="margin-bottom:0.5em;">Our Team</h3>
         <div class="chip-grid" style="margin: 0.5em 0 1em;">
-          <span class="chip">Charulatha</span>
-          <span class="chip">Manjunatha</span>
-          <span class="chip">Chethan</span>
-          <span class="chip">Jeevitha</span>
-          <span class="chip">Geetha</span>
-          <span class="chip">Bhavya</span>
-          <span class="chip">Sreekanth</span>
-          <span class="chip">Sai Prashanth</span>
-          <span class="chip">Anand</span>
           <span class="chip">Adarsh</span>
-          <span class="chip">Rajesh</span>
-          <span class="chip">Kajol</span>
+          <span class="chip">Anand</span>
           <span class="chip">Ankitha</span>
+          <span class="chip">Bhavya</span>
+          <span class="chip">Charulatha M. R.</span>
+          <span class="chip">Chethan</span>
+          <span class="chip">Geetha</span>
+          <span class="chip">Jeevitha</span>
+          <span class="chip">Kajol</span>
           <span class="chip">Kavitha</span>
-          <span class="chip">Sumithra</span>
-          <span class="chip">Venkat</span>
-          <span class="chip">Neha</span>
           <span class="chip">Krishnapriya</span>
-          <span class="chip">Pragya</span>
+          <span class="chip">Lavanya</span>
           <span class="chip">Mamtha</span>
-          <span class="chip">Nithin</span>
-          <span class="chip">Navya</span>
+          <span class="chip">Manjunatha</span>
           <span class="chip">Nandini</span>
           <span class="chip">Nagendran</span>
+          <span class="chip">Navya</span>
+          <span class="chip">Neha</span>
+          <span class="chip">Nithin</span>
+          <span class="chip">Pragya</span>
+          <span class="chip">Rajesh</span>
           <span class="chip">Roopa</span>
-          <span class="chip">Lavanya</span>
+          <span class="chip">Sai Prashanth</span>
           <span class="chip">Shivani</span>
+          <span class="chip">Sreekanth</span>
+          <span class="chip">Sumithra</span>
+          <span class="chip">Venkat</span>
         </div>
 
         <h3 style="margin:0.8em 0 0.5em;">Our Donors</h3>
         <div class="chip-grid" style="margin: 0.5em 0 1em;">
-          <span class="chip">Rita ChandraShekar · Chennai</span>
-          <span class="chip">Nanda Kumar · Bengaluru</span>
-          <span class="chip">Mamatha Nagaraj · Bengaluru</span>
-          <span class="chip">Shoban · USA</span>
-          <span class="chip">Jayanthai · Chennai</span>
-          <span class="chip">Rajesh · Chennai</span>
-          <span class="chip">Sai Prashanth · Chennai</span>
-          <span class="chip">Mamatha · Bengaluru</span>
-          <span class="chip">Krishnapriya · Bengaluru</span>
-          <span class="chip">Raman ChandraShekar · Bengaluru</span>
-          <span class="chip">Subham Enterprises</span>
-          <span class="chip">Pooja · Bengaluru</span>
-          <span class="chip">Sanjay · Chennai</span>
-          <span class="chip">Swapna Sridhar Murthy · Bengaluru</span>
-          <span class="chip">Nihar Panigrahi · Bengaluru</span>
-          <span class="chip">Sunita Ram Kumar · Chennai</span>
-          <span class="chip">Monash Molding Solution · Bengaluru</span>
-          <span class="chip">Ganesh · Tirunelveli</span>
-          <span class="chip">Naveen · Bengaluru</span>
-          <span class="chip">Dinesh · Bengaluru</span>
-          <span class="chip">Modran Spaace Ventures · Bengaluru</span>
-          <span class="chip">Soniyajoby · Bengaluru</span>
-          <span class="chip">Kiran · Bengaluru</span>
-          <span class="chip">Pinto · Bengaluru</span>
-          <span class="chip">Pavana · Bengaluru</span>
-          <span class="chip">Prabhagaran · Bengaluru</span>
-          <span class="chip">Reenu · Bengaluru</span>
-          <span class="chip">Murugavel Kuthaiyan · Bengaluru</span>
-          <span class="chip">Manivanan · Bengaluru</span>
-          <span class="chip">Amar · Bengaluru</span>
-          <span class="chip">Rashmi · Bengaluru</span>
-          <span class="chip">Vijay Kumar · Kerala</span>
-          <span class="chip">Kamalesh · Bengaluru</span>
-          <span class="chip">Babu · Bengaluru</span>
-          <span class="chip">Shruchikitchen · USA</span>
-          <span class="chip">Sangeetha · Chennai</span>
-          <span class="chip">Mohammed Moin · Chennai</span>
-          <span class="chip">Vishal Mohan Bhoj · Bengaluru</span>
-          <span class="chip">Malithama B.V. · Bengaluru</span>
-          <span class="chip">Thirunarayanan · Dubai</span>
-          <span class="chip">Indumathi · Chennai</span>
+          <span class="chip">Adarsh · Infinpro consultant, Chennai</span>
           <span class="chip">Aishwarya Jain · Bengaluru</span>
-          <span class="chip">Menaka · Bengaluru</span>
-          <span class="chip">Shabnam · Chennai</span>
-          <span class="chip">J. Shanthi · Chennai</span>
-          <span class="chip">Guru Subramanian · Delhi</span>
-          <span class="chip">Veena Reddy · Bengaluru</span>
-          <span class="chip">Yavanthi Shivakumar · Bengaluru</span>
-          <span class="chip">Thilak Narayanan · Chennai</span>
-          <span class="chip">Durga Steel Industries · Bengaluru</span>
-          <span class="chip">Vimara Devaramji · Bengaluru</span>
-          <span class="chip">Gandat Devaramji · Bengaluru</span>
-          <span class="chip">P.C. Gopi · Chennai</span>
-          <span class="chip">Sridhar Chakravarthy · Bengaluru</span>
-          <span class="chip">DESIGNX · Bengaluru</span>
-          <span class="chip">Nagadev Amruthnath · USA</span>
-          <span class="chip">Supreeth Vimala Suresh · Bengaluru</span>
-          <span class="chip">Swapnil Saloni · Bengaluru</span>
-          <span class="chip">Vanitha Girish · Bengaluru</span>
-          <span class="chip">Sireesh Auto Pvt Ltd · Bengaluru</span>
-          <span class="chip">Sushmitha · UK</span>
-          <span class="chip">Jaganath A.S. · Abu Dhabi</span>
+          <span class="chip">Amar · Bengaluru</span>
           <span class="chip">Amara Ram · Bengaluru</span>
-          <span class="chip">Gagan Karthik Sripuram · Bengaluru</span>
-          <span class="chip">Swapna Sreedhar Murthy · Bengaluru</span>
-          <span class="chip">Madhu · Chennai</span>
-          <span class="chip">Venu Motors · Bengaluru</span>
-          <span class="chip">Sumithra · Bengaluru</span>
-          <span class="chip">Manish · Bengaluru</span>
-          <span class="chip">Revanna · Bengaluru</span>
-          <span class="chip">Geetha Jayaram · Bengaluru</span>
-          <span class="chip">Shanthi · Chennai</span>
-          <span class="chip">Ganpat · Somvarpet</span>
-          <span class="chip">Johnson Andrews · USA</span>
-          <span class="chip">Zoho Corp</span>
-          <span class="chip">Arun · Chennai</span>
-          <span class="chip">Chetan Kumar N · Bengaluru</span>
-          <span class="chip">Sasidhar · USA</span>
-          <span class="chip">Ragul Raja · Bengaluru</span>
-          <span class="chip">Veena · Bengaluru</span>
-          <span class="chip">Girish · Bengaluru</span>
-          <span class="chip">Ganesh Ram · Chennai</span>
-          <span class="chip">Meyyappan · Chennai</span>
-          <span class="chip">Raman Chandra Shekar · Bengaluru</span>
-          <span class="chip">Roshan · Bengaluru</span>
-          <span class="chip">Nagendra · Bengaluru</span>
-          <span class="chip">Yathish · Bengaluru</span>
-          <span class="chip">Sandeep · Bengaluru</span>
-          <span class="chip">Dhananjay · Bengaluru</span>
-          <span class="chip">Pavan · USA</span>
-          <span class="chip">Reshma Krish Rainbow Builders · Bengaluru</span>
           <span class="chip">Arpan Kaur</span>
-          <span class="chip">Theja · Bengaluru</span>
-          <span class="chip">Prashansa Meyn · Denmark</span>
-          <span class="chip">Surana · Bengaluru</span>
+          <span class="chip">Arun · Chennai</span>
+          <span class="chip">Baba Fakrudin · Bengaluru</span>
+          <span class="chip">Babu · Bengaluru</span>
+          <span class="chip">ChandraShekar · Bengaluru</span>
+          <span class="chip">Chetan Kumar N · Bengaluru</span>
+          <span class="chip">Chethan · Bengaluru</span>
+          <span class="chip">Damodharan · Chennai</span>
+          <span class="chip">DESIGNX · Bengaluru</span>
+          <span class="chip">Dhananjay · Bengaluru</span>
+          <span class="chip">Dinesh · Bengaluru</span>
+          <span class="chip">Durga Steel Industries · Bengaluru</span>
+          <span class="chip">Gagan Karthik Sripuram · Bengaluru</span>
+          <span class="chip">Ganpat · Somvarpet</span>
+          <span class="chip">Ganesh · Tirunelveli</span>
+          <span class="chip">Ganesh · USA</span>
+          <span class="chip">Ganesh Ram · Chennai</span>
+          <span class="chip">Gandat Devaramji · Bengaluru</span>
+          <span class="chip">Geetha Jayaram · Bengaluru</span>
+          <span class="chip">Girish · Bengaluru</span>
+          <span class="chip">Guru Subramanian · Delhi</span>
+          <span class="chip">J. Shanthi · Chennai</span>
+          <span class="chip">Jaganath A.S. · Abu Dhabi</span>
+          <span class="chip">Janardhan · Bengaluru</span>
+          <span class="chip">Jayanthai · Chennai</span>
+          <span class="chip">Johnson Andrews · USA</span>
+          <span class="chip">Kamalesh · Bengaluru</span>
+          <span class="chip">Kiran · Bengaluru</span>
+          <span class="chip">Krishnapriya · Bengaluru</span>
+          <span class="chip">Madhu · Chennai</span>
+          <span class="chip">Malithama B.V. · Bengaluru</span>
+          <span class="chip">Mamatha · Bengaluru</span>
+          <span class="chip">Mamatha Nagaraj · Bengaluru</span>
+          <span class="chip">Mamatha Prasanna · Bengaluru</span>
+          <span class="chip">Manish · Bengaluru</span>
+          <span class="chip">Manivanan · Bengaluru</span>
+          <span class="chip">Menaka · Bengaluru</span>
+          <span class="chip">Meyyappan · Chennai</span>
+          <span class="chip">Mohammed Moin · Chennai</span>
+          <span class="chip">Modran Spaace Ventures · Bengaluru</span>
+          <span class="chip">Monash Molding Solution · Bengaluru</span>
+          <span class="chip">Mukesh · Bengaluru</span>
+          <span class="chip">Murugavel Kuthaiyan · Bengaluru</span>
+          <span class="chip">Nanda Kumar · Bengaluru</span>
+          <span class="chip">Nagadev Amruthnath · USA</span>
+          <span class="chip">Nagendra · Bengaluru</span>
+          <span class="chip">Naveen · Bengaluru</span>
+          <span class="chip">Nihar Panigrahi · Bengaluru</span>
+          <span class="chip">P.C. Gopi · Chennai</span>
           <span class="chip">PG Anand · USA</span>
           <span class="chip">PG Baskar · Germany</span>
-          <span class="chip">Ganesh · USA</span>
-          <span class="chip">Veena · Bengaluru</span>
-          <span class="chip">Chethan · Bengaluru</span>
-          <span class="chip">Sunitha and Raj · USA</span>
-          <span class="chip">ChandraShekar · Bengaluru</span>
-          <span class="chip">Vidya and Vinod · USA</span>
-          <span class="chip">Baba Fakrudin · Bengaluru</span>
-          <span class="chip">Damodharan · Chennai</span>
-          <span class="chip">Mamatha Prasanna · Bengaluru</span>
-          <span class="chip">Mukesh · Bengaluru</span>
+          <span class="chip">Pavana · Bengaluru</span>
+          <span class="chip">Pavan · USA</span>
+          <span class="chip">Pinto · Bengaluru</span>
+          <span class="chip">Pooja · Bengaluru</span>
+          <span class="chip">Prabhagaran · Bengaluru</span>
+          <span class="chip">Prashansa Meyn · Denmark</span>
+          <span class="chip">Ragul Raja · Bengaluru</span>
+          <span class="chip">Raman Chandra Shekar · Bengaluru</span>
+          <span class="chip">Raman ChandraShekar · Bengaluru</span>
+          <span class="chip">Rashmi · Bengaluru</span>
+          <span class="chip">Reenu · Bengaluru</span>
+          <span class="chip">Reshma Krish Rainbow Builders · Bengaluru</span>
+          <span class="chip">Revanna · Bengaluru</span>
+          <span class="chip">Rita ChandraShekar · Chennai</span>
+          <span class="chip">Roshan · Bengaluru</span>
           <span class="chip">Roopa · Bengaluru</span>
+          <span class="chip">Sai Prashanth · Chennai</span>
+          <span class="chip">Sangeetha · Chennai</span>
+          <span class="chip">Sanjay · Chennai</span>
+          <span class="chip">Sasidhar · USA</span>
           <span class="chip">Sasidhar Narayana · USA</span>
+          <span class="chip">Shabnam · Chennai</span>
+          <span class="chip">Shanthi · Chennai</span>
+          <span class="chip">Shoban · USA</span>
+          <span class="chip">Shruchikitchen · USA</span>
+          <span class="chip">Sireesh Auto Pvt Ltd · Bengaluru</span>
+          <span class="chip">Soniyajoby · Bengaluru</span>
+          <span class="chip">Sridhar Chakravarthy · Bengaluru</span>
+          <span class="chip">Subham Enterprises</span>
+          <span class="chip">Sumithra · Bengaluru</span>
+          <span class="chip">Sunita Ram Kumar · Chennai</span>
+          <span class="chip">Sunitha and Raj · USA</span>
+          <span class="chip">Supreeth Vimala Suresh · Bengaluru</span>
+          <span class="chip">Surana · Bengaluru</span>
+          <span class="chip">Swapna Sreedhar Murthy · Bengaluru</span>
+          <span class="chip">Swapna Sridhar Murthy · Bengaluru</span>
+          <span class="chip">Swapnil Saloni · Bengaluru</span>
+          <span class="chip">Sushmitha · UK</span>
+          <span class="chip">Theja · Bengaluru</span>
+          <span class="chip">Thirunarayanan · Dubai</span>
+          <span class="chip">Thilak Narayanan · Chennai</span>
+          <span class="chip">V. Saravanan · Chennai</span>
+          <span class="chip">Vanitha Girish · Bengaluru</span>
+          <span class="chip">Veena · Bengaluru</span>
+          <span class="chip">Veena Reddy · Bengaluru</span>
+          <span class="chip">Venu Motors · Bengaluru</span>
+          <span class="chip">Vidya and Vinod · USA</span>
+          <span class="chip">Vijay Kumar · Kerala</span>
+          <span class="chip">Vimara Devaramji · Bengaluru</span>
+          <span class="chip">Vishal Mohan Bhoj · Bengaluru</span>
+          <span class="chip">Yathish · Bengaluru</span>
+          <span class="chip">Yavanthi Shivakumar · Bengaluru</span>
+          <span class="chip">Zoho Corp</span>
         </div>
 
         <div class="callout callout-gold">
@@ -2281,7 +2287,7 @@
 
         <!-- Full-width image -->
         <div style="width: calc(100% + 36mm); margin-left: -18mm; margin-top: -2mm; margin-bottom: 6mm; height: 52mm; overflow: hidden; position: relative;">
-          <img src="/images/slide_27_Picture_2_01.webp" alt="Community support" style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;" />
+          <img src="/images/slide_24_Picture_3_02.webp" alt="Community and learning" style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;" />
           <div style="position:absolute; inset:0; background:linear-gradient(to bottom, transparent 30%, rgba(28,28,46,.65) 100%);"></div>
           <div style="position:absolute; bottom:12px; left:18mm; right:18mm;">
             <p style="font-family:'Playfair Display',Georgia,serif; font-size:18px; font-style:italic; color:var(--white); margin:0; line-height:1.4;">Together, we keep every child in school.</p>

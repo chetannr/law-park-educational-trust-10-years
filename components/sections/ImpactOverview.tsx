@@ -134,7 +134,7 @@ function ImpactOverview() {
           <div className="flex items-center justify-center gap-2 mt-3">
             <div style={{ width: 20, height: 1.5, background: GOLD, borderRadius: 1 }} />
             <span style={{ color: 'rgba(255,255,255,0.45)', fontFamily: 'Quicksand, sans-serif', fontSize: '0.75rem', letterSpacing: '0.1em' }}>
-              Charulatha, Founder
+              Charulatha M. R., Founder
             </span>
           </div>
         </div>

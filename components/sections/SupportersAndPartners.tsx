@@ -12,6 +12,10 @@ const CREAM = '#faf8f3'
 
 export function SupportersAndPartners({ supporters, teamMembers, partnerNGOs }: SupportersAndPartnersProps) {
   const teamList = teamMembers && teamMembers.length > 0 ? teamMembers : supporters.map((s) => s.name)
+  const sortedTeamList = [...teamList].sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))
+  const sortedSupportersWithQuotes = [...supporters]
+    .filter((s) => s.quote)
+    .sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }))
   return (
     <section id="supporters-partners" style={{ background: CREAM }} className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
@@ -43,7 +47,7 @@ export function SupportersAndPartners({ supporters, teamMembers, partnerNGOs }: 
             Our Team
           </h3>
           <div className="flex flex-wrap gap-2">
-            {teamList.map((name, index) => (
+            {sortedTeamList.map((name, index) => (
               <div
                 key={index}
                 className="bg-white flex items-center gap-2 px-4 py-2"
@@ -70,9 +74,7 @@ export function SupportersAndPartners({ supporters, teamMembers, partnerNGOs }: 
               Voices from Our Team
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {supporters
-                .filter((s) => s.quote)
-                .map((supporter, index) => (
+              {sortedSupportersWithQuotes.map((supporter, index) => (
                   <div
                     key={index}
                     className="p-5"

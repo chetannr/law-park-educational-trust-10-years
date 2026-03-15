@@ -13,7 +13,12 @@ const NAVY = '#1c1c2e'
 const GOLD = '#c9903e'
 const CREAM = '#faf8f3'
 
+function sortByName(a: { name: string }, b: { name: string }) {
+  return a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })
+}
+
 export function Trustees({ trustees }: TrusteesProps) {
+  const sortedTrustees = [...trustees].sort(sortByName)
   return (
     <section id="trustees" style={{ background: CREAM }} className="pt-20 sm:pt-28">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
@@ -37,7 +42,7 @@ export function Trustees({ trustees }: TrusteesProps) {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {trustees.map((trustee, index) => (
+          {sortedTrustees.map((trustee, index) => (
             <div
               key={index}
               className="bg-white flex gap-5 p-6"

@@ -27,10 +27,10 @@ function ContentLandingPage() {
                   Magazine
                 </h2>
                 <p className="text-gray-600 flex-1 mb-6">
-                  Print-ready A4 magazine templates for the 10-year anniversary. Open a template and export to PDF from the browser.
+                  Print-ready A4 magazine for the 10-year anniversary. Open and export to PDF from the browser.
                 </p>
                 <span className="text-primary-600 font-semibold inline-flex items-center gap-2">
-                  View templates
+                  View magazine
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
