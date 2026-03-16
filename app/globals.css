@@ -103,3 +103,35 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 }
+
+/* A4 letter page: print on letterhead / Save as PDF */
+.a4-letter-page {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+@media print {
+  /* Hide site chrome when printing so only letter content appears */
+  header,
+  footer,
+  a[aria-label="Contact us on WhatsApp"] {
+    display: none !important;
+  }
+
+  /* A4 letter: one page, no extra margins from layout */
+  .a4-letter-page {
+    box-shadow: none;
+    max-width: 100%;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .sudha-invite-letter {
+    max-width: 100%;
+  }
+
+  .a4-letter-page {
+    page-break-inside: avoid;
+  }
+}

@@ -48,12 +48,12 @@ export const websiteContent: WebsiteContent = {
     {
       name: 'Charulatha M. R.',
       role: 'Founder & Managing Trustee',
-      bio: 'Charulatha, Founder of Law Park Educational Trust, during her young age used to teach poor children in her locality free of cost. That was the foundation to start this Educational Trust in the name of Law Park Educational Trust. She did her B.A Economics, Chennai and did her L.LB., at Bangalore and completed with PGDIPRL in National Law School of India, University, Bangalore. Charulatha, always encouraged children to study and many times she would pay fees to those children even before she started this Trust. Most of the times she is surrounded with children asking doubts in their studies which continued even today.',
+      bio: 'Charulatha, Founder of Law Park Educational Trust, during her young age used to teach poor children in her locality free of cost. That was the foundation to start this Educational Trust in the name of Law Park Educational Trust. She did her B.A Economics, Chennai and did her L.LB., at Bengaluru and completed with PGDIPRL in National Law School of India, University, Bengaluru. Charulatha, always encouraged children to study and many times she would pay fees to those children even before she started this Trust. Most of the times she is surrounded with children asking doubts in their studies which continued even today.',
     },
     {
       name: 'S.M. MANJUNATHA',
       role: 'Trustee',
-      bio: 'Hailing from the small and beautiful village name Sadenahalli in Karnataka and a Trustee of Law Park Educational Trust. Since childhood, he had always had a passion for inspiring the poor and so, he was the first member of his family to leave the village he was born and raised in to study in the city. He graduted with a degree in Law from Bangalore and encouraged his fellow friends and cousins to follow in his footsteps and also graduate. Moreover, he funded many children from his village who have now grown into well settled, contributing members of society.',
+      bio: 'Hailing from the small and beautiful village name Sadenahalli in Karnataka and a Trustee of Law Park Educational Trust. Since childhood, he had always had a passion for inspiring the poor and so, he was the first member of his family to leave the village he was born and raised in to study in the city. He graduted with a degree in Law from Bengaluru and encouraged his fellow friends and cousins to follow in his footsteps and also graduate. Moreover, he funded many children from his village who have now grown into well settled, contributing members of society.',
     },
   ],
   testimonials: [
@@ -90,7 +90,7 @@ export const websiteContent: WebsiteContent = {
     {
       text: 'I think the organization has done an amazing job. I know how challenging it is just running a small centre like ours and appreciate the enormous effort put in by you and your team. It takes huge effort to organize such programs.',
       author: 'Rajesh Reddy',
-      role: 'Advocate, Bangalore',
+      role: 'Advocate, Bengaluru',
     },
     {
       text: 'First of all congratulations to you and your team. Amazing! You have got an incredible message as blessings from a legendary person. Have a growth wherein you serve the people in need even more better. My support and wishes undoubtedly will travel with you.',
@@ -165,7 +165,7 @@ export const websiteContent: WebsiteContent = {
     {
       text: 'We are glad to meet a Team like yours and we are very happy for the Charitable Trust that you are running for all those children who deserve. I congratulate entire team for being identified by the great people and its all because of your hard work, interest and concern on the children and also the importance of education for the children. Let you Trust achieve more blessings by serving the needy and my support will always be with you throughout the journey.',
       author: 'Bhavya Shravanth',
-      role: 'Bangalore',
+      role: 'Bengaluru',
     },
     {
       text: 'Really awesome job you guys doing and I appreciate you. Good luck for your journey.',
@@ -175,7 +175,7 @@ export const websiteContent: WebsiteContent = {
     {
       text: 'Thank you so much for the amazing job that you do. Knowing that you care for the kids giving them the confidence and reassurance. I just hope Law Park Educational Trust will continue to be hardworking and helpful to many children as possible. I am just humbled to volunteer for the organization.',
       author: 'Dr. Adarsh Babu',
-      role: 'Bangalore',
+      role: 'Bengaluru',
     },
     {
       text: 'Kudos to your efforts in investing your time & energy in creating better lives for the needy and deserving children. You are not only impacting the children but on a whole your efforts will create a better society for next generation to live. Truly appreciate your efforts and good luck to LAW PARK EDUCATIONAL TRUST in this journey. We will be glad to support you in this wonderful journey in any way possible.',
@@ -232,21 +232,21 @@ export const websiteContent: WebsiteContent = {
       name: 'Mr. Sreekanth',
       type: 'volunteer',
       contribution: 'Director',
-      description: 'Director at Techhat, Bangalore, providing valuable support and guidance to our trust operations and educational programs.',
+      description: 'Director at Techhat, Bengaluru, providing valuable support and guidance to our trust operations and educational programs.',
       quote: 'What struck me about Law Park is how methodically they verify every child\'s need before committing, that rigour builds lasting trust.',
     },
     {
       name: 'Mrs. Nandini',
       type: 'volunteer',
       contribution: 'Lead Consultant - ITC',
-      description: 'Lead Consultant at ITC, Bangalore, contributing expertise and support to our educational initiatives and student development programs.',
+      description: 'Lead Consultant at ITC, Bengaluru, contributing expertise and support to our educational initiatives and student development programs.',
       quote: 'I\'ve seen how the trust turns a small annual contribution into a child\'s entire year of school, the accountability is extraordinary.',
     },
     {
       name: 'K. Krishnapriya',
       type: 'volunteer',
       contribution: 'Customer Support Manager',
-      description: 'Customer Support Manager from Bangalore, actively volunteering and supporting our trust activities and student assistance programs.',
+      description: 'Customer Support Manager from Bengaluru, actively volunteering and supporting our trust activities and student assistance programs.',
       quote: 'Every field visit teaches me something new about resilience, these children carry ambition that most of us take for granted.',
     },
     {
@@ -260,7 +260,7 @@ export const websiteContent: WebsiteContent = {
       name: 'Ms. Navya',
       type: 'volunteer',
       contribution: 'Public Health Research Associate',
-      description: 'Public Health Research Associate at IPH, Bangalore, providing valuable support and expertise to our educational and community development programs.',
+      description: 'Public Health Research Associate at IPH, Bengaluru, providing valuable support and expertise to our educational and community development programs.',
       quote: 'Education and health are two sides of the same coin, a child who stays in school is a child who stays well.',
     },
     {
@@ -274,7 +274,7 @@ export const websiteContent: WebsiteContent = {
       name: 'Mrs. Bhavya',
       type: 'donor',
       contribution: 'Home maker',
-      description: 'Home maker from Bangalore, generously supporting our educational initiatives and contributing to the growth and development of underprivileged students.',
+      description: 'Home maker from Bengaluru, generously supporting our educational initiatives and contributing to the growth and development of underprivileged students.',
       quote: 'As a mother, I know what education means to a family. Supporting even one child feels like investing in an entire household\'s future.',
     },
     {
@@ -282,7 +282,7 @@ export const websiteContent: WebsiteContent = {
       type: 'volunteer',
       contribution: 'Advocate',
       description:
-        'Advocate from Bangalore who volunteers his legal expertise to support our trust operations and provides guidance on legal matters, ensuring our programs comply with all regulations.',
+        'Advocate from Bengaluru who volunteers his legal expertise to support our trust operations and provides guidance on legal matters, ensuring our programs comply with all regulations.',
       quote: 'The law exists to protect the vulnerable, helping this trust stay compliant means protecting the children it serves.',
     },
     {

@@ -59,7 +59,7 @@ function InviteWebpage() {
               <h2 className="text-3xl font-bold mb-6 text-gray-900">Our Story</h2>
               <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
             <p>
-              With all respect I introduce myself as Charulatha. M. R, Founder of Law Park Educational Trust, Bangalore. We as a team are helping children across India for their education. We have been helping children residing in the rural sector, children of HIV patients, children of acid-attack victims, tribal children and many such children. We help these children by paying their school fees so no child under our care is left unschooled.
+              With all respect I introduce myself as Charulatha. M. R, Founder of Law Park Educational Trust, Bengaluru. We as a team are helping children across India for their education. We have been helping children residing in the rural sector, children of HIV patients, children of acid-attack victims, tribal children and many such children. We help these children by paying their school fees so no child under our care is left unschooled.
             </p>
             <p>
               With tribal children, we stay with the children for a few days and we teach and learn many activities and finally distribute school essentials to these children.

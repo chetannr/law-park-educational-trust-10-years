@@ -71,7 +71,7 @@ function ContentLandingPage() {
                   Donor Invite
                 </h2>
                 <p className="text-gray-600 flex-1 mb-6">
-                  Sponsorship invite letter for the 10-year celebration event—bringing children to Bangalore for the first time. Copy and share with donors.
+                  Sponsorship invite letter for the 10-year celebration event—bringing children to Bengaluru for the first time. Copy and share with donors.
                 </p>
                 <span className="text-primary-600 font-semibold inline-flex items-center gap-2">
                   View content

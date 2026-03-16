@@ -4,18 +4,18 @@ import { useState } from 'react'
 import Card from '../ui/Card'
 import { DONATION_URL } from '@/data/constants'
 
-const webpageHeroHeadline = '10 Years of Service – Help Us Bring Children to Bangalore'
+const webpageHeroHeadline = '10 Years of Service – Help Us Bring Children to Bengaluru'
 const webpageSubheadline = 'Sponsor our celebration event and give children their first trip to the city. Your support brings smiles and lasting change.'
 const webpageAboutIntro = `Law Park Educational Trust is completing 10 years of service to our Nation. We help children across India—in rural areas, tribal communities, and children of HIV patients and acid-attack survivors—by supporting their education so no child under our care is left unschooled.
 
-To celebrate this milestone, we want to bring all the children under our care to Bangalore: an event, a one-day educational tour, surprise gifts, and lasting memories. For many of these children, it will be their first time visiting Bangalore—in fact, their first time stepping out of their abode.
+To celebrate this milestone, we want to bring all the children under our care to Bengaluru: an event, a one-day educational tour, surprise gifts, and lasting memories. For many of these children, it will be their first time visiting Bengaluru—in fact, their first time stepping out of their abode.
 
 We need your sponsorship to make this happen. Your support will be heartwarming for all of us and will create a great change in these children's lives.`
 const webpageKeyPoints = `• Law Park Educational Trust – 10 years of service to the Nation
 • Supporting children across India: rural, tribal, HIV-affected, acid-attack survivors
 • No child under our care left unschooled – we pay school fees and provide essentials
-• Celebrating with a Bangalore event: one-day tour, surprise gifts, memories for a lifetime
-• For many children, this will be their first time visiting Bangalore—first time stepping out of their abode
+• Celebrating with a Bengaluru event: one-day tour, surprise gifts, memories for a lifetime
+• For many children, this will be their first time visiting Bengaluru—first time stepping out of their abode
 • We request sponsorship to make this event possible. Together we can create a great change.`
 const webpageCtaBlock = `Your support can bring smiles and create lasting change in these children's lives. We request your financial help for this noble cause.
 
@@ -28,9 +28,9 @@ Representing our entire Team
 +919945665379`
 
 const webpageEmailSubjects = [
-  '10-Year Celebration – Sponsor Our Children\'s First Trip to Bangalore',
+  '10-Year Celebration – Sponsor Our Children\'s First Trip to Bengaluru',
   'Request for Sponsorship: Law Park Educational Trust 10-Year Event',
-  'Bring Smiles to Children – Support Our Bangalore Celebration',
+  'Bring Smiles to Children – Support Our Bengaluru Celebration',
   'Your Support Can Change Lives: 10-Year Milestone Event',
 ]
 
@@ -127,13 +127,13 @@ function WebpageContentPage() {
               <span className="font-semibold">From:</span> Charulatha M. R. (Founder)
             </div>
             <div>
-              <span className="font-semibold">Organization:</span> Law Park Educational Trust, Bangalore
+              <span className="font-semibold">Organization:</span> Law Park Educational Trust, Bengaluru
             </div>
             <div>
-              <span className="font-semibold">Ask:</span> Sponsorship for children&apos;s event and Bangalore visit
+              <span className="font-semibold">Ask:</span> Sponsorship for children&apos;s event and Bengaluru visit
             </div>
             <div>
-              <span className="font-semibold">Highlights:</span> First-time Bangalore visit for many children; event, tour, gifts
+              <span className="font-semibold">Highlights:</span> First-time Bengaluru visit for many children; event, tour, gifts
             </div>
             <div>
               <span className="font-semibold">Contact:</span> +919945665379
@@ -284,8 +284,8 @@ function WebpageContentPage() {
             <li><strong>Milestone:</strong> 10 years of service to the Nation</li>
             <li><strong>Reach:</strong> Children across India—rural, tribal, HIV-affected, acid-attack survivors</li>
             <li><strong>Impact:</strong> School fees and essentials so no child under our care is left unschooled</li>
-            <li><strong>Celebration:</strong> Bringing all children to Bangalore—event, tour, gifts</li>
-            <li><strong>First time:</strong> For many, first time visiting Bangalore and stepping out of their abode</li>
+            <li><strong>Celebration:</strong> Bringing all children to Bengaluru—event, tour, gifts</li>
+            <li><strong>First time:</strong> For many, first time visiting Bengaluru and stepping out of their abode</li>
             <li><strong>Ask:</strong> Sponsorship to make the event possible</li>
             <li><strong>Call to action:</strong> Donate or contact for sponsorship; link to donation page</li>
           </ul>

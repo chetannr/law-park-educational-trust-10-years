@@ -6,7 +6,7 @@ import { DONATION_URL } from '@/data/constants'
 
 const donorInviteFullLetter = `Dear Madam,
 
-With all respect I introduce myself as Charulatha. M. R, Founder of Law Park Educational Trust, Bangalore. We as a team are helping children across India for their education. We have been helping children residing in the rural sector, children of HIV patients, children of acid-attack victims, tribal children and many such children. We help these children by paying their school fees so no child under our care is left unschooled.
+With all respect I introduce myself as Charulatha. M. R, Founder of Law Park Educational Trust, Bengaluru. We as a team are helping children across India for their education. We have been helping children residing in the rural sector, children of HIV patients, children of acid-attack victims, tribal children and many such children. We help these children by paying their school fees so no child under our care is left unschooled.
 
 With tribal children, we stay with the children for a few days and we teach and learn many activities and finally distribute school essentials to these children.
 
@@ -28,7 +28,7 @@ const donorInviteInstagramCaption = `We're completing 10 years of serving our Na
 
 We help children across India—rural, tribal, children of HIV patients and acid-attack survivors—by supporting their education so no child under our care is left unschooled.
 
-This year we want to celebrate by bringing ALL the children under our care to Bangalore: an event, a day tour, surprise gifts, and memories for a lifetime. For many, it will be their first time stepping out of their abode. 💫
+This year we want to celebrate by bringing ALL the children under our care to Bengaluru: an event, a day tour, surprise gifts, and memories for a lifetime. For many, it will be their first time stepping out of their abode. 💫
 
 We're excited but need sponsorship to make it happen. Your support can bring smiles and change lives.
 
@@ -37,14 +37,14 @@ We're excited but need sponsorship to make it happen. Your support can bring smi
 💝 Donate: ${DONATION_URL}
 
 Contact: +919945665379
-#LawParkEducationalTrust #10YearsOfService #EducationForAll #Sponsorship #DonateForEducation #Bangalore #RuralEducation #NGOIndia #SupportChildren`
+#LawParkEducationalTrust #10YearsOfService #EducationForAll #Sponsorship #DonateForEducation #Bengaluru #RuralEducation #NGOIndia #SupportChildren`
 
-const donorInviteFacebookTitle = '10-Year Celebration – Sponsor Our Children\'s First Trip to Bangalore'
+const donorInviteFacebookTitle = '10-Year Celebration – Sponsor Our Children\'s First Trip to Bengaluru'
 const donorInviteFacebookContent = `Dear Friends and Supporters,
 
 Law Park Educational Trust is completing 10 years of service to our Nation. We help children across India—in rural areas, tribal communities, and children of HIV patients and acid-attack survivors—by supporting their education so no child under our care is left unschooled.
 
-To celebrate this milestone, we want to bring all the children under our care to Bangalore: an event, a one-day educational tour, surprise gifts, and lasting memories. For many of these children, it will be their first time visiting Bangalore—in fact, their first time stepping out of their abode.
+To celebrate this milestone, we want to bring all the children under our care to Bengaluru: an event, a one-day educational tour, surprise gifts, and lasting memories. For many of these children, it will be their first time visiting Bengaluru—in fact, their first time stepping out of their abode.
 
 We are happy and excited to make this happen, but finance is our only constraint. We request your sponsorship for this event. It will be heartwarming for all of us to bring smiles to these children, and together we can create a great change in their lives.
 
@@ -59,10 +59,10 @@ Charulatha M. R.
 Representing Law Park Educational Trust's Team
 +919945665379`
 
-const donorInviteYoutubeTitle = '10-Year Celebration | Sponsor Children\'s First Trip to Bangalore | Law Park Educational Trust'
+const donorInviteYoutubeTitle = '10-Year Celebration | Sponsor Children\'s First Trip to Bengaluru | Law Park Educational Trust'
 const donorInviteYoutubeDescription = `Law Park Educational Trust is completing 10 years of service. We help children across India—rural, tribal, children of HIV patients and acid-attack survivors—through education support so no child under our care is left unschooled.
 
-To celebrate, we want to bring all the children under our care to Bangalore: an event, a one-day tour, surprise gifts, and memories for a lifetime. For many, it will be their first time visiting Bangalore—their first time stepping out of their abode.
+To celebrate, we want to bring all the children under our care to Bengaluru: an event, a one-day tour, surprise gifts, and memories for a lifetime. For many, it will be their first time visiting Bengaluru—their first time stepping out of their abode.
 
 We need sponsorship to make this happen. Your support will bring smiles and create lasting change in these children's lives.
 
@@ -72,13 +72,13 @@ We request your financial help for this noble cause.
 
 Contact: +919945665379
 
-#LawParkEducationalTrust #10YearsOfService #EducationForAll #Sponsorship #DonateForEducation #Bangalore #NGOIndia #SupportChildren`
+#LawParkEducationalTrust #10YearsOfService #EducationForAll #Sponsorship #DonateForEducation #Bengaluru #NGOIndia #SupportChildren`
 
-const donorInviteWhatsappShort = `*10-Year Celebration – Sponsor Our Children's Trip to Bangalore* 💌
+const donorInviteWhatsappShort = `*10-Year Celebration – Sponsor Our Children's Trip to Bengaluru* 💌
 
 Law Park Educational Trust is completing *10 years* of service. We help children across India with education support.
 
-To celebrate, we want to bring *all children under our care* to Bangalore—event, tour, gifts. For many, it will be their *first time* stepping out of their abode.
+To celebrate, we want to bring *all children under our care* to Bengaluru—event, tour, gifts. For many, it will be their *first time* stepping out of their abode.
 
 We need *sponsorship* to make it happen. Your support can bring smiles and change lives.
 
@@ -90,11 +90,11 @@ Contact: +919945665379`
 
 const donorInviteWhatsappLong = `*Dear Donor,* 💌
 
-With all due respect I introduce myself as *Charulatha M. R*, Founder of *Law Park Educational Trust*, Bangalore. Along with my husband *Mr. Manjunatha S. M* we started this Trust in 2012 (registered 2016). We, with like-minded individuals, are successfully carrying the trust forward.
+With all due respect I introduce myself as *Charulatha M. R*, Founder of *Law Park Educational Trust*, Bengaluru. Along with my husband *Mr. Manjunatha S. M* we started this Trust in 2012 (registered 2016). We, with like-minded individuals, are successfully carrying the trust forward.
 
 Under our trust we help *children across India* with their education—rural sector, children of HIV patients, acid-attack victims, tribal children. We pay school fees so no child under our care is left unschooled.
 
-*This year we complete 10 years* of service. To celebrate, we want *all children under our care* to visit Bangalore: an event, one-day Bangalore tour, surprise gifts. For many, it will be their *first time* visiting Bangalore—first time stepping out of their abode.
+*This year we complete 10 years* of service. To celebrate, we want *all children under our care* to visit Bengaluru: an event, one-day Bengaluru tour, surprise gifts. For many, it will be their *first time* visiting Bengaluru—first time stepping out of their abode.
 
 We are happy and excited but *finance is our only constraint*. We request *sponsorship* for this event. It will be heartwarming to bring smiles to these children. Together we can create a great change.
 
@@ -110,9 +110,9 @@ Representing Law Park Educational Trust's Team
 +919945665379`
 
 const donorInviteEmailSubjects = [
-  '10-Year Celebration – Sponsor Our Children\'s First Trip to Bangalore',
+  '10-Year Celebration – Sponsor Our Children\'s First Trip to Bengaluru',
   'Request for Sponsorship: Law Park Educational Trust 10-Year Event',
-  'Bring Smiles to Children – Support Our Bangalore Celebration',
+  'Bring Smiles to Children – Support Our Bengaluru Celebration',
   'Your Support Can Change Lives: 10-Year Milestone Event',
 ]
 
@@ -174,7 +174,7 @@ function DonorInviteContentPage() {
               <span className="font-semibold">From:</span> Charulatha M. R. (Founder)
             </div>
             <div>
-              <span className="font-semibold">Organization:</span> Law Park Educational Trust, Bangalore
+              <span className="font-semibold">Organization:</span> Law Park Educational Trust, Bengaluru
             </div>
             <div>
               <span className="font-semibold">Ask:</span> Invitation to an interaction session with children

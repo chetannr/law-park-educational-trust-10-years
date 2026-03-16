@@ -645,6 +645,39 @@
       margin: 0;
     }
 
+    /* ── Smiles gallery (masonry: full width, computed to fit one page) ── */
+    .gallery-smiles {
+      display: flex;
+      flex-direction: row;
+      gap: 2mm;
+      margin: 6mm 0 0;
+      width: 100%;
+      max-height: 244mm;
+      break-inside: avoid;
+    }
+
+    .gallery-smiles__col {
+      display: flex;
+      flex-direction: column;
+      gap: 2mm;
+      flex: 0 0 calc((100% - 6mm) / 4);
+      min-width: 0;
+    }
+
+    .gallery-smiles__item {
+      break-inside: avoid;
+      page-break-inside: avoid;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .gallery-smiles__item img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
     /* ── Testimonial ── */
     .testi {
       break-inside: avoid;
@@ -1076,12 +1109,15 @@
     .cover-logo-wrap {
       margin-bottom: 14mm;
       padding: 10px 14px;
-      background: rgb(255 255 255 / 70%);
+      /* background: rgb(255 255 255 / 70%); */
       border-radius: 6px;
       display: inline-block;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, .15);
+      /* box-shadow: 0 2px 12px rgba(0, 0, 0, .15); */
       width: fit-content;
       margin-top: 13mm;
+      position: absolute;
+      top: -16px;
+      left: 14mm;
     }
 
     .cover-logo {
@@ -1475,10 +1511,18 @@
 
           <div class="toc-entry">
             <div class="toc-left">
+              <span class="toc-section">In Their Smiles</span>
+              <div class="toc-title">Moments of Joy</div>
+            </div>
+            <span class="toc-num">14</span>
+          </div>
+
+          <div class="toc-entry">
+            <div class="toc-left">
               <span class="toc-section">Donor &amp; Volunteer Voices</span>
               <div class="toc-title">In Their Own Words</div>
             </div>
-            <span class="toc-num">14</span>
+            <span class="toc-num">15</span>
           </div>
 
           <div class="toc-entry">
@@ -1486,7 +1530,7 @@
               <span class="toc-section">Recognition &amp; Awards</span>
               <div class="toc-title">The Bharat Shiksha Ratan Award</div>
             </div>
-            <span class="toc-num">18</span>
+            <span class="toc-num">19</span>
           </div>
 
           <div class="toc-entry">
@@ -1494,7 +1538,7 @@
               <span class="toc-section">Our Team &amp; Partners</span>
               <div class="toc-title">The People Behind the Work</div>
             </div>
-            <span class="toc-num">19</span>
+            <span class="toc-num">20</span>
           </div>
 
           <div class="toc-entry">
@@ -1502,7 +1546,7 @@
               <span class="toc-section">Our Donors</span>
               <div class="toc-title">With Gratitude</div>
             </div>
-            <span class="toc-num">20</span>
+            <span class="toc-num">21</span>
           </div>
 
           <div class="toc-entry">
@@ -1510,7 +1554,7 @@
               <span class="toc-section">Connect With Us</span>
               <div class="toc-title">Walk a Little Further With Us</div>
             </div>
-            <span class="toc-num">21</span>
+            <span class="toc-num">22</span>
           </div>
 
         </div>
@@ -1756,7 +1800,7 @@
             <p>One became ten. <strong>10 students</strong> received scholarships in Chickaballapur. With each new child, our resolve grew stronger.</p>
             <span class="loc">Chickaballapur</span>
             <div class="img-wrap" style="margin-top:0.45em;">
-              <img src="/images/slide_05_Picture_1_00.webp" alt="Growing support 2017" style="width:100%; height:90px; object-fit:cover; display:block;" />
+              <img src="/images/2017-3.jpeg" alt="Growing support 2017" style="width:100%; height:90px; object-fit:cover; display:block;" />
               <div class="cap">2017 Chickaballapur</div>
             </div>
           </div>
@@ -2088,6 +2132,7 @@
                 <img src="/images/slide_27_Picture_3_02.webp" alt="Scholarship interview 2025" style="width:100%; height:90px; object-fit:cover; display:block;" />
                 <div class="cap">Scholarship interviews, 2025</div>
               </div>
+
             </div>
           </div>
         </div>
@@ -2331,7 +2376,61 @@
 
 
     <!-- ═══════════════════════════════════════════════
-   PAGE 14 DONOR & VOLUNTEER VOICES (1/4)
+   PAGE 14 IN THEIR SMILES (Magazine photos gallery)
+   ═══════════════════════════════════════════════ -->
+    <div class="page">
+      <div class="running-head">
+        <span>In Their Smiles</span>
+        <span class="rh-dot"></span>
+        <span>10-Year Anniversary Magazine</span>
+      </div>
+
+      <div class="page-inner" style="padding-top: 12mm;">
+        <span class="kicker">In Their Smiles</span>
+        <h2>Moments of Joy</h2>
+        <span class="gold-line"></span>
+        <p style="font-size: 12px; color: var(--ink-muted); margin-bottom: 0;">The happiness of the children we support is at the heart of everything we do. Here are some of those moments.</p>
+
+        <div class="gallery-smiles">
+          <div class="gallery-smiles__col">
+            <div class="gallery-smiles__item"><img src="/images/Magazine photos/mag_01.jpeg" alt="Children with Law Park" style="width:100%;height:auto;object-fit:contain;display:block;"></div>
+            <div class="gallery-smiles__item"><img src="/images/Magazine photos/mag_06.jpeg" alt="Children with Law Park" style="width:100%;height:auto;object-fit:contain;display:block;"></div>
+            <div class="gallery-smiles__item"><img src="/images/Magazine photos/mag_12.jpeg" alt="Children with Law Park" style="width:100%;height:auto;object-fit:contain;display:block;"></div>
+            <div class="gallery-smiles__item"><img src="/images/Magazine photos/mag_17.jpeg" alt="Children with Law Park" style="width:100%;height:auto;object-fit:contain;display:block;"></div>
+          </div>
+          <div class="gallery-smiles__col">
+            <div class="gallery-smiles__item"><img src="/images/Magazine photos/mag_02.jpeg" alt="Children with Law Park" style="width:100%;height:auto;object-fit:contain;display:block;"></div>
+            <div class="gallery-smiles__item"><img src="/images/Magazine photos/mag_10.jpeg" alt="Children with Law Park" style="width:100%;height:auto;object-fit:contain;display:block;"></div>
+            <div class="gallery-smiles__item"><img src="/images/Magazine photos/mag_03.jpeg" alt="Children with Law Park" style="width:100%;height:auto;object-fit:contain;display:block;"></div>
+            <div class="gallery-smiles__item"><img src="/images/Magazine photos/mag_16.jpeg" alt="Children with Law Park" style="width:100%;height:auto;object-fit:contain;display:block;"></div>
+          </div>
+
+          <div class="gallery-smiles__col">
+            <div class="gallery-smiles__item"><img src="/images/Magazine photos/mag_19.jpeg" alt="Children with Law Park" style="width:100%;height:auto;object-fit:contain;display:block;"></div>
+            <div class="gallery-smiles__item"><img src="/images/Magazine photos/mag_04.jpeg" alt="Children with Law Park" style="width:100%;height:auto;object-fit:contain;display:block;"></div>
+            <div class="gallery-smiles__item"><img src="/images/Magazine photos/mag_07.jpeg" alt="Children with Law Park" style="width:100%;height:auto;object-fit:contain;display:block;"></div>
+            <div class="gallery-smiles__item"><img src="/images/Magazine photos/mag_15.jpeg" alt="Children with Law Park" style="width: 100%; height: 218px; object-fit: cover; display: block; object-position: bottom;">
+            </div>
+          </div>
+          <div class="gallery-smiles__col">
+            <div class="gallery-smiles__item"><img src="/images/Magazine photos/mag_05.jpeg" alt="Children with Law Park" style="width:100%;height:auto;object-fit:contain;display:block;"></div>
+            <div class="gallery-smiles__item"><img src="/images/Magazine photos/mag_09.jpeg" alt="Children with Law Park" style="width:100%;height:auto;object-fit:contain;display:block;"></div>
+            <div class="gallery-smiles__item"><img src="/images/Magazine photos/mag_13.jpeg" alt="Children with Law Park" style="width:100%;height:auto;object-fit:contain;display:block;"></div>
+            <div class="gallery-smiles__item"><img src="/images/Magazine photos/mag_18.jpeg" alt="Children with Law Park" style="width:100%;height:auto;object-fit:contain;display:block;"></div>
+          </div>
+        </div>
+
+        <div class="running-foot">
+          <span>lawparkeducationaltrust.org</span>
+          <span>journey.lawparkeducationaltrust.org</span>
+          <span class="folio">14</span>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════
+   PAGE 15 DONOR & VOLUNTEER VOICES (1/4)
    ═══════════════════════════════════════════════ -->
     <div class="page">
       <div class="running-head">
@@ -2376,14 +2475,15 @@
         </div>
 
         <div class="testi">
-          <blockquote>I am proud of you for the mission you have started in providing education to the poor and needy. This is such an incredible job you are doing to the society. I am happy to support and join with you
+          <blockquote>I am proud of you for the mission you have started in providing education to the poor and needy. This is such an incredible job you are doing to the society. I am happy to support and join with
+            you
             in this journey of your service. My best wishes to you and your team for all success to accomplish your mission.</blockquote>
           <cite>Krishnapriya, Customer Support Leader, French MNC Company</cite>
         </div>
         <div class="testi">
           <blockquote>I think the organization has done an amazing job. I know how challenging it is just running a small centre like ours and appreciate the enormous effort put in by you and your team. It takes huge
             effort to organize such programs.</blockquote>
-          <cite>Rajesh Reddy, Advocate, Bangalore</cite>
+          <cite>Rajesh Reddy, Advocate, Bengaluru</cite>
         </div>
         <div class="pull" style="margin-top: 0.8em;">
           <q>Every voice here is proof that kindness travels — from hand to hand, city to village, person to child.</q>
@@ -2393,7 +2493,7 @@
       <div class="running-foot">
         <span>lawparkeducationaltrust.org</span>
         <span>journey.lawparkeducationaltrust.org</span>
-        <span class="folio">14</span>
+        <span class="folio">15</span>
       </div>
     </div>
 
@@ -2469,7 +2569,7 @@
       <div class="running-foot">
         <span>lawparkeducationaltrust.org</span>
         <span>journey.lawparkeducationaltrust.org</span>
-        <span class="folio">15</span>
+        <span class="folio">16</span>
       </div>
     </div>
 
@@ -2503,13 +2603,15 @@
         </div>
 
         <div class="testi">
-          <blockquote>Charu and Manjunatha — You are doing an outstanding service by providing education to these children. This is the contribution to people and society. Best wishes to continue your excellent services.
+          <blockquote>Charu and Manjunatha — You are doing an outstanding service by providing education to these children. This is the contribution to people and society. Best wishes to continue your excellent
+            services.
           </blockquote>
           <cite>K.V. Ramani, Founder and Chancellor of SAI UNIVERSITY, Chairman Managing Director, Digital Holdings Pvt. Ltd.</cite>
         </div>
 
         <div class="testi">
-          <blockquote>Thank you very much charulatha madam, you are doing very great and noble service to deserving and financially poor students who are unable to continue their studies. I once again thank you and your
+          <blockquote>Thank you very much charulatha madam, you are doing very great and noble service to deserving and financially poor students who are unable to continue their studies. I once again thank you and
+            your
             noble service.</blockquote>
           <cite>Madhav Reddy</cite>
         </div>
@@ -2520,9 +2622,10 @@
 
         <div class="testi">
           <blockquote>We are glad to meet a Team like yours and we are very happy for the Charitable Trust that you are running for all those children who deserve. I congratulate entire team for being identified by the
-            great people and its all because of your hard work, interest and concern on the children and also the importance of education for the children. Let you Trust achieve more blessings by serving the needy and my
+            great people and its all because of your hard work, interest and concern on the children and also the importance of education for the children. Let you Trust achieve more blessings by serving the needy and
+            my
             support will always be with you throughout the journey.</blockquote>
-          <cite>Bhavya Shravanth, Bangalore</cite>
+          <cite>Bhavya Shravanth, Bengaluru</cite>
         </div>
 
         <div class="testi">
@@ -2533,7 +2636,7 @@
         <div class="testi">
           <blockquote>Thank you so much for the amazing job that you do. Knowing that you care for the kids giving them the confidence and reassurance. I just hope Law Park Educational Trust will continue to be
             hardworking and helpful to many children as possible. I am just humbled to volunteer for the organization.</blockquote>
-          <cite>Dr. Adarsh Babu, Bangalore</cite>
+          <cite>Dr. Adarsh Babu, Bengaluru</cite>
         </div>
         <div class="testi">
           <blockquote>Law Park is striving to bring a smile on the face of many young kids and parents. I am enthralled with the team members who are working towards making this society a better place and happier by
@@ -2545,7 +2648,7 @@
       <div class="running-foot">
         <span>lawparkeducationaltrust.org</span>
         <span>journey.lawparkeducationaltrust.org</span>
-        <span class="folio">16</span>
+        <span class="folio">17</span>
       </div>
     </div>
 
@@ -2570,7 +2673,8 @@
 
         <div class="testi">
           <blockquote>Kudos to your efforts in investing your time &amp; energy in creating better lives for the needy and deserving children. You are not only impacting the children but on a whole your efforts will
-            create a better society for next generation to live. Truly appreciate your efforts and good luck to LAW PARK EDUCATIONAL TRUST in this journey. We will be glad to support you in this wonderful journey in any
+            create a better society for next generation to live. Truly appreciate your efforts and good luck to LAW PARK EDUCATIONAL TRUST in this journey. We will be glad to support you in this wonderful journey in
+            any
             way possible.</blockquote>
           <cite>Arun AK, CEO, INFINPRO CONSULTANTS</cite>
         </div>
@@ -2599,7 +2703,7 @@
       <div class="running-foot">
         <span>lawparkeducationaltrust.org</span>
         <span>journey.lawparkeducationaltrust.org</span>
-        <span class="folio">17</span>
+        <span class="folio">18</span>
       </div>
     </div>
 
@@ -2639,7 +2743,8 @@
               <div><span>Presented by:</span> Mr. Kamal Singh Negi (Cabinet Minister) &amp; Mr. Dinesh Upadhyay (Ayush Minister)</div>
               <div><span>Distinction:</span> Selected from 25 awardees at the National Summit</div>
             </div>
-            <p>This recognition honoured a decade-long commitment to transforming lives through education — representing every child we have supported, every volunteer who gave their time, and every donor who believed in
+            <p>This recognition honoured a decade-long commitment to transforming lives through education — representing every child we have supported, every volunteer who gave their time, and every donor who believed
+              in
               us.</p>
           </div>
         </div>
@@ -2655,7 +2760,7 @@
       <div class="running-foot">
         <span>lawparkeducationaltrust.org</span>
         <span>journey.lawparkeducationaltrust.org</span>
-        <span class="folio">18</span>
+        <span class="folio">19</span>
       </div>
     </div>
 
@@ -2688,7 +2793,7 @@
           <div class="trustee">
             <span class="role-tag">Trustee</span>
             <h4>S. M. Manjunatha</h4>
-            <p>Hailing from the village of Sadenahalli, Karnataka, he was the first in his family to study in the city. He graduated in Law from Bangalore, and funded many children from his village who have now grown
+            <p>Hailing from the village of Sadenahalli, Karnataka, he was the first in his family to study in the city. He graduated in Law from Bengaluru, and funded many children from his village who have now grown
               into well-settled members of society.</p>
           </div>
         </div>
@@ -2732,17 +2837,28 @@
           <p>In 2025, we partnered with Nisarga Foundation to distribute 300 school bags, notebooks, and stationeries to tribal children in H.D. Kote.</p>
         </div>
         <div class="callout callout-gold" style="margin-top:0.5em;">
-          <div class="callout-label">Healthcare Partners</div>
-          <p>Partner NGOs <strong>Belaku Trust</strong> (Bangarpet) and <strong>Soukhya Samrudhi Samsthe</strong> (Kolar), together with the <strong>District Health &amp; Family Welfare Department, Kolar</strong>,
-            support children from
-            vulnerable and HIV-affected families.</p>
+          <div style="display: flex;justify-content: space-between;">
+            <div style="width: 90mm;display: flex;flex-direction: column;">
+              <div class="callout-label">Healthcare Partners</div>
+              <div style="width: 90mm;gap: 5mm;display: flex;flex-direction: column;">
+                <p><strong>Belaku Trust</strong> (Bangarpet):<br>Works with vulnerable and HIV-affected<br /> families in the region.</p>
+                <p><strong>Soukhya Samrudhi Samsthe</strong> (Kolar):<br>Partners with us to support children <br />from these families.</p>
+                <p><strong>District Health &amp; Family Welfare Department</strong> (Kolar):<br>Joins these NGOs to deliver healthcare<br /> and welfare support.</p>
+              </div>
+            </div>
+            <div class="img-wrap" style="margin-top:0.6em;">
+              <img src="/images/HIV.jpeg" alt="Community programme with Law Park, Belaku Trust, District Health &amp; Family Welfare Kolar, Soukhya Samsthe"
+                style="width:100%; height:140px; object-fit:cover; display:block;">
+              <div class="cap">Community programme with healthcare partners, Kolar</div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="running-foot">
         <span>lawparkeducationaltrust.org</span>
         <span>journey.lawparkeducationaltrust.org</span>
-        <span class="folio">19</span>
+        <span class="folio">20</span>
       </div>
     </div>
 
@@ -2764,7 +2880,8 @@
           <h2 style="color:var(--white);">Our Donors</h2>
         </div>
 
-        <p style="font-family:'Inter',sans-serif; font-size:10.5px; color:var(--ink-muted); margin-bottom:0.8em; font-style:italic;">Every name here represents a person or organisation that believed in a child's right to
+        <p style="font-family:'Inter',sans-serif; font-size:10.5px; color:var(--ink-muted); margin-bottom:0.8em; font-style:italic;">Every name here represents a person or organisation that believed in a child's right
+          to
           learn. We are grateful to each one of you.</p>
 
         <div class="chip-grid" style="margin: 0.5em 0 1em;">
@@ -2888,7 +3005,7 @@
       <div class="running-foot">
         <span>lawparkeducationaltrust.org</span>
         <span>journey.lawparkeducationaltrust.org</span>
-        <span class="folio">20</span>
+        <span class="folio">21</span>
       </div>
     </div>
 
@@ -2973,13 +3090,13 @@
       <div class="running-foot">
         <span>Law Park Educational Trust · 10-Year Anniversary Magazine · 2016–2025</span>
         <span>lawparkeducationaltrust.org</span>
-        <span class="folio">21</span>
+        <span class="folio">22</span>
       </div>
     </div>
 
 
     <!-- ═══════════════════════════════════════════════
-   PAGE 17 BACK COVER
+   BACK COVER
    ═══════════════════════════════════════════════ -->
     <div class="back-cover">
       <div style="position:relative; z-index:1; padding: 0 30mm;">
