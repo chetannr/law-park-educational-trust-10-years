@@ -61,7 +61,7 @@
       font-size: 13.5px;
       line-height: 1.72;
       color: var(--ink-mid);
-      background: #2a2a3a;
+      background: var(--white);
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
@@ -70,17 +70,6 @@
       width: 210mm;
       margin: 0 auto;
       background: var(--white);
-      box-shadow: 0 8px 48px rgba(0, 0, 0, .28);
-    }
-
-    @media print {
-      body {
-        background: var(--white);
-      }
-
-      .magazine {
-        box-shadow: none;
-      }
     }
 
     /* ── Every interior page ── (fixed 297 mm so header + content + footer fit A4) */
