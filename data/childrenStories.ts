@@ -15,7 +15,7 @@ export const childrenStories: ChildStory[] = [
   {
     gender: 'Female',
     summary:
-      'This child is taken care of by her grandmother. Mother left this child and married another. Father doesn’t even care about this child and stays away somewhere. Her grandmother at this old age earns for this child’s future and takes care of the child.',
+      'This child is taken care by her grandmother. Mother left this child and married another. Father doesn’t even care about this child and stays away somewhere. Her grandmother at this old age earns for this child’s future and takes care of the child.',
     image: '/images/1st-Child-3.webp',
   },
   {

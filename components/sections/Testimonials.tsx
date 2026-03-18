@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export interface Testimonial {
   text: string
   author: string
@@ -69,10 +71,21 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
                 {testimonial.text}
               </p>
 
-              {/* Gold bar citation */}
+              {/* Gold bar citation + optional photo */}
               <div className="flex items-center gap-3 pt-4" style={{ borderTop: `1px solid #f0ece4` }}>
+                {testimonial.image && (
+                  <div className="shrink-0 w-12 h-12 rounded-full overflow-hidden bg-gray-100 relative">
+                    <Image
+                      src={testimonial.image}
+                      alt=""
+                      width={48}
+                      height={48}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                )}
                 <div style={{ width: 20, height: 2, background: GOLD, borderRadius: 1, flexShrink: 0 }} />
-                <div>
+                <div className="min-w-0 flex-1">
                   <div
                     className="font-semibold text-sm"
                     style={{ color: NAVY, fontFamily: 'Quicksand, sans-serif' }}

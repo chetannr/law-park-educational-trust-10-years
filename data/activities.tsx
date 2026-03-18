@@ -24,7 +24,7 @@ export const activities: Activity[] = [
   },
   {
     title: 'Cultural Awareness Programs',
-    description: 'We share knowledge about language origins, cultural heritage, and practical tips. For example, explaining how Kannada language came into existence through the origin of sounds (Varnamala).',
+    description: 'We share stories of language and culture, helping children understand their history. Children leave knowing their roots better.',
     icon: <BookOpen className="w-10 h-10 text-gold-500" strokeWidth={1.5} />,
   },
   {

@@ -71,7 +71,7 @@ function StoryCard({ story }: { story: ChildStory }) {
               className="text-xs font-semibold uppercase tracking-wider"
               style={{ color: GOLD, fontFamily: 'Quicksand, sans-serif', letterSpacing: '0.1em' }}
             >
-              Child — undisclosed
+              Child
             </span>
             {story.gender && (
               <span
