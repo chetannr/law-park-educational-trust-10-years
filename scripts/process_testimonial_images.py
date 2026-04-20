@@ -19,6 +19,12 @@ Usage:
 
     # Custom input/output
     python scripts/process_testimonial_images.py --input public/magazine/testimonial-images --output public/magazine/NGO_Processed_Images
+
+    # Only specific files (paths after options; --input ignored)
+    python scripts/process_testimonial_images.py --output public/magazine/NGO_Processed_Images path/to/a.jpg path/to/b.jpg
+
+    # Stable numbered names (order = argument order for explicit files, sorted for --input)
+    python scripts/process_testimonial_images.py --basename-prefix children-story --output public/images/children-stories-processed --print file1.jpeg file2.jpeg
 """
 
 import argparse
@@ -200,6 +206,7 @@ def process_image(
     padding_factor: float,
     jpeg_quality: int,
     use_grayscale: bool,
+    output_basename: Optional[str] = None,
 ) -> Optional[str]:
     """
     Load image, detect faces, compute 9:16 crop (or center fallback), resize, grayscale, save.
@@ -246,7 +253,8 @@ def process_image(
         pil_image = Image.fromarray(resized_rgb, mode="RGB")
 
     output_dir.mkdir(parents=True, exist_ok=True)
-    out_name = image_path.stem + ".jpg"
+    stem = output_basename if output_basename else image_path.stem
+    out_name = stem + ".jpg"
     out_path = output_dir / out_name
     pil_image.save(str(out_path), "JPEG", quality=jpeg_quality, optimize=True)
     return out_name
@@ -296,34 +304,71 @@ def main() -> None:
         action="store_true",
         help="Keep color; default is grayscale",
     )
+    parser.add_argument(
+        "--basename-prefix",
+        type=str,
+        default=None,
+        help="Save as {prefix}-01.jpg, {prefix}-02.jpg, ... (order preserved for explicit files)",
+    )
+    parser.add_argument(
+        "--basename-start",
+        type=int,
+        default=1,
+        help="First index when using --basename-prefix (default: 1)",
+    )
+    parser.add_argument(
+        "files",
+        nargs="*",
+        type=Path,
+        help="Optional image paths to process only these files (ignores --input)",
+    )
     args = parser.parse_args()
 
-    input_dir = args.input
     output_dir = args.output
-    if not input_dir.is_dir():
-        print(f"Error: Input directory not found: {input_dir}")
-        sys.exit(1)
-
     output_width = args.width
     if output_width is None:
         output_width = 2160 if args.print else 1080
 
-    image_files: List[Path] = []
-    for ext in SUPPORTED_EXTENSIONS:
-        image_files.extend(input_dir.glob(f"*{ext}"))
-        image_files.extend(input_dir.glob(f"*{ext.upper()}"))
-    image_files = sorted(set(image_files))
+    if args.files:
+        missing = [p for p in args.files if not p.is_file()]
+        if missing:
+            for p in missing:
+                print(f"Error: Not a file: {p}")
+            sys.exit(1)
+        seen = set()
+        image_files = []
+        for p in args.files:
+            r = p.resolve()
+            if r in seen:
+                continue
+            seen.add(r)
+            image_files.append(r)
+        source_label = f"{len(image_files)} explicit path(s)"
+    else:
+        input_dir = args.input
+        if not input_dir.is_dir():
+            print(f"Error: Input directory not found: {input_dir}")
+            sys.exit(1)
+        image_files = []
+        for ext in SUPPORTED_EXTENSIONS:
+            image_files.extend(input_dir.glob(f"*{ext}"))
+            image_files.extend(input_dir.glob(f"*{ext.upper()}"))
+        image_files = sorted(set(image_files))
+        source_label = str(input_dir)
 
     if not image_files:
-        print(f"No images found in {input_dir}")
+        print(f"No images found in {source_label}")
         sys.exit(0)
 
-    print(f"Processing {len(image_files)} image(s) from {input_dir}")
+    print(f"Processing {len(image_files)} image(s) from {source_label}")
     print(f"Output: {output_dir} | {output_width}px width | 9:16 portrait | Grayscale: {not args.no_grayscale}")
     print()
 
     success = 0
-    for path in image_files:
+    for index, path in enumerate(image_files, start=args.basename_start):
+        out_base = None
+        if args.basename_prefix:
+            out_base = f"{args.basename_prefix}-{index:02d}"
         out_name = process_image(
             path,
             output_dir,
@@ -331,6 +376,7 @@ def main() -> None:
             padding_factor=args.padding,
             jpeg_quality=args.quality,
             use_grayscale=not args.no_grayscale,
+            output_basename=out_base,
         )
         if out_name:
             print(f"  OK: {path.name} -> {out_name}")
